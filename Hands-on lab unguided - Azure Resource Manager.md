@@ -17,30 +17,39 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Contents
 
--   [Abstract and learning objectives](#abstract-and-learning-objectives)
--   [Overview](#overview)
--   [Solution architecture](#solution-architecture)
--   [Requirements](#requirements)
--   [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
-    -   [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
-    -   [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
-    -   [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
--   [Exercise 1: Configure Automation account](#exercise-1-configure-automation-account)
-    -   [Task 1: Create Azure Automation account](#task-1-create-azure-automation-account)
--   [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
-    -   [Task 1: Define the network foundation](#task-1-define-the-network-foundation)
--   [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
-    -   [Task 1: Add storage and set to use Premium](#task-1-add-storage-and-set-to-use-premium)
-    -   [Task 2: Add a virtual machine for the web server](#task-2-add-a-virtual-machine-for-the-web-server)
-    -   [Task 3: Add a virtual machine for the SQL Server](#task-3-add-a-virtual-machine-for-the-sql-server)
-    -   [Task 4: Deploy completed solution to Azure](#task-4-deploy-completed-solution-to-azure)
--   [Exercise 4: Lock down the environment](#exercise-4-lock-down-the-environment)
-    -   [Task 1: Restrict traffic to the web server](#task-1-restrict-traffic-to-the-web-server)
-    -   [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2-update-the-network-security-group-to-allow-windows-remote-desktop)
--   [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
-    -   [Task 1: Parameterize the size of the environment and add load balancing](#task-1-parameterize-the-size-of-the-environment-and-add-load-balancing)
--   [After the hands-on lab ](#after-the-hands-on-lab)
-    -   [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
+<!-- TOC -->
+
+- [Azure Resource Manager](#azure-resource-manager)
+    - [Hands-on lab unguided](#hands-on-lab-unguided)
+    - [March 2018](#march-2018)
+- [Contents](#contents)
+- [Lift and shift hands-on lab unguided](#lift-and-shift-hands-on-lab-unguided)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Overview](#overview)
+    - [Solution architecture](#solution-architecture)
+    - [Requirements](#requirements)
+    - [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
+        - [Task 1: Create a virtual machine for your lab environment](#task-1--create-a-virtual-machine-for-your-lab-environment)
+        - [Task 2: Connect to the VM and download the student files](#task-2--connect-to-the-vm-and-download-the-student-files)
+        - [Task 3: Validate connectivity to Azure](#task-3--validate-connectivity-to-azure)
+    - [Exercise 1: Configure Automation account](#exercise-1--configure-automation-account)
+        - [Task 1: Create Azure Automation account](#task-1--create-azure-automation-account)
+    - [Exercise 2: Define the network foundation](#exercise-2--define-the-network-foundation)
+        - [Task 1: Define the network foundation](#task-1--define-the-network-foundation)
+    - [Exercise 3: Extend with Compute](#exercise-3--extend-with-compute)
+        - [Task 1: Add storage and set to use Premium](#task-1--add-storage-and-set-to-use-premium)
+        - [Task 2: Add a virtual machine for the web server](#task-2--add-a-virtual-machine-for-the-web-server)
+        - [Task 3: Add a virtual machine for the SQL Server](#task-3--add-a-virtual-machine-for-the-sql-server)
+        - [Task 4: Deploy completed solution to Azure](#task-4--deploy-completed-solution-to-azure)
+    - [Exercise 4: Lock down the environment](#exercise-4--lock-down-the-environment)
+        - [Task 1: Restrict traffic to the web server](#task-1--restrict-traffic-to-the-web-server)
+        - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2--update-the-network-security-group-to-allow-windows-remote-desktop)
+    - [Exercise 5: Scale out the deployment](#exercise-5--scale-out-the-deployment)
+        - [Task 1: Parameterize the size of the environment and add load balancing](#task-1--parameterize-the-size-of-the-environment-and-add-load-balancing)
+    - [After the hands-on lab](#after-the-hands-on-lab)
+        - [Task 1: Delete the resource groups created](#task-1--delete-the-resource-groups-created)
+
+<!-- /TOC -->
 
 # Lift and shift hands-on lab unguided
 
@@ -85,7 +94,7 @@ Prior to attending the lab, follow the instructions below to create a
 lab environment using an Azure Virtual Machine and download the needed
 files for the lab exercise.
 
-#### Task 1: Create a virtual machine for your lab environment 
+### Task 1: Create a virtual machine for your lab environment 
 
 1.  Launch a browser using incognite or in-private mode, and navigate to
     <https://portal.azure.com>. Once prompted, login with your Microsoft
@@ -128,7 +137,7 @@ files for the lab exercise.
 
     ![Screenshot of the Deploying Visual Studio Community 2017 icon.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image4.png "Deploying Visual Studio Community 2017 icon")
 
-#### Task 2: Connect to the VM and download the student files
+### Task 2: Connect to the VM and download the student files
 
 1.  Move back to the Portal page on your local machine, and wait for **LABVM** to show the Status of **Running**. Click **Connect** to establish a new Remote Desktop Session.
 
@@ -189,7 +198,7 @@ files for the lab exercise.
 
 14. The **Downloads** folder will open. ***Right-click*** the zip file, and click **Extract All**. In the **Extract Compressed (Zipped) Folders** window, enter **C:\\Hackathon** in the **Files will be extracted to this folder** dialog. Click the **Extract** button.
 
-#### Task 3: Validate connectivity to Azure
+### Task 3: Validate connectivity to Azure
 
 1.  Within the virtual machine, launch **Visual Studio 2017**, and validate you can login with your Microsoft Account when prompted.
 
@@ -210,7 +219,7 @@ network for a proof of concept deployment of their new application
 CloudShop. Before creating the ARM Template, you must first create and
 configure an Azure Automation account using the Azure portal.
 
-#### Task 1: Create Azure Automation account
+### Task 1: Create Azure Automation account
 
 Tasks to complete
 
@@ -236,7 +245,7 @@ Contoso has asked you to create an ARM template that will configure the
 network for a proof of concept deployment of their new application
 CloudShop.
 
-#### Task 1: Define the network foundation
+### Task 1: Define the network foundation
 
 Tasks to complete
 
@@ -277,7 +286,7 @@ Public IP, and virtual machines for the web server(s) and a SQL server.
 The servers will be automatically configured using a PowerShell DSC
 script supplied to you by the infrastructure team.
 
-#### Task 1: Add storage and set to use Premium
+### Task 1: Add storage and set to use Premium
 
 Tasks to complete
 
@@ -293,7 +302,7 @@ Exit criteria
 -   The new storage account should default to using Premium Storage in
     the template.
 
-#### Task 2: Add a virtual machine for the web server
+### Task 2: Add a virtual machine for the web server
 
 Tasks to complete
 
@@ -327,7 +336,7 @@ Exit criteria
     Registration Key, and Configuration Node name(s) of the Automation
     account.
 
-#### Task 3: Add a virtual machine for the SQL Server
+### Task 3: Add a virtual machine for the SQL Server
 
 Tasks to complete
 
@@ -403,7 +412,7 @@ Exit criteria
 
         -   SQL Server should be in mixed authentication mode.
 
-#### Task 4: Deploy completed solution to Azure
+### Task 4: Deploy completed solution to Azure
 
 Tasks to complete
 
@@ -440,7 +449,7 @@ Duration: 15 minutes
 In this portion of the hackathon, you will deploy a network security
 group to restrict the network attack surface for the deployment.
 
-#### Task 1: Restrict traffic to the web server
+### Task 1: Restrict traffic to the web server
 
 Tasks to complete
 
@@ -466,7 +475,7 @@ Exit criteria
 -   The **hackathonVnet** **dependsOn** array should be updated to
     reference **hackathonNetworkSecurityGroup**.
 
-#### Task 2: Update the network security group to allow Windows Remote Desktop 
+### Task 2: Update the network security group to allow Windows Remote Desktop 
 
 Tasks to complete
 
@@ -497,7 +506,7 @@ Scale Sets. It is recommended that unless you have configured scale sets
 before that you use the Leader's guide with the hackathon answers to
 complete this exercise.
 
-#### Task 1: Parameterize the size of the environment and add load balancing
+### Task 1: Parameterize the size of the environment and add load balancing
 
 Tasks to complete
 
@@ -558,7 +567,7 @@ Exit criteria
 
 Duration: 10 minutes
 
-#### Task 1: Delete the resource groups created
+### Task 1: Delete the resource groups created
 
 1.  Within the Azure portal, click Resource Groups on the left
     navigation.

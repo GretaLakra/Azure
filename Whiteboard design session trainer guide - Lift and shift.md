@@ -17,27 +17,40 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Contents
 
--   **[Trainer information](#trainer-information)**
--   **[Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)**
-    -   [Abstract and learning objectives ](#abstract-and-learning-objectives)
-    -   [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        -   [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator/subject-matter-expert-sme-presentation-of-customer-case-study)
-        -   [Customer situation](#customer-situation)
-        -   [Customer needs](#customer-needs)
-        -   [Customer objections](#customer-objections)
-        -   [Infographic for common scenarios](#infographic-for-common-scenarios)
-    -   [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    -   [Step 3: Present the solution](#step-3-present-the-solution)
-    -   [Wrap-up](#wrap-up)
-    -   [Additional references](#additional-references)
--   **[Lift and shift whiteboard design session trainer guide](#lift-and-shift-whiteboard-design-session-trainer-guide)**
-    -   [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    -   [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    -   [Step 3: Present the solution](#step-3-present-the-solution-1)
-    -   [Wrap-up](#wrap-up-1)
-    -   [Preferred target audience](#preferred-target-audience)
-    -   [Preferred solution](#preferred-solution)
-    -   [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+<!-- TOC -->
+
+- [Lift and shift](#lift-and-shift)
+    - [Whiteboard design session trainer guide](#whiteboard-design-session-trainer-guide)
+    - [March 2018](#march-2018)
+    - [Contents](#contents)
+    - [Trainer information](#trainer-information)
+    - [Role of the trainer](#role-of-the-trainer)
+        - [Whiteboard design session flow](#whiteboard-design-session-flow)
+        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
+        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+- [Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
+- [Lift and shift whiteboard design session trainer guide](#lift-and-shift-whiteboard-design-session-trainer-guide)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Preferred target audience](#preferred-target-audience)
+    - [Preferred solution](#preferred-solution)
+    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+
+<!-- /TOC -->
 
 ## Trainer information
 
@@ -68,7 +81,7 @@ An amazing trainer:
 
 -   Effectively leads the feedback process.
 
-#### Whiteboard design session flow 
+### Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
@@ -108,7 +121,7 @@ Outcome: Present solution to your customer
 
 -   Review preferred solution
 
-#### Before the whiteboard design session: How to prepare
+### Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
@@ -124,7 +137,7 @@ Before conducting your first whiteboard design session:
 
 -   Make notes for later.
 
-#### During the whiteboard design session: Tips for an effective whiteboard design session
+### During the whiteboard design session: Tips for an effective whiteboard design session
 
 **Refer to the Trainer guide** to stay on track and observe the timings.
 
@@ -195,7 +208,7 @@ lift and shift capabilities. In addition, attendees will learn to:
 
 Analyze your customer's needs.
 
-#### Facilitator/subject matter expert (SME) presentation of customer case study 
+### Facilitator/subject matter expert (SME) presentation of customer case study 
 
 Duration: 15 minutes
 
@@ -209,7 +222,7 @@ tips.
 
 3.  As a table team, review the following customer case study.
 
-#### Customer situation
+### Customer situation
 
 Lucerne Publishing is one of the largest English-language publishers in
 the world. With nearly 200 years of history, Lucerne has published some
@@ -306,7 +319,7 @@ underlying application code.
 
 ![The Existing procurement solution includes vmware, vCenter, SQL Server 2005 cluster, Frontend IIS Servers, and Cookie Affinity.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image3.png "Existing procurement solution")
 
-#### Customer needs 
+### Customer needs 
 
 1.  How can we assess our environment for suitability and cost analysis
     before migrating to Azure?
@@ -343,7 +356,7 @@ underlying application code.
     to the Cloud. Lucerne demands there is a way to "fail back" if
     something goes wrong, or they are outside of that 12-hour window.
 
-#### Customer objections 
+### Customer objections 
 
 1.  How can we tell how much we will really be spending once we have
     migrated to Azure?
@@ -365,7 +378,7 @@ underlying application code.
     during this one-time move, but when it comes up, everything needs to
     be perfect.
 
-#### Infographic for common scenarios
+### Infographic for common scenarios
 
 ![This image contains common scenarios for both Azure IaaS and Azure
 Resource

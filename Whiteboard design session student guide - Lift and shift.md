@@ -17,18 +17,26 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Contents
 
--   **[Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)**
-    -   [Abstract and learning objectives](#abstract-and-learning-objectives)
-    -   [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        -   [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitatorsubject-matter-expert-sme-presentation-of-customer-case-study)
-        -   [Customer situation](#customer-situation)
-        -   [Customer needs](#customer-needs)
-        -   [Customer objections ](#customer-objections)
-        -   [Infographic for common scenarios](#infographic-for-common-scenarios)
-    -   [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    -   [Step 3: Present the solution](#step-3-present-the-solution)
-    -   [Wrap-up](#wrap-up)
-        [Additional references](#additional-references)
+<!-- TOC -->
+
+- [Lift and shift](#lift-and-shift)
+    - [Whiteboard design session student guide](#whiteboard-design-session-student-guide)
+    - [March 2018](#march-2018)
+- [Contents](#contents)
+- [Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
+
+<!-- /TOC -->
 
 #  Lift and shift whiteboard design session student guide
 
@@ -59,7 +67,7 @@ lift and shift capabilities. In addition, attendees will learn to:
 
 Analyze your customer's needs.
 
-#### Facilitator/subject matter expert (SME) presentation of customer case study 
+### Facilitator/subject matter expert (SME) presentation of customer case study 
 
 Duration: 15 minutes
 
@@ -73,7 +81,7 @@ tips.
 
 3.  As a table team, review the following customer case study.
 
-#### Customer situation
+### Customer situation
 
 Lucerne Publishing is one of the largest English-language publishers in
 the world. With nearly 200 years of history, Lucerne has published some
@@ -170,7 +178,7 @@ underlying application code.
 
 ![The Existing procurement solution includes vmware, vCenter, SQL Server 2005 cluster, Frontend IIS Servers, and Cookie Affinity.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image3.png "Existing procurement solution")
 
-#### Customer needs 
+### Customer needs 
 
 1.  How can we assess our environment for suitability and cost analysis
     before migrating to Azure?
@@ -207,7 +215,7 @@ underlying application code.
     to the Cloud. Lucerne demands there is a way to "fail back" if
     something goes wrong, or they are outside of that 12-hour window.
 
-#### Customer objections 
+### Customer objections 
 
 1.  How can we tell how much we will really be spending once we have
     migrated to Azure?
@@ -229,7 +237,7 @@ underlying application code.
     during this one-time move, but when it comes up, everything needs to
     be perfect.
 
-#### Infographic for common scenarios
+### Infographic for common scenarios
 
 ![This image contains common scenarios for both Azure IaaS and Azure
 Resource

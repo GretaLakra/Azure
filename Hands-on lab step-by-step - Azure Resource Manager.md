@@ -17,33 +17,41 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Contents
 
--   [Abstract and learning objectives](#abstract-and-learning-objectives)
--   [Overview](#overview)
--   [Solution architecture](#solution-architecture)
--   [Requirements](#requirements)
--   [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
-    -   [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
-    -   [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
-    -   [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
--   [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
-    -   [Task 1: Create Automation Account](#task1-create-automation-account)
-    -   [Task 2: Upload DSC Configurations into Automation Account](#task-2-upload-dsc-configurations-into-automation-account)
-    -   [Task 3: Add an Azure Automation credential](#task-3-add-an-azure-automation-credential)
--   [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
-    -   [Task 1: Deploy a virtual network with a template](#task-1-deploy-a-virtual-network-with-a-template)
--   [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
-    -   [Task 1: Add an Azure storage account](#task-1-add-an-azure-storage-account)
-    -   [Task 2: Add a virtual machine and configure as a web server](#task-2-add-a-virtual-machine-and-configure-as-a-web-server)
-    -   [Task 3: Add a Windows virtual machine for the database server](#task-3-add-a-windows-virtual-machine-for-the-database-server)
-    -   [Task 4: Deploy your updated template to Azure](#task-4-deploy-your-updated-template-to-azure)
--   [Exercise 4: Lock down the environment](#exercise-4-lock-down-the-environment)
-    -   [Task 1: Restrict traffic to the web server](#task-1-restrict-traffic-to-the-web-server)
-    -   [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2-update-the-network-security-group-to-allow-windows-remote-desktop)
--   [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
-    -   [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
--   [After the hands-on lab ](#after-the-hands-on-lab)
-    -   [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
+<!-- TOC -->
 
+- [Azure Resource Manager](#azure-resource-manager)
+    - [Hands-on lab step-by-step](#hands-on-lab-step-by-step)
+    - [March 2018](#march-2018)
+    - [Contents](#contents)
+- [Lift and shift hands-on lab step-by-step](#lift-and-shift-hands-on-lab-step-by-step)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Overview](#overview)
+    - [Solution architecture](#solution-architecture)
+    - [Requirements](#requirements)
+    - [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
+        - [Task 1: Create a virtual machine for your lab environment](#task-1--create-a-virtual-machine-for-your-lab-environment)
+        - [Task 2: Connect to the VM and download the student files](#task-2--connect-to-the-vm-and-download-the-student-files)
+        - [Task 3: Validate connectivity to Azure](#task-3--validate-connectivity-to-azure)
+    - [Exercise 1: Configure Automation Account](#exercise-1--configure-automation-account)
+        - [Task 1: Create Automation Account](#task-1--create-automation-account)
+        - [Task 2: Upload DSC Configurations into Automation Account](#task-2--upload-dsc-configurations-into-automation-account)
+        - [Task 3: Add an Azure Automation credential](#task-3--add-an-azure-automation-credential)
+    - [Exercise 2: Define the network foundation](#exercise-2--define-the-network-foundation)
+        - [Task 1: Deploy a virtual network with a template](#task-1--deploy-a-virtual-network-with-a-template)
+    - [Exercise 3: Extend with Compute](#exercise-3--extend-with-compute)
+        - [Task 1: Add an Azure storage account](#task-1--add-an-azure-storage-account)
+        - [Task 2: Add a virtual machine and configure as a web server](#task-2--add-a-virtual-machine-and-configure-as-a-web-server)
+        - [Task 3: Add a Windows virtual machine for the database server](#task-3--add-a-windows-virtual-machine-for-the-database-server)
+        - [Task 4: Deploy your updated template to Azure](#task-4--deploy-your-updated-template-to-azure)
+    - [Exercise 4: Lock down the environment](#exercise-4--lock-down-the-environment)
+        - [Task 1: Restrict traffic to the web server](#task-1--restrict-traffic-to-the-web-server)
+        - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2--update-the-network-security-group-to-allow-windows-remote-desktop)
+    - [Exercise 5: Scale out the deployment](#exercise-5--scale-out-the-deployment)
+        - [Task 1: Parameterize and scale out the environment](#task-1--parameterize-and-scale-out-the-environment)
+    - [After the hands-on lab](#after-the-hands-on-lab)
+        - [Task 1: Delete the resource groups created](#task-1--delete-the-resource-groups-created)
+
+<!-- /TOC -->
 # Lift and shift hands-on lab step-by-step
 
 ## Abstract and learning objectives 
@@ -87,7 +95,7 @@ Prior to attending the lab, follow the instructions below to create a
 lab environment using an Azure Virtual Machine and download the needed
 files for the lab exercise.
 
-#### Task 1: Create a virtual machine for your lab environment 
+### Task 1: Create a virtual machine for your lab environment 
 
 1.  Launch a browser using incognite or in-private mode, and navigate to
     <https://portal.azure.com>. Once prompted, login with your Microsoft
@@ -130,7 +138,7 @@ files for the lab exercise.
 
     ![Screenshot of the Deploying Visual Studio Community 2017 icon.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image4.png "Deploying Visual Studio Community 2017 icon")
 
-#### Task 2: Connect to the VM and download the student files
+### Task 2: Connect to the VM and download the student files
 
 1.  Move back to the Portal page on your local machine, and wait for **LABVM** to show the Status of **Running**. Click **Connect** to establish a new Remote Desktop Session.
 
@@ -191,7 +199,7 @@ files for the lab exercise.
 
 14. The **Downloads** folder will open. ***Right-click*** the zip file, and click **Extract All**. In the **Extract Compressed (Zipped) Folders** window, enter **C:\\Hackathon** in the **Files will be extracted to this folder** dialog. Click the **Extract** button.
 
-#### Task 3: Validate connectivity to Azure
+### Task 3: Validate connectivity to Azure
 
 1.  Within the virtual machine, launch **Visual Studio 2017**, and
     validate you can login with your Microsoft Account when prompted.
@@ -212,7 +220,7 @@ In this exercise, you will create and configure an Azure Automation
 Account in the Azure portal before configuring and deploying the
 resources of your ARM template.
 
-#### Task 1: Create Automation Account
+### Task 1: Create Automation Account
 
 1.  Browse to the Azure portal and authenticate at
     <https://portal.azure.com/>
@@ -223,7 +231,7 @@ resources of your ARM template.
     
     ![In the Add Automation Account blade, the Name field is set to Automation-Acct. The Resource Group field is set to Automation\_RG, and the Create new radio button is selected. The Location field is set to Location nearest you. TheCreate Azure Run As account is set to Yes.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image17.png "Add Automation Account blade")
 
-#### Task 2: Upload DSC Configurations into Automation Account
+### Task 2: Upload DSC Configurations into Automation Account
 
 1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **DSC Configurations** menu.
 
@@ -240,7 +248,7 @@ resources of your ARM template.
     \
     ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations / CloudShopSQL panes")
 
-#### Task 3: Add an Azure Automation credential
+### Task 3: Add an Azure Automation credential
 
 1.  The CloudShopSQL DSC configuration requires a credential object to
     access the local administrator account on the virtual machine.
@@ -276,7 +284,7 @@ Duration: 15 minutes
 Your first ARM template task is to create a virtual network template
 using Visual Studio and deploy it to your Azure account.
 
-#### Task 1: Deploy a virtual network with a template
+### Task 1: Deploy a virtual network with a template
 
 1.  Open Visual Studio. The shortcut should be available on the desktop,
     and if it is not, click the Windows icon in the bottom left corner,
@@ -398,7 +406,7 @@ task by creating a storage account and adding virtual machines for the
 web application and database followed by configuring the machines for
 the roles.
 
-#### Task 1: Add an Azure storage account
+### Task 1: Add an Azure storage account
 
 1.  On the **JSON Outline** window, click **Add Resource** in the upper-left corner, or right-click the **resources** and choose **Add New Resource**.
 
@@ -427,7 +435,7 @@ specified is 11 characters or less in length.
 
     ![In the JSON window, the callout arrow now points to \"Premium\_LRS.\"](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image43.png "JSON window")
 
-#### Task 2: Add a virtual machine and configure as a web server
+### Task 2: Add a virtual machine and configure as a web server
 
 1.  Add a new **Windows Virtual Machine** called **hackathonVM**, and
     choose ***hackstorage*** as the Storage Account and **FrontEndNet**
@@ -645,7 +653,7 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
 
 11. Save your changes to the **azuredeploy.json** template file.
 
-#### Task 3: Add a Windows virtual machine for the database server
+### Task 3: Add a Windows virtual machine for the database server
 
 1.  Add another virtual machine to the template by clicking **Add Resource** and next, selecting **Windows Virtual Machine**.
 
@@ -890,7 +898,7 @@ writing. It may be resolved by now.
 
 20. Save your changes to the **azuredeploy.json** template file.
 
-#### Task 4: Deploy your updated template to Azure
+### Task 4: Deploy your updated template to Azure
 
 1.  Before deploying your updated template, you should take note of your
     Automation key and registration URL. In the Azure portal, click
@@ -1002,7 +1010,7 @@ Duration: 15 minutes
 In this exercise, you will deploy a network security group to restrict
 the network attack surface for the deployment.
 
-#### Task 1: Restrict traffic to the web server
+### Task 1: Restrict traffic to the web server
 
 1.  Add the following at the beginning of the JSON template as the first
     item under the **resources** node. This will deploy the network
@@ -1090,7 +1098,7 @@ the network attack surface for the deployment.
 
     ![The Remote Desktop Connection window displays, with the message that it cannot connect to the remote computer, and then lists possible reasons.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image86.png "Remote Desktop Connection window")
 
-#### Task 2: Update the network security group to allow Windows Remote Desktop
+### Task 2: Update the network security group to allow Windows Remote Desktop
 
 1.  Add a new rule to the network security group to allow in traffic on
     port 3389 Remote Desktop Protocol (RDP) by adding a comma at the end
@@ -1136,7 +1144,7 @@ front-end using a scalable number of virtual machines and storage
 accounts. For this, you will use the load balancer and the scale sets
 feature.
 
-#### Task 1: Parameterize and scale out the environment 
+### Task 1: Parameterize and scale out the environment 
 
 1.  Add the following variables to the end of the **variables** section
     of the **azuredeploy.json** file:
@@ -1562,7 +1570,7 @@ NOTE: Wait until the Resource Group has been deleted prior to moving onto the ne
 
 Duration: 10 minutes
 
-#### Task 1: Delete the resource groups created
+### Task 1: Delete the resource groups created
 
 1.  Within the Azure portal, click Resource Groups on the left navigation.
 
