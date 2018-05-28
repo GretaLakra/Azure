@@ -1,10 +1,18 @@
 ![](images/HeaderPic.png "Microsoft Cloud Workshops")
 
-# Azure Resource Manager
+<div class="MCWHeader1">
+Azure Resource Manager
+</div>
 
-## Hands-on lab step-by-step
+<div class="MCWHeader2">
+Hands-on lab step-by-step
+</div>
 
-## March 2018
+<div class="MCWHeader3">
+March 2018
+</div>
+
+
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -15,43 +23,40 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-## Contents
+**Contents**
 
 <!-- TOC -->
 
-- [Azure Resource Manager](#azure-resource-manager)
-    - [Hands-on lab step-by-step](#hands-on-lab-step-by-step)
-    - [March 2018](#march-2018)
-    - [Contents](#contents)
 - [Lift and shift hands-on lab step-by-step](#lift-and-shift-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
-        - [Task 1: Create a virtual machine for your lab environment](#task-1--create-a-virtual-machine-for-your-lab-environment)
-        - [Task 2: Connect to the VM and download the student files](#task-2--connect-to-the-vm-and-download-the-student-files)
-        - [Task 3: Validate connectivity to Azure](#task-3--validate-connectivity-to-azure)
-    - [Exercise 1: Configure Automation Account](#exercise-1--configure-automation-account)
-        - [Task 1: Create Automation Account](#task-1--create-automation-account)
-        - [Task 2: Upload DSC Configurations into Automation Account](#task-2--upload-dsc-configurations-into-automation-account)
-        - [Task 3: Add an Azure Automation credential](#task-3--add-an-azure-automation-credential)
-    - [Exercise 2: Define the network foundation](#exercise-2--define-the-network-foundation)
-        - [Task 1: Deploy a virtual network with a template](#task-1--deploy-a-virtual-network-with-a-template)
-    - [Exercise 3: Extend with Compute](#exercise-3--extend-with-compute)
-        - [Task 1: Add an Azure storage account](#task-1--add-an-azure-storage-account)
-        - [Task 2: Add a virtual machine and configure as a web server](#task-2--add-a-virtual-machine-and-configure-as-a-web-server)
-        - [Task 3: Add a Windows virtual machine for the database server](#task-3--add-a-windows-virtual-machine-for-the-database-server)
-        - [Task 4: Deploy your updated template to Azure](#task-4--deploy-your-updated-template-to-azure)
-    - [Exercise 4: Lock down the environment](#exercise-4--lock-down-the-environment)
-        - [Task 1: Restrict traffic to the web server](#task-1--restrict-traffic-to-the-web-server)
-        - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2--update-the-network-security-group-to-allow-windows-remote-desktop)
-    - [Exercise 5: Scale out the deployment](#exercise-5--scale-out-the-deployment)
-        - [Task 1: Parameterize and scale out the environment](#task-1--parameterize-and-scale-out-the-environment)
+        - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
+        - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
+        - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
+    - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
+        - [Task 1: Create Automation Account](#task-1-create-automation-account)
+        - [Task 2: Upload DSC Configurations into Automation Account](#task-2-upload-dsc-configurations-into-automation-account)
+        - [Task 3: Add an Azure Automation credential](#task-3-add-an-azure-automation-credential)
+    - [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
+        - [Task 1: Deploy a virtual network with a template](#task-1-deploy-a-virtual-network-with-a-template)
+    - [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
+        - [Task 1: Add an Azure storage account](#task-1-add-an-azure-storage-account)
+        - [Task 2: Add a virtual machine and configure as a web server](#task-2-add-a-virtual-machine-and-configure-as-a-web-server)
+        - [Task 3: Add a Windows virtual machine for the database server](#task-3-add-a-windows-virtual-machine-for-the-database-server)
+        - [Task 4: Deploy your updated template to Azure](#task-4-deploy-your-updated-template-to-azure)
+    - [Exercise 4: Lock down the environment](#exercise-4-lock-down-the-environment)
+        - [Task 1: Restrict traffic to the web server](#task-1-restrict-traffic-to-the-web-server)
+        - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2-update-the-network-security-group-to-allow-windows-remote-desktop)
+    - [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
+        - [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
     - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete the resource groups created](#task-1--delete-the-resource-groups-created)
+        - [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
 
 <!-- /TOC -->
+
 # Lift and shift hands-on lab step-by-step
 
 ## Abstract and learning objectives 
@@ -225,7 +230,7 @@ resources of your ARM template.
 1.  Browse to the Azure portal and authenticate at
     <https://portal.azure.com/>
 
-2.  Click **+Create Resource** and type **Automation** in the search box. Choose **Automation** from the results.
+2.  Click + **Create Resource** and type **Automation** in the search box. Choose **Automation** from the results.
 
 3.  Click **Create** on the Automation blade to display the **Add Automation Account** blade. Specify the following information, and click **Create**.
     
@@ -260,8 +265,7 @@ resources of your ARM template.
 
 2.  Click the **Add a credential** button.
 
-    ![Screenshot of the Add a credential
-    button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image22.png "Add a credential button")
+    ![Screenshot of the Add a credential button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image22.png "Add a credential button")
 
 3.  Specify the following properties and confirm creation to continue.
 
