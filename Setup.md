@@ -1,8 +1,18 @@
 
 # Lift and shift setup
 
+## Requirements
+
+1.  Azure Subscription
+
+2.  Understanding of Azure Infrastructure as a Service components
+
+3.  Familiarity with JavaScript Object Notation (JSON)
+
+4.  Familiarity with PowerShell
 
 ## Before the hands-on lab (HOL)
+
 
 Duration: 15 minutes
 
