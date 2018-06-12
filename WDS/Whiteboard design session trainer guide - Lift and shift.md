@@ -9,15 +9,14 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
-
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
-The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these umanufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third-party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -29,24 +28,24 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
 - [Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Lift and shift whiteboard design session trainer guide](#lift-and-shift-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
-    - [Wrap-up](#wrap-up-1)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -185,13 +184,7 @@ ask again. You will usually get a response.
 
 ## Abstract and learning objectives 
 
-In this workshop, students will help a global publisher architect a
-solution to migrate their on-premises procurement system into Azure.
-Because of the desire to not change the existing application, this will
-involve moving the application and its dependencies onto Azure IaaS VMs.
-There are many questions and concerns the customer has, and they will
-look to the student to answer these and provide the end-state design and
-the high-level steps to get there.
+In this workshop, students will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
 
 Attendees will be better able to migrate and enable easy deployment for
 lift and shift capabilities. In addition, attendees will learn to:
@@ -247,21 +240,29 @@ Sign-On (SSO) to Office 365 and full synchronization of Azure AD and
 their Local Active Directory.
 
 With the successful migration to Office 365 behind them, Lucerne now
-wants to pilot a relatively high-impact workload directly in Azure and
-set up the network infrastructure to ensure direct connectivity with
-Microsoft.
+wants to pilot setting up the necessary network infrastructure 
+to connect their environment with Microsoft, and migrating production
+workloads to Azure.
+They have chosen two existing on-premises applications to migrate to Azure
+for this pilot - a procurement system and an HR application.
+These have been selected in part for their diverse
+requirements, to challenge the migration team and build confidence
+for future migrations.
 
-The pilot migration workload is a third-party procurement system that is
-hosted on-premises today that Lucerne would like to migrate to Azure
+Lucerne would like to migrate both applications to Azure
 with a minimal amount of changes. One of Greg's primary concerns with
-this workload is around security. Greg wants to validate that only
+Azure is around security. Greg wants to validate that only
 members of the team who are responsible for a service have access to
 that service. For instance, only the networking team should be able to
 manage the connectivity to Azure, and only the infrastructure team
-members responsible for procurement should be able to manage the
-procurement infrastructure. Greg is also interested in other governance
+members responsible for a given application should be able to manage 
+that application. Greg is also interested in other governance
 features he can apply to ensure only supported workloads are being used
 in their Azure subscription.
+
+**Existing network architecture**
+
+![The existing network architecture has Ethernet bridging the Lucerne New York headquarters and the Equinix New York DC location, which uses an On-premises Network.](images/image2.png "Existing Network Architecture")
 
 **Procurement system**
 
@@ -278,7 +279,7 @@ group in AD the user must belong to. The frontend web servers are load
 balanced using an F5 load balancer with cookie affinity enabled, because
 the application uses an in-memory session state. The web servers are
 currently configured with two vCPUs, six GB of memory, and the VMware
-host runs Xeon processors (Sandy Bridge). The hardware is not running at
+host runs Xeon processors (Skylake). The hardware is not running at
 capacity when measured by CPU or memory.
 
 The application itself is accessed by users on Lucerne's corporate
@@ -286,14 +287,13 @@ network via the URL https://procurement. Jesse is concerned about
 security to the application and wants to restrict access to only
 requests from the on-premises network.
 
-The backend for this solution is hosted on a VMWare VMs using SQL Server
-2005 in a failover cluster configuration. Lucerne has checked with the
-vendor, and the application is supported with SQL Server 2008, 2012,
-2014 and 2016. As part of an earlier planned upgrade, Lucerne has
-already acquired licenses for SQL Server 2016 Enterprise Edition with
-Software Assurance (SA). The solution makes heavy use of TempDB when
+The backend for this solution is hosted on a VMware VMs using SQL Server
+2012 with Always On availability groups.
+The solution makes heavy use of TempDB when
 generating ad hoc reports. The database size for this workload is
-relatively small at just under 200 GB. SQL Server capitalizes on System
+around 600 GB. The prcurement system is a third-party component which is 
+certified for use with all supported versions of SQL Server but not
+with Azure SQL Database. SQL Server capitalizes on System
 Center Data Protection Manager (DPM) 2012 R2 for regular backups
 throughout the day to disk and the backups are then offloaded to tape
 and eventually to offsite storage.
@@ -305,85 +305,110 @@ for a refresh, and as such, this is a prime candidate for migration to
 Azure. There are currently no plans for a significant change to the
 underlying application code.
 
-**Existing network architecture**
-
-![The existing network architecture has Ethernet bridging the Lucerne New York headquarters and the Equinix New York DC location, which uses an On-premises Network.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image2.png "Existing Network Architecture")
-
 **Existing procurement solution**
 
-![The Existing procurement solution includes vmware, vCenter, SQL Server 2005 cluster, Frontend IIS Servers, and Cookie Affinity.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image3.png "Existing procurement solution")
+![Image showing the on-premises procurement system architecture. The outer box is labelled 'Data Center'. At the top is a network device labelled 'F5 Cookie Affinity'. This leads to an inner box labelled 'VMware'. In this box sit 4 servers labelled 'Frontend IIS Servers' and 3 servers labelled' SQL 2012 Always On AG'. There is also one server labelled 'vCenter'.](images/procurement-onprem.png "Existing procurement solution")
+
+**HR application**
+
+Ellen Jones is the infrastructure lead responsible for managing the HR application.
+She has described this as a legacy application, which Lucerne plan to replace
+within the next 24 months.
+Ellen's team is stretched and she is keen to minimize any on-going maintenance.
+
+It is a two-tier applicaiton architecture, with the web tier running on Windows Server 2012 with 
+Microsoft Internet Information Services (IIS) and ASP.NET with the .NET
+Framework 4.5. This is implemented on two Dell PowerEdge servers,
+with two 4-core Intel Xeon CPUs (Sandy Bridge) and 4GB memory. Both the OS and application
+have been installed on the same drive, which has UEFI boot enabled.
+
+The application is accessed via the internal network via the URL https://AskHR. It is open
+to all staff, who are identified using their AD credentials. There have been requests to make
+the application available from outside the corporate network, but due to security concerns
+this has not yet been implemented.
+
+The database backend runs on SQL Server 2005 in a failover cluster configuration.
+The database design uses several T-SQL jobs scheduled using SQL Agent.
+The database size for this workload is relatively small at just under 200 GB.
+It runs on similar hardware to the web servers, except with 16GB memory and SSD disks.
+The application has been tested to run with SQL Server 2016, and part of an earlier planned
+upgrade Lucerne has already acquired licenses for SQL Server 2016 Enterprise Edition with
+Software Assurance (SA).
+
+The database contains highly sensitive HR information and must be accessible only
+to the application tier. Lucerne are extremely concerned about this point and are looking for
+a strong level of assurance that the database will not be accessible via any other means.
+
+The application was written in-house using contract staff who are no longer available to the company.
+No application installers are available. Ellen believes the original source code
+is in an off-site backup archive, but fears that substantial effort would be required to locate
+it and rebuild. Even the smallest code change represent a substantial challenge
+and potential obstacle to migration.
+
+**Existing HR application**
+
+![Image showing the on-premises HR application architecture. From top to bottom the image shows a network load balancer, two front-end IIS servers, three SQL database servers labelled 'SQL 2005 failover cluster'. At the bottom, the image is labelled 'Data Center'.](images/hrapp-onprem.png "Existing procurement solution")
 
 ### Customer needs 
 
-1.  How can we assess our environment for suitability and cost analysis
-    before migrating to Azure?
+1.  Lucerne have asked you to assess each application for suitability and cost analysis
+    before migrating to Azure.
 
-2.  Identify the infrastructure requirements and plan for establishing a
-    connection with Azure ExpressRoute that will support Lucerne's
-    migrated infrastructure.
+1.  The procurement system is a critical business application. Availability is required 24/7,
+    including during migration.
 
-3.  Isolate privileges for managing infrastructure in the cloud as well
-    as understand what governance controls can be put in place to
-    control costs and supported workloads. Ensure that workloads
-    deployed to Azure cannot be deleted or changed without authorization
-    or by accident.
+1.  The HR application is only used in office hours and a once-off 12-hour migration
+    window can be made available.
 
-4.  Document the options for migrating the web tier to Azure keeping in
-    mind that the configuration of the application will essentially be
-    the same (supporting cookie affinity, etc.).
+1.  Each migrated application must offer high availability even
+    if a VM fails or during patching cycles.
+        
+1.  Each migrated application must include backup/restore capabilities,
+    for both web and database tiers.
 
-5.  Create a migration plan for the database tier, and ensure the
-    database will always be available even if a VM fails or during
-    normal maintenance, such as patching monthly or when service packs
-    are applied to the SQL Servers.
-
-6.  Understand how backup for this workload will work after migration
-    (for application and compute workloads).
-
-7.  Prior to the migration, the procurement team should be able to
+1.  Prior to cutting over production traffic, Lucerne should be able to
     perform a full test of the application running in Azure to ensure it
     is fully functional.
 
-8.  The migration needs to be completed as quickly as possible, but it
-    doesn't have to be immediate. The customer can stand for a 12-hour
-    outage window in which the system can be down for this one-time move
-    to the Cloud. Lucerne demands there is a way to "fail back" if
-    something goes wrong, or they are outside of that 12-hour window.
+1.  Lucerne demands there is a way to "fail back" if
+    something goes wrong at any point in the migration process.
+
+1.  Both applications are Intranet applications. Lucerne requires connectivity
+    from their corporate network to be robust, secure and performant.
+
+1.  All Azure deployments must support least-privilige access controls,
+    and protections to ensure production resources cannot be modified or
+    deleted without authorization or by accident.
+    
+2.  Mechanisms must be in place to control and monitor Azure cost and prevent
+    use of unapproved Azure services.
 
 ### Customer objections 
 
 1.  How can we tell how much we will really be spending once we have
     migrated to Azure?
 
-2.  Moving procurement to the cloud seems like a security problem. It
+1.  Moving the procurement system to the cloud seems like a security problem. It
     should only be accessible from people at Lucerne's offices.
 
-3.  We already have licenses for SQL Server. We do not want to pay for
+1.  We already have licenses for SQL Server. We do not want to pay for
     them again.
 
-4.  Our operations team is new to the cloud and currently uses existing
+1.  Our operations team is new to the cloud and currently uses existing
     technologies like System Center Operations Manager (SCOM). We are
     concerned about the time it takes to learn new technologies to
     monitor and maintain an existing workload.
 
-5.  The sun never sets on Lucerne Publishing. Logistics and procurement
+1.  The sun never sets on Lucerne Publishing. Logistics and procurement
     is one of our most critical applications. Any glitch will cause
-    havoc in our ecosystem. The system can be down for only 12 hours
-    during this one-time move, but when it comes up, everything needs to
-    be perfect.
+    havoc in our ecosystem. The procurement system migration must be
+    seamless, with no loss of data and no application downtime.
 
 ### Infographic for common scenarios
 
-![This image contains common scenarios for both Azure IaaS and Azure
-Resource
-Manager.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image4.png "Common scenarios")
+![Image titled 'Azure Infrastructure as a Service (IaaS)' with icons and text for Virtual Machines, ExpressRoute, Managed Disks, Virtual Networks, Application Gateway, Load Balancers, and Azure SQL Database Managed Instances. Image titled 'Azure Resource Manager' with icons and text for Role-Based Access Control (RBAC), Azure Policy, and Resource Locks.](images/common-scenarios-1.png "Common scenarios 1")
 
-![In this second Infographic for common scenarios, Backup and Business
-Continuity is on the left, and is made up of: Azure Backup, Azure Site
-Recovery, SQL Server Managed Backup, Automation Backup, and Azure
-Storage Blob. On the right, Migration tools is made up of: Azure
-Migrate, Database Migration Service, and Database
-Migration.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image5.png "Infographic for common scenarios")
+![Image showing icons and text for Azure Backup, Azure Site Recovery, and SQL Server Managed Backup to Azure Storage Blobs. Image showing icons and text for Azure Migrate, Database Migration Service, Database Migration Assistant, Azure Site Recovery, and third-party tools.](images/common-scenarios-2.png "Common scenarios 2")
 
 ## Step 2: Design a proof of concept solution
 
@@ -396,73 +421,92 @@ Time frame: 60 minutes
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
-2.  What customer business needs do you need to address with your solution?
+1.  What customer business needs do you need to address with your solution?
 
 **Design** 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
-_Design for limiting access to resources_
-
-1.  What does Lucerne need to do to allow isolated access to different
-    components of Azure? Specifically, your design should allow the
-    network infrastructure team to manage the virtual network and the
-    procurement infrastructure team to manage the procurement
-    infrastructure.
-
-_ExpressRoute Integration_
+_Networking and Security_
 
 1.  Which peering options and other ExpressRoute features would be
     required?
 
-2.  Can you identify the workflow that Lucerne will need to follow to
+1.  Can you identify the workflow that Lucerne will need to follow to
     enable ExpressRoute in its environment?
 
-3.  Network Design: The networking team has provided the following
+1.  The networking team has provided the following
     address space for creating the virtual network: 10.0.1.0/24. The
     on-premises network uses the following address space: 172.16.0.0/16.
-
-4.  By drawing a diagram, what connectivity options and subnets would
+    By drawing a diagram, what connectivity options and subnets would
     you use for the network design?
 
-5.  What additional security measures can you take to minimize the
-    attack surface of the procurement solution at the network level?
+1.  What additional security measures can you take to minimize the
+    attack surface of each application at the network level?
 
-6.  How does the design address security and user authentication?
+1.  What does Lucerne need to do to allow isolated access to different
+    components of Azure? Specifically, your design should allow the
+    network infrastructure team to manage the virtual network, the
+    procurement infrastructure team to manage the procurement
+    infrastructure, and the HR team to manage the HR application.
 
-_Migration_
+1.  How can Lucerne control and monitor their Azure spend?
 
-1.  What options are available to assess our environment for suitability
-    to migrating to Azure?
+_Migration - Procurement system_
 
-2.  Which compute stack would you recommend for the web application?
+1.  What options are available to assess the procurement system for suitability
+    to migrating to Azure, and to forecast Azure costs?
 
-3.  Which data storage option and pricing tier would you recommend for
+1.  Which compute stack would you recommend for the web tier, keeping in
+    mind that the configuration of the application will essentially be
+    the same (supporting cookie affinity, etc.)? 
+
+1.  Which data storage option and pricing tier would you recommend for
     the database?
 
-4.  What migration approach, including tools and steps would you use to
+1.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure?
 
-5.  How does the design address availability?
+1.  How long will the migration take to synchronize data, for each tier?
+    (Feel free to state any assumptions you need to make.)
 
-6.  How does the design perform user authentication?
+1.  How does the design perform user authentication?
 
-7.  How is load balancing configured in the migrated workload?
+1.  How is load balancing configured in the migrated workload?
 
-8.  How are all the VMs backed up?
+1.  How does the design achieve high availability?
 
-9.  How is the database backed up?
+1.  How are all the VMs backed up?
 
-10. How do you remove the dependency on tape for offsite backup?
+1.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
+
+_Migration - HR application_
+
+1.  What options are available to assess the HR application for suitability
+    to migrating to Azure, and to forecast Azure costs?
+
+1.  Which compute stack would you recommend for the web tier?
+
+1.  Which data storage option and pricing tier would you recommend for the database?
+
+1.  What migration approach (including tools and steps) would you use to
+    move the workload to Microsoft Azure? Keep in mind the physical server specifications
+    and that application installers are not available.
+
+1.  How are high availability and backup provided, for both web and database tiers?
+
+1.  How does your design meet Lucerne's database security requirements?
+
+1.  What additional benefits can your design bring?
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Prepare a 15-minute chalk-talk style presentation to the customer describing your migration design
+2.  Identify any customer needs that are not addressed with the proposed solution. 
+3.  Identify the benefits of your solution. 
+4.  Determine how you will respond to the customer’s objections. 
 
-Prepare a 15-minute chalk-talk style presentation to the customer. 
 
 ## Step 3: Present the solution
 
@@ -505,13 +549,17 @@ Duration: 15 minutes
 | Site-to-Site VPN documentation | <https://azure.microsoft.com/en-us/documentation/services/vpn-gateway/> |
 | ExpressRoute documentation | <https://azure.microsoft.com/en-us/documentation/services/expressroute/> |
 | Application Gateway documentation | <https://azure.microsoft.com/en-us/documentation/services/application-gateway/> |
+| Azure Migration Hub | https://azure.microsoft.com/migration/ |
 | Prepare for Azure Site Recovery deployment | <https://azure.microsoft.com/en-us/documentation/articles/site-recovery-best-practices/> |
 | Replicate VMware virtual machines and physical servers to Azure with Azure Site Recovery | <https://azure.microsoft.com/en-us/documentation/articles/site-recovery-vmware-to-azure-classic/> |
 | Azure Site Recovery Service URLs | <https://azure.microsoft.com/en-us/documentation/articles/site-recovery-best-practices/#service-urls/> |
 | Azure Migrate Documentation | <https://docs.microsoft.com/en-us/azure/migrate/> |
 | Database Migration Service | <https://azure.microsoft.com/en-us/services/database-migration/> |
 | Database Migration Assistant | <<https://docs.microsoft.com/en-us/sql/dma/dma-overview/> |
+| Azure blog - Migrating to Azure SQL Database with zero downtime for read-only workloads | https://azure.microsoft.com/blog/migrating-to-azure-sql-database-with-zero-downtime-for-read-only-workloads/ |
+| Azure blog - Azure Backup for SQL Server on Azure now in public preview |  https://azure.microsoft.com/en-us/blog/azure-backup-for-sql-server-on-azure-vm-public-preview/  |
 | StarWind V2V Converter | https://www.starwindsoftware.com/converter/> |
+| CloudEndure | https://www.cloudendure.com/ |
 
 
 # Lift and shift whiteboard design session trainer guide
@@ -574,60 +622,19 @@ Duration: 15 minutes
 
 -   Greg Vernon---Head of infrastructure and operations
 
--   Jesse Adams---Infrastructure lead
+-   Jesse Adams---Infrastructure lead, procurement system
+
+-   Ellen Jones---Infrastrucuture lead, HR application
 
 -   Identity and security leads
 
 -   Network engineering
 
--   Procurement infrastructure team
+-   Procurement sytem and HR application infrastructure teams
 
 ## Preferred solution
 
-**Design for limiting access to resources**
-
-1.  What does Lucerne need to do to allow isolated access to different
-    components of Azure? Specifically, your design should allow the
-    network infrastructure team to manage the virtual network and the
-    procurement infrastructure team to manage the procurement
-    infrastructure.
-
-    -   When creating the Azure Subscription, it is critical that the
-        default directory point to the existing Office 365 AD Tenant.
-        This will require Global Admin rights on the Office 365 Tenant.
-
-    -   Using ARM policies Lucerne can set the following constraints:
-
-        -   Locations resources can be created
-
-        -   Required tags
-
-        -   Naming conventions of created resources
-
-        -   Image types that can be created
-
-        -   Instance sizes for VMs
-
-        -   Services that can be used (service catalog)
-
-2.  When deploying resources, Lucerne should plan to deploy the virtual
-    network into its own resource group. This will allow Lucerne to
-    segment out resources and assign management rights just to the team
-    that requires them.
-
-3.  The procurement resources should go in a separate resource group, as
-    they all share the same life cycle and should be managed by the same
-    team.
-
-    ![The Preferred solution starts with ProcurementRG, which is a
-    Resource Group that contains resources for the procurement map, and
-    Infrastructure Team, which has Full control. An arrow points to
-    SharedVNETRG, which is the Resource Group that contains virtual
-    network(s), a Network Admin Group, which has Full Control, and an
-    Infrastructure Team, whic h has Read
-    access.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image6.png "Preferred solution")
-
-**ExpressRoute Integration**
+_Networking and Security_
 
 1.  Which peering options and other ExpressRoute features would be
     required?
@@ -640,12 +647,12 @@ Duration: 15 minutes
         additional authorization is required from Microsoft after an
         assessment has been completed.
 
-    -   Private peering: This enables connectivity to their virtual
+    -   Azure private peering: This enables connectivity to their virtual
         machines in the procurement solution. This is accomplished by
         Microsoft publishing BGP routes from the virtual networks to
         on-premises to access the procurement solution.
 
-2.  Can you identify the workflow that Lucerne will need to follow to
+1.  Can you identify the workflow that Lucerne will need to follow to
     enable ExpressRoute in its environment?
 
     ![The ExpressRoute Integration workflow starts with a box that has
@@ -661,78 +668,117 @@ Duration: 15 minutes
     using the ExpressRoute circuit, which includes linking virtual
     networks to Azure private peering, Connecting to Azure services on
     public IPs through Azure Public peering, and Connecting to Microsoft
-    cloud services.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image7.png "ExpressRoute Integration workflow")
+    cloud services.](images/image7.png "ExpressRoute Integration workflow")
 
-3.  Network Design: The networking team has provided the following
+1.  The networking team has provided the following
     address space for creating the virtual network: 10.0.1.0/24. The
     on-premises network uses the following address space: 172.16.0.0/16.
     By drawing a diagram, what connectivity options and subnets would
     you use for the network design?
 
-    -   A simple design given the address space of 10.0.1.0/24 could
-        have the following subnets:
+    -   A simple example subnet breakdown is as follows:
+        -   10.0.1.0/28: ExpressRoute
+        -   10.0.1.16/28: Application Gateway
+        -   10.0.1.64/28: Procurement web tier
+        -   10.0.1.80/28: Procurement DB tier
+        -   10.0.1.128/28: HR App web tier
+        -   10.0.1.144/28: HR App DB tier
+    -   Note that ExpressRoute Gateways and Application Gateways each require dedicated subnets.
+        ExpressRoute requires a /28 subnet or larger
+        Application Gateway requires one private IP address per instance, plus the front-end
+        private IP address. Azure reserves the first 4 IP addresses in each subnet for internal use
+        A /28 subnet is therefore recommended to allow headroom for additional gateway instances in future.
+    -   Optionally, the network space could be broken down into three separate virtual networks
+        for the shared infrastructure components, and application specific components.
+        These networks would then be connected using Virtual Network Peering.
+        This approach has the advantage of allowing delegated permissions to be assigned
+        independently for each virtual network. With a single virtual network, the network
+        administrator will have full control over all subnets.
 
-    -   10.0.1.0/26 Web, 10.0.1.64/26 Data
+        ![This diagram shows the Lucerne network design. On the left is the on-premises network, with servers, a domain controller, and a network gateway icon. On the right is the Azure virtual network, which is divided into six subnets (ExpressRoute, App Gw, Procurement Web, Procurement DB, HR App Web, and HR App DB). The ExpressRoute subnet has a network endpoint that is connected to the on-premises network gateway via an ExpressRoute connection.](images/network-design.png "Lucrne Connectivity diagram")
 
-    -   10.0.1.128/28 Gateway (ExpressRoute gateways require a /28
-        subnet or larger)
+1.  What additional security measures can you take to minimize the
+    attack surface of each application at the network level?
+    
+    -   The design should use Network Security Groups (NSGs) on
+        every subnet, to ensure that only permitted traffic can reach
+        each service tier. This is particularly important to protect the databases.
+    -   The procurement system will use Application Gateway for cookie affinity.
+        This could also be deployed with WAF enabled to provide additional
+        security filtering for the procurement application. However, given
+        this is an internal application (not Internet facing), this is optional.
+    -   The HR application could also be optionally deployed behind the Application
+        Gateway. To reduce costs, the same Application Gateways could be shared.
 
-4.  What additional security measures can you take to minimize the
-    attack surface of the procurement solution at the network level?
+1.  What does Lucerne need to do to allow isolated access to different
+    components of Azure? Specifically, your design should allow the
+    network infrastructure team to manage the virtual network, the
+    procurement infrastructure team to manage the procurement
+    infrastructure, and the HR team to manage the HR application.
 
-    -   A network security group should be created to allow inbound and
-        outbound traffic from the 172.16.0.0/16 network and between the
-        procurement and database subnets in Azure to minimize the attack
-        surface.
+    -   When creating the Azure Subscription, it is critical that the
+        default directory point to the existing Office 365 AD Tenant
+        (This will require Global Admin rights on the Office 365 Tenant).
+        This enables existing Azure AD user identities and groups to
+        be used to control access to Azure resources.
 
-5.  How does the design address security and user authentication?
+    -   When deploying resources, Lucerne should use separate resource
+        groups for the virtual network, the procurement system,
+        and the HR application.
+        This will allow Lucerne to segment out resources and assign
+        management rights just to the team that requires them. 
 
-    -   Configure the virtual network to reference the existing AD DNS
-        infrastructure to enable users to authenticate successfully.
-        Deploying domain controllers in the same virtual network would
-        be advised once the deployment moves out of the pilot phase. The
-        domain controller's site/subnet configuration should be
-        configured to authenticate to the local DC in the virtual
-        network before an on-premises DC.
+        ![This diagram shows the resource groups and permissions for each resource group. The first resource group is named 'VnetRG' and contains 'Virtual Networks'. The permissions are 'Network Team: Contributor', 'Procurement Team: Reader' and 'HR App Team: Reader'. The second resource group is named 'ProcurementRG' and contains 'Procurement system'. The permissions are 'Procurement Team: Contributor'. The third resource group is named 'HrAppRG' and contains 'HR application'. The permissions are 'HR App Team: Contributor'.](images/resource-groups.png "Preferred solution")
 
-        ![In the Lucrne Connectivity diagram for a Hybrid Network using
-        ExpressRoute, Remote Locations connect through hte Lucerne
-        global routed network. ExpressRoute connects . A Local site
-        includes a gateway subnet, a WEB subnet, and a Data subnet.
-        EspressRoute connects the
-        two.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image8.png "Lucrne Connectivity diagram")
+1.  How can Lucerne control and monitor their Azure spend?
+    -   Using Azure Resource Manager policies Lucerne can set the following constraints:
+        -   Locations resources can be created
+        -   Image types that can be created
+        -   Instance sizes for VMs
+        -   Services and service tiers that can be used (a 'service catalog')
+    - Lucerne can use Azure Cost Management to create detailed reports of current and forecast spend.
+    - Resource Manager tags can be used to assign spending to specific teams or cost centers
 
-**Migration**
+_Migration - Procurement system_
 
-1.  How can we assess our environment for suitability and cost analysis
-    before migrating to Azure?
-
+1.  What options are available to assess the procurement system for suitability
+    to migrating to Azure, and to forecast Azure costs?
     -   The Azure Migrate Service can be used to assess the
         infrastructure in your environment. The Azure Migrate service
         assesses on-premises workloads for migration to Azure. The
         service assesses migration suitability and performance-based
         sizing, and provides cost estimations for running your
         on-premises machines in Azure.
-
     -   The Azure Migration Service provides the following benefits:
-
         -   Assess Azure readiness: Assess whether your on-premises
             machines are suitable for running in Azure.
-
         -   Get size recommendations: Get size recommendations for Azure
-            VMs based on the performance history of on-premises VMs.
-
+            VMs based on the performance history of on-premises VMs. You can specify
+            a 'comfort factor', which is a buffer applied on top of
+            the measured utilization when making sizing recommendations.
         -   Estimate monthly costs: Get estimated costs for running
-            on-premises machines in Azure.
-
+            on-premises machines in Azure. You can specify the VM pricing tier
+            (basic/standard). The estimate will also account for Azure Hybrid Benefit
+            (to re-use existing licenses) and any Azure offers you are enrolled to
         -   Migrate with high confidence: Visualize dependencies of
             on-premises machines to create groups of machines that you
             will assess and migrate together. You can accurately view
             dependencies for a specific machine, or for all machines in
             a group.
-
-2.  Which compute stack would you recommend for the web application?
-
+    -   Azure Migrate currently only supports VMware workloads, which is fine
+        for the procurement system. To deploy Azure Migrate:
+        1.  You create an Azure Migrate project.
+        1.  Azure Migrate uses an on-premises VM called the collector appliance, to discover information about your on-premises machines. To create the appliance, you download a setup file in Open Virtualization Appliance (.ova) format, and import it as a VM on your on-premises vCenter Server.
+        1.  You connect to the VM using console connection in vCenter Server, specify a new password for the VM while connecting and then run the collector application in the VM to initiate discovery.
+        1.  The collector collects VM metadata using VMware PowerCLI cmdlets. Discovery is agentless, and doesn't install anything on VMware hosts or VMs. The collected metadata includes VM information (cores, memory, disks, disk sizes, and network adapters). It also collects performance data for VMs, including CPU and memory usage, disk IOPS, disk throughput (MBps), and network output (MBps).
+        1.  The metadata is pushed to the Azure Migrate project. You can view it in the Azure portal.
+        1.  For the purposes of assessment, you gather the discovered VMs into groups. For example, you might group VMs that run the same application. For more precise grouping, you can use dependency visualization to view dependencies of a specific machine, or for all machines in a group and refine the group.
+        1.  Once your group is formed, you create an assessment for the group.
+        1.  After the assessment finishes, you can view it in the portal, or download it in Excel format.
+        
+1.  Which compute stack would you recommend for the web tier, keeping in
+    mind that the configuration of the application will essentially be
+    the same (supporting cookie affinity, etc.)? 
     -   Virtual Machines: The application install has a dependency on
         the global assembly cache, which rules out Azure Web Apps. These
         machines should be configured as DS2\_v2. This will provide for
@@ -740,16 +786,25 @@ Duration: 15 minutes
         data disk could be added to the VMs depending upon the needs of
         the application or if it doesn't meet the requirement of
         Read/Write Cache which is on by the default with all Azure VMs.
+    -   Application Gateway: To provide access to the procurement application and ensure
+        that the needs are met for the requirement of cookie session
+        affinity, an Azure Application Gateway will be built. As an
+        alternative, administrators could also utilize an F5
+        from the Azure Marketplace.
 
-3.  Which data storage option and pricing tier would you recommend for
+1.  Which data storage option and pricing tier would you recommend for
     the database?
-
-    -   Virtual Machines and SQL Server 2016 due to the team's goal of
-        minimizing changes to the application and the unknown
-        compatibility of the third-party procurement application and SQL
-        Database. The customer should likely reach out to the vendor to
-        determine the roadmap on when and if SQL Database will be
-        officially supported. The most likely instance size in Azure to
+    -   Virtual Machines and SQL Server 2012, due to the unknown
+        compatibility of the third-party procurement system and Azure SQL
+        Database. The customer should likely reach out to the third-party vendor to
+        determine the roadmap on when and if Azure SQL Database will be
+        officially supported.
+    -   Migration is a good opportunity to upgrade from
+        the existing SQL Server 2012 to SQL Server 2016, rather than leaving
+        behind a future upgrade task. However this will also require them to
+        upgrade their existing SQL licenses. Using SQL 2012 allows existing licenses
+        to be re-used under the Azure Hybrid Benefit.
+    -   The most likely instance size in Azure to
         match the existing hardware would be the DS3\_v2 instance. The
         DS3\_v2 supports four cores, 14 GB per server, and supports
         Premium storage for high-performance Solid-State Disk
@@ -758,305 +813,238 @@ Duration: 15 minutes
         layout on the VM that consists of: TempDB on the local SSD, Logs
         should be on a separate disk (non-cached), Data on another disk
         (Cached disk). Also, never use the drive letter E: as some Hosts
-        in Azure have DVD drives which will cause SQL issues starting if
+        in Azure have DVD drives which will cause issues starting if
         drive letters change upon booting.
 
-4.  What migration approach, including tools and steps would you use to
+1.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure?
 
-    -   Create the Azure Application Gateway
+    -   The migration will take place in two phases. In the first phase, the web
+        tier will be migrated, still using the on-premises database via the
+        ExpressRoute connection. In the second phase, the database will be migrated.
 
-        -   To provide access to the procurement application and ensure
-            that the needs are met for the requirement of cookie session
-            affinity, an Azure Application Gateway will be built. As an
-            alternative, administrators could also capitalize on an F5
-            from the Azure Marketplace.
+    -   Phase 1: Web Tier Migration
 
--   Associate the AppGateway with the web tier subnet.
+        Before migrating the web servers, the Virtual Network should
+        be deployed. The Virtual Network should be broken into subnets for the web tier,
+        data tier, Application Gateway, and ExpressRoute Gateway. Configure the virtual network
+        DNS settings to reference the on-premises AD-integrated DNS server.
+        
+        The ExpressRoute Gateway should be deployed and connected to the
+        ExpressRoute circuit as discussed earlier.
 
--   Configure the frontend IP configuration with a static IP from the
-    web tier subnet.
+        Next, deploy the Application Gateway. It should be deployed to
+        its dedicated subnet, with a static internal IP address.
+        For a production application, at least 2 instances must be used.
 
--   Configure the backend server pool of IPs to reference the
-    procurement web servers.
+        We must choose one of three different approaches to migrate the web tier. It can be
+        migrated using Azure Site Recovery; by porting existing disk images to Azure;
+        or by setting up new servers and re-installing the application.
 
-    -   Set cookie-based affinity on the backend HTTP server settings
-        list.
+        All three approaches are viable. The last approach (re-install) is probably
+        the best option since it is simple, gives a clean deployment with no legacy
+        artifacts, and provides an opportunity to upgrade the OS from WIndows Server 2008 R2
+        to the latest OS version.
 
-        -   Update DNS
+        -   Web tier migration option 1: Azure Site Recovery
 
-            -   Update the A Record to map the hostname "procurement" to
-                the static IP of the load balancer. This will allow for
-                the continued use of the URL: https://procurement.
+            Use ASR to facilitate the migration. ASR supports VMware
+            to ARM failovers and can be used for the web tier of the
+            application. This allows for simple migration of the
+            application that had a complex installation. 
+            
+            Use the  [Azure documentation](https://docs.microsoft.com/azure/site-recovery/vmware-azure-architecture) to set up ASR replication.
+            This includes:
+            -   Provisioning the Azure environment (Recovery Services Vault, Virtual Network and Storage Account)
+            -   Setting up ASR in the on-premises environment, including creating the necessary VMware account,
+                installing the mobility service on the web tier VMs, deploying the ASR Configuration Server
+                and connecting it with your Recovery Service Vault.
+            -   Replicating the web tier VMs to Azure Storage. This includes setting the replication policy
+                which defines the retention period (0 suffices since we will only use the latest recovery point),
+                the type of snapshots to use (crash-consistent snapshots suffices for the web tier), and whether
+                to use a replication group (not needed, since the web tier VMs do not share application state).
 
-        -   Migration option 1: Azure Site Recovery for Web Tier
+            To test the migration before the live site cutover:
+            -   Initiate a test failover from the Azure portal. This will create
+                new Azure VMs from the replicated data from the legacy web servers.
+                These VMs will be connected to the on-premises production database
+                (if desired, a test database could be configured).
+            -   Configure the backend server pool of the Application Gateway
+                to reference the procurement web servers.
+                Set cookie-based affinity on the backend HTTP server setting.
+            -   Test the new web tier via the Application Gateway front-end IP  
 
-            -   Use ASR to facilitate the migration. ASR supports VMware
-                to ARM failovers and can be used for the web tier of the
-                application. This allows for simple migration of the
-                application that had a complex installation. Use the
-                following steps to complete the migration:
+            To perform the migration:
+            -   Initiate a planned failover from the Azure portal. As with the test
+                failover, this will create Azure VMs from the replicated web tier disks,
+                connected to the on-premises production database.
+            -   Update the Application Gateway back-end server pool to reference
+                the new web server VMs, and validate the application is working
+            -   Update the DNS entry for the 'https://procurement' endpoint
+                to point to the Application Gateway front-end
 
-            -   Step 1: Using the Azure Portal, build a Recovery
-                Services Vault
-
-            -   Step 2: Set up the target environment by choosing the
-                Subscription, Storage Account, and Virtual Network that
-                will be used for the web servers when they are migrated
-                over to Azure.
-
-            -   Step 3: Set up the replication settings and get the
-                application replicating.
-
-            -   Step 4: Replicate the application and set the failover
-                properties for when the web servers come online.
-
-            -   Step 5: Complete a Test Failover from the Azure Portal
-                to ensure that the machines will in fact failover and
-                start properly.
-
-            -   Step 6: Migration Night
-
-            -   To perform the migration, a planned failover will be
-                initiated from the portal.
-
-            -   Once the web tier machines are up and running in Azure,
-                the administrator should sign in and manually change the
-                connection strings in IIS to point to the new SQL AG
-                listener. (This could be scripted as a part of the
-                failover as well, but since this is a one-time
-                migration, it is not worth the effort).
-
-            -   See the SQL Migration Night step for the instructions on
-                how to back up and manually restore the data to the new
-                SQL Server Cluster.
-
-            -   *Note: Make sure that the number of cores that is
-                required for the application does not exceed the limit
-                on the Azure subscription/region/VM Series that you
-                selected. If it does exceed the number, the failover
-                will not work properly.* Contact Microsoft Support to
-                have the number raised.
-
-            -   Step 7: Rollback (if required)
-
-            -   If the migration does not work properly and it is going
-                to go outside of the customers stated 12-hour
-                maintenance window, there is a simple back out plan. The
+            Rollback (if required):
+            -   If the migration does not work properly, there is a simple back out plan. The
                 planned failover should be canceled from the portal and
                 then the VMs in VMware should be restarted to restore
                 service.
+            -   If the 'procurement' DNS entry has already been updated, revert it to the previous value.
+                
+            Note: To minimize the impact of DNS caching, the Time-To-Live (TTL) for the DNS entry
+            should be reduced to a short value (e.g. 60 seconds) well in advance of the migration.
+            This enables DNS changes during migration and roll-back to take effect quickly.
+            Once migration is successful and stable, the TTL should be returned to a long value (e.g. 1 day)
 
-                ![For network configurations, you should open
-                ports/sites to ensure all servers can talk. For Windows
-                machines, use a GPO to open the ports in the \"Domain.\"
-                Whitelist IP ranges of the Azure region where Site
-                Recovery vaults are located. Remember that a VPN or
-                ExpressRoute connection is required for failback. A
-                table on the right for a Process server lists Domain
-                access via corp firewall, and Inbound/Outbound ports for
-                the Config server, Process server, Master target server,
-                protected machines, and Corp firewall to Azure (which
-                hsa no outbound
-                port).](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image9.png "Network configurations")
+        -   Web tier migration option 2: VMWare Virtual to Virtual migration
 
-                ![Azure Site Recovery (HTTPS) connects a Datacenter and
-                an Azure Region. The Datacenter is made up of vCenter,
-                Configuration Server, SQL Server 2005 Cluster, Frontend
-                IIS servers, and Cookie Affinity. The Azure Region is
-                made up of Azure Site Recovery vault, Azure storage, and
-                a virtual network made up of Workload
-                VMs.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image10.png "ASR Migration Configuration diagram")
+            The current webservers are VMware VMs running on vCenter. To
+            migrate this to Azure, Lucerne must use a conversion tool such
+            as StarWind V2V. This tool must be downloaded and installed on a
+            local work station. The following are the steps to use this
+            method (VMWare Disk to Azure Disk) direct migration where the
+            same VM that is running in VMware will be booted on Azure.
 
--   Migration option 2: VMWare Virtual to Virtual migration for Web tier
-    (Details)
+            The overall migration process is similar to that used with ASR.
+            First, the networking components (Virtual Network, ExpressRoute
+            Gateway, and Application Gateway) are deployed.
 
-    -   The current webservers are VMware VMs running on vCenter. To
-        migrate this to Azure, Lucerne must use a conversion tool such
-        as StarWind V2V. This tool must be downloaded and installed on a
-        local work station. The following are the steps to use this
-        method (VMWare Disk to Azure Disk) direct migration where the
-        same VM that is running in VMware will be booted on Azure.
+            Download and install StarWind V2V Converter on a local server.
+            For each web tier VM, replicate to Azure using the following process:
+            -   Install the Azure Virtual Machine agent on the IIS servers
+                that will be migrated, and uninstall the VMware Tools.
+            -   Stop the VM using vCenter and then use the V2V
+                Converter making sure to specify output of the fixed VHD format.
+            -   Use the Azure Storage Explorer or the Add-AzureRmVHD
+                cmdlet to upload the VHD files to a storage account. These will be
+                *specialized* images, meaning they are not generalized to use
+                for multiple deployments.
+            -   Use PowerShell or a template to create the VMs for the
+                web tier from the VHDs into an availability set.
+            -   Restart the VM and move on to the next VM
 
-    -   Step 1: Create a storage account, virtual network and establish
-        site-to-site connectivity.
+            Once the VMs are deployed to Azure, they should be able to connect
+            to the on-premises production database.
 
-    -   Step 2: Update the virtual network to reference the domain
-        controllers on-premises in DNS.
+            From this point, the remaining steps to configure Application Gateway,
+            test the new web tier, and cut over or fail back production traffic by
+            modifying the http://procurement endpoint DNS entry, are the same as Option 1 above.
 
-    -   Step 3: Download and install StarWind V2V Converter on a local
-        server.
+        -   Web tier migration option 3: Rebuild and redeploy
 
-    -   Step 4: Install the Azure Virtual Machine agent on the IIS
-        servers that will be migrated, and uninstall the VMware Tools.
+            The last option is to create the infrastructure in Azure and do
+            a fresh deployment of the procurement web tier. While this is
+            time consuming and error prone, it may be safer in the long run.
+            Things like drivers on the physical servers, or incompatible
+            disk sizes (OS disks larger than 2TB; Data disks larger than
+            4TB) may make the other two options not viable. In addition,
+            there are huge benefits to move to a fresh OS that is supported
+            version. Currently they are on Windows Server 2008 R2.
 
-    -   Step 5: Stop the VMs using vCenter and then use the V2V
-        Converter making sure to specify output of the fixed VHD format.
+            Again, the overall process is similar to what we have already seen
+            The difference is in how the web tier VMs are deployed
+            once the networking components are in place.
+            -   Use PowerShell, template, or the Portal to create the
+                VMs running Windows Server 2016 Datacenter for the web tier.
+                Ensure they are provisioned into an availability set.
+            -   Using the wizard, manually install the application again
+                making sure to configure anything per the vendors instructions
+                or restore any configurations that might be required
+                specifically for the application from the on-premises servers.
 
-    -   Step 6: Use the Azure Storage Explorer or the Add-AzureRmVHD
-        cmdlet to upload disks to a storage account. These will be
-        *specialized* images, meaning they are not generalized to use
-        for multiple deployments.
+            The virtual machines should be configured to connect to the on-premises
+            production database.
 
-    -   Step 7: Use PowerShell or a template to create the VMs for the
-        web tier from disks into an availability set.
+            From this point, the remaining steps to configure Application Gateway,
+            test the new web tier, and cut over or fail back production traffic by
+            modifying the http://procurement endpoint DNS entry, are the same as Option 1 above.
 
-    -   Step 8: Create the Azure Application Gateway associated with the
-        Procurement subnet. Configure the frontend IP configuration with
-        a static IP from the procurement subnet. Configure the backend
-        server pool of IPs to reference the procurement web servers. Set
-        cookie-based affinity on the backend HTTP server settings list.
+    -   Phase 2: Database Migration
 
-    -   Step 9: Update DNS to map the hostname <https://procurement> to
-        the static IP of the App Gateway.
+        Since the SQL Database already uses Always On availability groups, near-seamless
+        migration to Azure can be acheived by extending this availability group to include 
+        new SQL server instances running in Azure VMs, switching the Azure instances to
+        primary, and removing the on-premises instances.
 
-    -   Step 10: Complete the SQL Migration and update the connection
-        strings (details follow later in this guide).
+        To prepare for migration:
+        -   Deploy the first Azure SQL VM into an availability set and install SQL Server. This VM will 
+            re-use the existing SQL licenses via the Azure Hybrid Benefit, so
+            you should **not** install one of the licensed SQL server options from
+            the Azure marketplace.
+            During migration, the Virtual Machine's internal IP address should be
+            visible from the on-premises network, via the ExpressRoute connection
+            (update NSGs if necessary so this is so).
+        -   Replicate SQL logins and any jobs from the SQL Agent from your on-premises
+            database to the Azure SQL VM.
+        -   Add the VM as a node in the Windows failover cluster used by the on-premises
+            SQL servers.
+        -   Enable Always On availability groups on the SQL VM in Azure.
+        -   From the on-premises database, add the Azure VM as a secondary replica, with
+            asynchronous replication. Wait for the synchronization to complete.
+        -   Set up the second Azure SQL VM as above, using the same availability set.
+        -   Set up an Azure Internal Load Balancer (ILB) pointing to the two Azure SQL VMs, with
+            Direct Server Return (DSR) enabled. DSR is required when load-balancing virtual machines
+            in a SQL server Always On availability group.
+        -   Set up an Azure Storage account to use as a witness for the database
 
--   Migration option 3: Rebuild and Redeploy for Web Tier
+        When ready to migrate:
+        
+        -   Pause the procurement web application, or put into a 'read-only' mode one is available.
+            (Note: this may not be necessary if transaction volumes are low, and some increase
+            in transaction latency can be tolerated) 
+        -   Switch the SQL Always On availability group to synchronous replication mode, and wait until syncronized
+        -   Trigger a manual SQL failover, so the Azure VM becomes the primary replica
+        -   Update procurement web application to use the ILB endpoint as database endpoint
+        -   Restart procurement web application
 
-    -   The last option is to create the infrastructure in Azure and do
-        a fresh deployment of the procurement web tier. While this is
-        time consuming and error prone, it may be safer in the long run.
-        Things like drivers on the physical servers, or incompatible
-        disk sizes (OS disks larger than 2TB; Data disks larger than
-        4TB) may make the other two options not viable. In addition,
-        there are huge benefits to move to a fresh OS that is supported
-        version. Currently they are on Windows Server 2008 R2.
+        Once the migration is complete and stable:
+        -   Remove the on-premises database servers from the Always On availability group, and decommission those servers.
+        -   Update the NSG on the SQL tier subnet to block traffic from the on-premises network. Only traffic from the
+            web tier should be permitted.
 
-    -   Step 1: Create a storage account, virtual network, and establish
-        site-to-site connectivity.
+        If there is a need to roll-back:
+        -   Simply repeat the migration step in reverse, so an on-premises database replica is primary,
+            and an on-premises listener is used as the database endpoint
 
-    -   Step 2: Update the virtual network to reference the domain
-        controllers on-premises in DNS.
+        Testing the migration process:
+        -   It is not advisable to run test transactions through the produciton database. Testing should be
+            completed in a separate test or staging environment. Subject to data use constraints, a
+            backup of the production database can be restored into the test environment for testing purposes.
 
-    -   Step 3: Use PowerShell, template, or the Portal to create the
-        VMs running Windows Server 2016 Datacenter for the web tier.
-        Ensure they are provisioned into an availability set.
+1.  How long will the migration take to synchronize data, for each tier?
+    (Feel free to state any assumptions you need to make.)
 
-    -   Step 4: Using the wizard, manually install the application again
-        making sure to configure anything per the vendors instructions
-        or restore any configurations that might be required
-        specifically for the application from the on-premises servers.
+    - Web tier
+        -   Assume use of Azure Site Recovery
+        -   Initial sync of (assumed) 3 web servers with 500GB data (assumed) each
+        -   Assume time dominated by initial sync, on-going changes for incremental sync are negligible on a web server
+        -   Assume Standard SKU ExpressRoute Gateway, with 1,000 Mbps theoretical max and actual throughput of 800 Mbps
+        -   Disregard compression to give worst-case estimate
+        -   Time required: (3 * 500 * 1,073,741,824 * 8) / (800 * 1,000,000 * 3,600) = **4 1/2 hours**
+    -   Database
+        -   600 GB initial sync
+        -   Assume bandwidth is as above
+        -   Assume bandwidth is sufficient to handle on-going incremental sync
+        -   Disregard compression to give worst-case estimate
+        -   Time required: (600 * 1,073,741,824 * 8) / (800 * 1,000,000 * 3,600) = **1 hour 47 minutes**
 
-    -   Step 5: Create the Azure Application Gateway associated with the
-        procurement subnet. Configure the frontend IP configuration with
-        a static IP from the procurement subnet. Configure the backend
-        server pool of IPs to reference the procurement web servers. Set
-        cookie-based affinity on the backend HTTP server settings list.
+    -   These are ballpark estimates but they suffice to show the bandwidth is sufficient and the migration is feasible.
 
-    -   Step 6: Update DNS to map the hostname <https://procurement> to
-        the static IP of the App Gateway.
-
-    -   Step 7: Complete the SQL Migration and update the connection
-        strings (details follow later in this guide).
-
--   Manual build of Azure IaaS VMs for the SQL Server (specifics on the
-    database tier)
-
-    -   Since the SQL Server is being upgraded from SQL Server 2005 to
-        SQL Server 2016, a rebuild is required. To accomplish this and
-        migrate the DB to Azure, use the following steps:
-
-    -   Step 1: Build a SQL Cluster in Azure
-
-        1.  Create a Premium Storage Account.
-
-        2.  Using a BYOL template from the Azure Marketplace, deploy two
-            SQL Server 2016 virtual machines on Windows Server 2016. The
-            BYOL templates allow Lucerne to bring their own SQL licenses
-            via License Mobility.
-
-        3.  Build an AlwaysOn Cluster from these servers, using a Cloud
-            Witness from a dedicated storage account.
-
-        4.  Make sure to choose the correct region, virtual network, and
-            subnet that are designated for database servers. Standard
-            DS3\_V2 is a good option for the SQL Servers.
-
-        5.  Update the Network security groups to allow traffic between
-            the web tier and the data tier subnets only on port 1433
-            from the web tier subnet. Consider other Network Security
-            Group (NSG) rules to secure the data.
-
-    -   Step 2: Use Database Migration Assistant to migrate the data to
-        the new SQL Server.
-
-        6.  Ensure the source database is on a network that is routable
-            over the ExpressRoute connection.
-
-        7.  Install Database Migration Assistant locally (does not have
-            to be on the SQL server). The Database Migration Assistant
-            require .NET 4.5.2 to be installed on the virtual machine.
-
-        8.  Create a migration project.
-
-        9.  Specify the project type as Migration (you can also do an
-            assessment first to ensure the compatibility of the
-            migration).
-
-        10. Specify the procurement database that is running SQL Server
-            2005 as the source database and the new database in Azure as
-            the target.
-
-        11. Add the procurement database to the databases list.
-
-        12. Specify a shared location that the source and target SQL
-            instances have access to.
-
-        13. Make sure that the user account running Data Migration
-            Assistant has read privileges to the backup location and
-            write privileges to the location from which the target
-            server restores.
-
-        14. Start the migration and view the results.
-
-            Note: At the time of this writing, the Azure Database
-            Assistant service is in preview and does not support
-            targeting SQL Server, just SQL Database.
-
-**Provide the following configuration details for the application
-tiers.**
-
-**Task:** How does the design address availability?
-
-**Answer:** The application will be configured with availability sets on
-both tiers to minimize host outages from hardware and host updates. The
-web tier will have load balancing enabled to accommodate for individual
-VM failures. The database will be moved to a SQL AlwaysOn availability
-group with synchronous commits to similar behavior of their existing
-deployment.
-
-![This procurement migration overview diagram has a Web Tier and a Data
-Tier, both of which are encircled by an ExpressRoute Gateway. The Web
-Tier encompasses a Load Balancer configuration and an Availability set.
-The Load Balancer Configuration has an Azure Application Gateway, a
-Static VNET IP, Port 443, and Cookie-based affinity. The Data Tier also
-encompasses a Load Balancer Configuration and an Availability set. The
-availability set has an Internal Load Balancer, a Static VNET IP, Port
-1443, and Cookie-based affinity. The Data Tier also has an arrow
-pointing to a Cloud Witness storage
-account.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/image11.png "Procurement migration overview")
-
-5.  How does the design address availability?
-
-    -   The application will be configured with availability sets on
-        both tiers to minimize host outages from hardware and host
-        updates. The web tier will have load balancing enabled to
-        accommodate for individual VM failures. The database will be
-        moved to a SQL AlwaysOn availability group with synchronous
-        commits to similar behavior of their existing deployment.
-
-6.  How does the design perform user authentication?
-
-    -   Deploying an internal load-balanced IP allows traffic from the
-        intranet.
+1.  How does the design address user authentication?
 
     -   The application will authenticate to the existing domain
         controllers (as-is) because the environment is still connected
-        to the existing Active Directory environment.
+        to the existing Active Directory environment.      
+        To implement this, configure the virtual network to reference the
+        existing AD DNS server IP addresses.
+        
+        Deploying domain controllers in the same virtual network or using
+        Azure AD Domain Services would
+        be advised once the deployment moves out of the pilot phase. The
+        domain controller's site/subnet configuration should be
+        configured to authenticate to the local domain controller in the virtual
+        network before an on-premises domain controller.
 
-7.  How is load balancing configured in the migrated workload?
+1.  How is load balancing configured in the migrated workload?
 
     -   The F5 in front of the web servers will be replaced with the
         Azure Application Gateway configured to listen on an internal IP
@@ -1065,37 +1053,158 @@ account.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/im
         the F5 and to support the lack of external session state support
         on the application. For SQL, an internal load-balanced endpoint
         will also be configured with direct server return enabled for
-        the SQL AlwaysOn listener.
+        the SQL Always On listener.
 
-8.  How are all the VMs backed up?
+1.  How does the design achieve high availability?
 
-    -   Back them up using Azure Backup (IaaS VMs) and the same Recovery
-        Services Vault that was created for the Migration.
+    -   The application will be configured with availability sets on
+        both tiers to minimize host outages from hardware and host updates. The
+        web tier will have load balancing enabled to accommodate for individual
+        VM failures. The database will use a SQL Always On availability
+        group with synchronous commits to similar behavior of their existing
+        deployment.
 
-9.  How is the database backed up?
+        ![This diagram shows the design for the procurement system once migrated to Azure. At the top is the ExpressRoute icon. This is connected to the Application Gateway icon, which sits in the App Gw subnet, and is labelled with 'Static IP address' and 'Cookie affinity'. The Application Gateway is connected to the web tier virtual machines, which sit within an availability set within the web tier subnet. The web tier virtual machines are connected to the internal load balancer icon, sits in the database tier subnet and is labelled with 'Direct Server Return'. This is connected to the database virtual machines, which sit within an availability set, also within the database tier subnet. The database virtual machines are connected to a storage account icon, which is labelled 'Cloud Witness (storage account)'.](images/procurement-azure.png "Procurement migration overview")
 
-    -   This is by using both Azure Backup Server or the built-in SQL
-        backup. Often Database Admins will also like an alternative way
-        to perform backups. For those cases, the DBAs can configure SQL
-        Server 2016 to back up the SQL database directly to Azure
-        Storage (SQL Server Managed Backup to Microsoft Azure). This
-        allows for an independent backup solution for the DB that can be
-        managed directly by the DBAs while performing other types of
-        changes to applications without the complexity of the Backup
-        interface.
+1.  How are all the VMs backed up?
 
-    -   It's important to note that Azure Backup uses a Recovery
+    -   Back them up using Azure Backup (for IaaS VMs) using a Recovery
+        Services Vault.
+
+1.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
+
+    -   There are 3 options:
+        -   Use Azure Backup Server. The downside is that this requires
+            additional infrastructure (the backup server) to be deployed,
+            maintained, and paid for.
+        -   Use built-in SQL backup. For SQL Server 2016, this can back up
+            directly to an Azure Storage account. It does not offer centralized 
+            management or long-term retention.
+        -   Use the Azure Backup Service. A new feature of Azure Backup (in Preview at the time of writing) is native
+            support to back up SQL databases running in Azure VMs. This is a low-cost, fully-managed zero-infrastructure service
+            that allows you to centrally manage your backups across all your databases.
+
+        It's important to note that Azure Backup Server and Azure Backup
+        Service both use a Recovery
         Services Vault which by default is Geo-Replicated, so there are
         always three copies of the data in two regions (each region has
         3 copies). If a DBA uses SQL Server backup directly to Azure
         Storage, the Storage Account that is used should have GRS
         enabled to ensure there are copies of the SQL Server BAK files
-        in two locations
+        in two locations.
 
-10. How do you remove the dependency on tape for offsite backup?
+    -   Given the geo-replicated backups described above, the need for offsite tape backups is removed.
 
-    -   Azure Backup will be implemented to allow for offsite backups.
-        This will integrate with the existing Recovery Service Vault.
+_Migration - HR application_
+
+1.  What options are available to assess the HR application for suitability
+    to migrating to Azure, and to forecast Azure costs?
+
+    -   The Azure Migrate tool does not currently support assessment of physical infrastructure.
+    -   Third-party alternatives should be considered (see list at https://azure.microsoft.com/migration/assess/).
+    -   The [Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=7826)
+        can be used to help assess the existing application for migration.
+ 
+
+1.  Which compute stack would you recommend for the web tier?
+
+    -   Due to the lack of application installers, and the need to migrate quickly,
+        the web tier should be migrated to Azure VMs.
+    -   Using Azure App Service is unsuitable
+        since it will require access to the application code and require more time.
+        In addition, since this is an internal application, using Azure App Service
+        will require an App Service Environment, which will add significant additional cost.
+        
+1.  Which data storage option and pricing tier would you recommend for the database?
+
+    -   Based on the desire for minimal on-going maintenance, Azure SQL Datbase
+        Managed Instances should be considered in preference to running SQL Server
+        in Azure VMs. (Using SQL Server in VMs is a good 'plan B' in case
+        an unexpected compatibility issue arises.)
+    -   Note that the vanilla Azure SQL Database service is unsuitable due to the
+        requirement for T-SQL jobs scheduled using SQl Agent;
+        however this **is** supported on Azure SQL Database Managed Instances.
+
+    ![The diagram shows the high-level architecture for the HR application, after migration to Azure. At the top, there is the incoming ExpressRoute connection from the on-premises network. This connects to the Internal Load Balancer, which in turn connects to the web servers. The web servers are enclosed in an availability set. The Internal Load Balancer and web servers are in the web tier. The web servers connect to the Azure SQL Database Managed Instance, which sits in the Database tier.](images/hrapp-azure.png "HR application solution design")
+    
+1.  What migration approach (including tools and steps) would you use to
+    move the workload to Microsoft Azure? Keep in mind the physical server specifications
+    and that application installers are not available.
+
+    -   Migrating the web tier
+    
+        This poses a significant challenge. The existing physical servers
+        use UEFI boot, and therefore Azure Site Recovery cannot be used.
+        The application installers are not available, and so re-installing the application
+        onto clean Azure VMs would be very difficult.
+
+        In this situation, use of third-party migration tools should be explored.
+        For example, [CloudEndure](https://www.cloudendure.com/live-migration/)
+        offers block-level migration of both VMs and physical servers. The migration process
+        is as follows:
+        -   Install the CloudEndure agent on the physical servers to be migrated
+        -   Specify the destination servers in Azure
+        -   CloudEndure will replicate the physical servers to Azure, at the block level,
+            including any on-going changes. This occurs in the background, without disrupting
+            the running application.
+        -   To test the migrated server, CloudEndure allows you to spin up new Azure
+            servers for verification
+        -   Once testing is complete, user traffic can be cut over to the migrated servers
+            similarly to the procurement system.
+
+    -   Migrating the database tier     
+
+        Migrating the database to Azure SQL Database Managed Instances can be executed
+        using the [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
+        This is a fully managed service designed to enable seamless migrations from multiple
+        database sources to Azure Data platforms with minimal downtime.
+
+        Support for Azure SQL Database Managed Instances is currently in Preview.
+        Microsoft publishes detailed step-by-step guidance on how to
+        [execute the migration](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance).
+
+        To summarize the migration steps:
+        -   Complete pre-requisites, such as setting up the Virtual Network
+            ensuring the correct network connectivity, setting up logins, etc.
+        -   Create an Azure Database Migration Service resource, specifying
+            the destination Virtual Network.
+        -   Create a Migration Project, and specify the source database.
+        -   Specify the setting for the Azure SQL Database Managed Instance, 
+            which the migration process will provision for you.
+        -   Run the migration, specifying the storage location for backup files
+            and login details.   
+        -   View the migration report, validate the migrated database, and update
+            the web tier to use the new database.
+
+        If issues arise during migration, Microsoft have also published detailed documentation
+        on how to [execute a manual migration](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate).
+    
+
+1.  How are high availability and backup provided, for both web and database tiers?
+    
+    -   The application will be configured with availability sets on
+        both tiers to minimize host outages from hardware and host
+        updates. The web tier will have load balancing enabled to
+        accommodate for individual VM failures.
+        
+        By migrating the database to Azure SQL Database Managed Instances,
+        the service will benefit from improved from the high availability 
+        features which are built-in to this service (similar to SQL
+        Always On availability groups). This is an improvement over the previous
+        database failover cluster implementation.
+
+1.  How does your design meet Lucerne's database security requirements?
+
+    -   Both Azure VMs running SQL Server and Azure SQL Database Managed Instances
+        are deployed into the Azure Virtual Network hosting the application
+        This gives full network isolation and supports Network Security Groups
+        to define what traffic is permitted.
+
+1.  What additional benefits can your design bring?
+
+    -   It may be possible to deploy Azure AD Application Proxy to make the application
+        available to remote users, without having to open the application
+        to traffic from the Internet.
 
 ## Checklist of preferred objection handling
 
@@ -1109,7 +1218,7 @@ account.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/im
     suggested virtual machine sizes and estimated cost for running the
     solution in Azure.
 
-2.  The procurement application should only be accessible from people at
+1.  The procurement application should only be accessible from people at
     Lucerne's offices. Putting it in the cloud seems like a security
     problem.
 
@@ -1125,17 +1234,19 @@ account.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/im
     to only allow the on-premises network and restrict other address
     spaces in the virtual network itself.
 
-3.  We already have licenses for SQL Server. We do not want to pay for
+1.  We already have licenses for SQL Server. We do not want to pay for
     them again.
 
     **Potential answer**
 
-    Creating a virtual machine using the SQL Server bring your own
-    license (BYOL) images. now available in the Azure Marketplace,
-    resolves this problem and the existing investments can be
-    capitalized on.
+    For the procurement system, the existing SQL licenses can be re-used.
+    Either deploy Windows Server VMs and install SQL Server, or use a 'BYOL'
+    SQL Server VM from the Azure Marketplace.
 
-4.  Our operations team is new to the cloud and currently uses existing
+    For the HR system, the existing SQL Server 2016 licenses can be used
+    for the Azure SQL Database Managed Instance deployment.
+
+1.  Our operations team is new to the cloud and currently uses existing
     technologies like SCOM. We are concerned about the time it takes to
     learn new technologies to monitor and maintain an existing workload.
 
@@ -1145,28 +1256,25 @@ account.](images/Whiteboarddesignsessiontrainerguide-Liftandshiftimages/media/im
     machines in Hyper-V. With hybrid connectivity, SCOM could be used to
     manage the cloud-based deployment in the same way as they are today.
 
-5.  The sun never sets on Lucerne Publishing. Logistics and procurement
+1.  The sun never sets on Lucerne Publishing. Logistics and procurement
     is one of our most critical applications. Any glitch will cause
-    havoc in our ecosystem. The migration process cannot bring down the
-    application for more than 12 hours. How will you ensure that our
-    migration to Azure will happen as quickly and seamlessly as
-    possible?
+    havoc in our ecosystem. The procurement system migration must be
+    seamless, with no loss of data and no application downtime.
 
     **Potential answer**
 
-    By using ASR, the process to failover is very quick and smooth. The
-    process should be easy to do in under an hour. Also, if the
-    application does not appear to be working or there is an unforeseen
-    complication, the back out plan is very simple to implement.
-    Choosing the other options won't be quite as fast, but all are safe,
-    each with pros and cons. The ASR option will be the fastest
-    migration, but will bring with it years of a running machine and an
-    old OS. This is also the case for the use of the V2V migration using
-    the migration PowerShell. The cleanest way would be to rebuild, but
-    that will also be the approach that involves the most manual action
-    meaning there is more opportunity for errors to occur.
+    For the web tier, both on-premises and Azure-based web servers are deployed in parallel,
+    with the cut-over occurring at the DNS level by updating the http://procurement endpoint
+    DNS entry. This should be seamless for the end users. Even existing sessions will not be interrupted,
+    since they will continue on their existing server until they are terminated. The only possible
+    effect is loss of cookie affinity as new sessions are established against the new servers.
 
-6.  The procurement application is a simple application with known
+    For the database, a short migration window (in the order of minutes) is required when failing over the primary
+    replica. The impact can be minimized by switching the web tier to a read-only mode, if one is available.
+    Failing over the database without pausing or using a read-only mode on the web app is possible, if
+    the transaction volume is low and a slight chance of losing a database transaction can be tolerated.
+
+1.  The procurement application is a simple application with known
     dependencies and is perfect for a pilot. What about more complicated
     workloads or workloads where we don't exactly know where the
     dependencies are?
