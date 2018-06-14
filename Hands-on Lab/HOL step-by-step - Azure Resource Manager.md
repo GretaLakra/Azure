@@ -1,4 +1,4 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Azure Resource Manager
@@ -32,10 +32,6 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
-    - [Before the hands-on lab (HOL)](#before-the-hands-on-lab-hol)
-        - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
-        - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
-        - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
     - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
         - [Task 1: Create Automation Account](#task-1-create-automation-account)
         - [Task 2: Upload DSC Configurations into Automation Account](#task-2-upload-dsc-configurations-into-automation-account)
