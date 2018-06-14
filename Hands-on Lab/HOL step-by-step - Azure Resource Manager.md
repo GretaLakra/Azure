@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Azure Resource Manager
@@ -77,17 +77,6 @@ using Azure Virtual Machines.
 ## Solution architecture
 
 ![This image is a representation of the Solution Architecture.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image2.png "Solution Architecture")
-
-## Requirements
-
-1.  Azure Subscription
-
-2.  Understanding of Azure Infrastructure as a Service components
-
-3.  Familiarity with JavaScript Object Notation (JSON)
-
-4.  Familiarity with PowerShell
-
 
 ## Exercise 1: Configure Automation Account
 
