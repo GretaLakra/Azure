@@ -1,4 +1,12 @@
-# Abstract
+# Lift and Shift Azure Resource Manager
+
+Lucerne Publishing is one of the largest English-language publishers in the world. With nearly 200 years of history, Lucerne has published some of the world's foremost authors, including Nobel Prize, Pulitzer Prize, National Book Award, Newbery Medal and Caldecott Medal winners. Lucerne is consistently at the forefront of innovation, using digital technology to create unique reading and viewing experiences and expand the reach of its authors and documentary producers.
+
+Lucerne is starting a three-year project to move most of its data center footprint to the cloud. "We are convinced that cloud implementations will give us cost savings and more importantly, deliver operational flexibility," says Greg Vernon, head of infrastructure and enterprise operations at Lucerne. "Like every other business, we are under constant pressure to do more with less. We believe that cloud computing will be substantially cheaper over time than in-house data centers." 
+
+## Target audience
+
+- Infrastructure Architect 
 
 ## Workshop
 In this workshop, students will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk.
@@ -35,18 +43,4 @@ In this lab, attendees will learn how to author an Azure Resource Manager (ARM) 
 - SQL Server
 - Azure Security
 
-
-# Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
