@@ -781,7 +781,7 @@ _Migration - Procurement system_
     the same (supporting cookie affinity, etc.)? 
     -   Virtual Machines: The application install has a dependency on
         the global assembly cache, which rules out Azure Web Apps. These
-        machines should be configured as DS2\_v2. This will provide for
+        machines should be configured as DS2\_v2 or D2S\_v3. This will provide for
         the required cores and RAM to meet the needs of the machines. A
         data disk could be added to the VMs depending upon the needs of
         the application or if it doesn't meet the requirement of
@@ -805,8 +805,8 @@ _Migration - Procurement system_
         upgrade their existing SQL licenses. Using SQL 2012 allows existing licenses
         to be re-used under the Azure Hybrid Benefit.
     -   The most likely instance size in Azure to
-        match the existing hardware would be the DS3\_v2 instance. The
-        DS3\_v2 supports four cores, 14 GB per server, and supports
+        match the existing hardware would be the DS3\_v2 or D4S_v3 instances. These
+        support four cores, 14 or 16 GB per server, and supports
         Premium storage for high-performance Solid-State Disk
         (SSD)-backed disks. Premium Storage will be used for both the
         web and database VMs. To ensure the best performance, use a disk
