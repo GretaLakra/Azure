@@ -191,8 +191,8 @@ The database backend runs on SQL Server 2005 in a failover cluster configuration
 The database design uses several T-SQL jobs scheduled using SQL Agent.
 The database size for this workload is relatively small at just under 200 GB.
 It runs on similar hardware to the web servers, except with 16GB memory and SSD disks.
-The application has been tested to run with SQL Server 2016, and part of an earlier planned
-upgrade Lucerne has already acquired licenses for SQL Server 2016 Enterprise Edition with
+The application has been tested to run with SQL Server 2017, and part of an earlier planned
+upgrade Lucerne has already acquired licenses for SQL Server 2017 Enterprise Edition with
 Software Assurance (SA).
 
 The database contains highly sensitive HR information and must be accessible only

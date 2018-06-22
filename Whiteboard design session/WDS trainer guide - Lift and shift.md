@@ -331,8 +331,8 @@ The database backend runs on SQL Server 2005 in a failover cluster configuration
 The database design uses several T-SQL jobs scheduled using SQL Agent.
 The database size for this workload is relatively small at just under 200 GB.
 It runs on similar hardware to the web servers, except with 16GB memory and SSD disks.
-The application has been tested to run with SQL Server 2016, and part of an earlier planned
-upgrade Lucerne has already acquired licenses for SQL Server 2016 Enterprise Edition with
+The application has been tested to run with SQL Server 2017, and part of an earlier planned
+upgrade Lucerne has already acquired licenses for SQL Server 2017 Enterprise Edition with
 Software Assurance (SA).
 
 The database contains highly sensitive HR information and must be accessible only
@@ -800,7 +800,7 @@ _Migration - Procurement system_
         determine the roadmap on when and if Azure SQL Database will be
         officially supported.
     -   Migration is a good opportunity to upgrade from
-        the existing SQL Server 2012 to SQL Server 2016, rather than leaving
+        the existing SQL Server 2012 to SQL Server 2017, rather than leaving
         behind a future upgrade task. However this will also require them to
         upgrade their existing SQL licenses. Using SQL 2012 allows existing licenses
         to be re-used under the Azure Hybrid Benefit.
@@ -944,7 +944,7 @@ _Migration - Procurement system_
             The difference is in how the web tier VMs are deployed
             once the networking components are in place.
             -   Use PowerShell, template, or the Portal to create the
-                VMs running Windows Server 2016 Datacenter for the web tier.
+                VMs running Windows Server 2017 Datacenter for the web tier.
                 Ensure they are provisioned into an availability set.
             -   Using the wizard, manually install the application again
                 making sure to configure anything per the vendors instructions
@@ -1077,7 +1077,7 @@ _Migration - Procurement system_
         -   Use Azure Backup Server. The downside is that this requires
             additional infrastructure (the backup server) to be deployed,
             maintained, and paid for.
-        -   Use built-in SQL backup. For SQL Server 2016, this can back up
+        -   Use built-in SQL backup. For SQL Server 2017, this can back up
             directly to an Azure Storage account. It does not offer centralized 
             management or long-term retention.
         -   Use the Azure Backup Service. A new feature of Azure Backup (in Preview at the time of writing) is native
@@ -1243,7 +1243,7 @@ _Migration - HR application_
     Either deploy Windows Server VMs and install SQL Server, or use a 'BYOL'
     SQL Server VM from the Azure Marketplace.
 
-    For the HR system, the existing SQL Server 2016 licenses can be used
+    For the HR system, the existing SQL Server 2017 licenses can be used
     for the Azure SQL Database Managed Instance deployment.
 
 1.  Our operations team is new to the cloud and currently uses existing
