@@ -279,8 +279,8 @@ group in AD the user must belong to. The frontend web servers are load
 balanced using an F5 load balancer with cookie affinity enabled, because
 the application uses an in-memory session state. The web servers are
 currently configured with two vCPUs, six GB of memory, and the VMware
-host runs Xeon processors (Skylake). The hardware is not running at
-capacity when measured by CPU or memory.
+host runs Xeon processors (Skylake). The hardware utilization is unknown
+at this point in time.
 
 The application itself is accessed by users on Lucerne's corporate
 network via the URL https://procurement. Jesse is concerned about
@@ -299,8 +299,8 @@ throughout the day to disk and the backups are then offloaded to tape
 and eventually to offsite storage.
 
 The database is deployed on VMs, and both are equipped with eight vCPUs
-and 16 GB of memory running on the same VMware host. The hardware is not
-running at capacity when measured by CPU or memory. The hardware is due
+and 16 GB of memory running on the same VMware host. The hardware
+utilization is unknown at this point in time. The hardware is due
 for a refresh, and as such, this is a prime candidate for migration to
 Azure. There are currently no plans for a significant change to the
 underlying application code.
@@ -756,6 +756,7 @@ _Migration - Procurement system_
             VMs based on the performance history of on-premises VMs. You can specify
             a 'comfort factor', which is a buffer applied on top of
             the measured utilization when making sizing recommendations.
+            (Especially useful since the existing HW utilization is unknown.)
         -   Estimate monthly costs: Get estimated costs for running
             on-premises machines in Azure. You can specify the VM pricing tier
             (basic/standard). The estimate will also account for Azure Hybrid Benefit
