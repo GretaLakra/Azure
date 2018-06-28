@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 
@@ -31,11 +31,11 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
-    - [Requirements](#requirements)
+    - [Help References](#help-references)
     - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
         - [Task 1: Create Automation Account](#task-1-create-automation-account)
-        - [Task 2: Upload DSC Configurations into Automation Account](#task-2-upload-dsc-configurations-into-automation-account)
-        - [Task 3: Add an Azure Automation credential](#task-3-add-an-azure-automation-credential)
+        - [Task 2: Add an Azure Automation credential](#task-2-add-an-azure-automation-credential)
+        - [Task 3: Upload DSC Configurations into Automation Account](#task-3-upload-dsc-configurations-into-automation-account)
     - [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
         - [Task 1: Deploy a virtual network with a template](#task-1-deploy-a-virtual-network-with-a-template)
     - [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
@@ -78,6 +78,24 @@ using Azure Virtual Machines.
 
 ![This image is a representation of the Solution Architecture.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image2.png "Solution Architecture")
 
+## Help References
+
+|    |            |
+|----------|:-------------:|
+| **Description** | **Links** |
+| Creating and deploying Azure resource groups through Visual Studio
+| https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy | 
+| Azure Quick Start Templates | <https://azure.microsoft.com/en-us/resources/templates/> |
+| Using Managed Disks with Templates | <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/using-managed-disks-template-deployments> |
+| Azure VM Scale Sets Templates | <https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start> |
+| Azure DSC Extension for Virtual Machines | <https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template> |
+| Azure Virtual Machine Scale Sets | <https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/> |
+| Azure Virtual Machine Scale Sets and Azure Automation DSC| <https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-automation-dsc> |
+| App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
+| Azure CLI | <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli/> |
+
+
+
 ## Exercise 1: Configure Automation Account
 
 Duration: 15 minutes
@@ -97,24 +115,7 @@ resources of your ARM template.
     
     ![In the Add Automation Account blade, the Name field is set to Automation-Acct. The Resource Group field is set to Automation\_RG, and the Create new radio button is selected. The Location field is set to Location nearest you. TheCreate Azure Run As account is set to Yes.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image17.png "Add Automation Account blade")
 
-### Task 2: Upload DSC Configurations into Automation Account
-
-1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **DSC Configurations** menu.
-
-    ![On the Automation account page, in the left pane, DSC configuration is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image18.png "Automation account page")
-
-2.  Click **+Add a configuration** to upload
-    **C:\\Hackathon\\ARM\_Hackathon\_Guide\_Student\_Files\\CloudShopSQL.ps1** and **C:\\Hackathon\\ARM\_Hackathon\_Guide\_Student\_Files\\CloudShopWeb.ps1.**![In the DSC Configurations pane, the Add a configuration button is circled. In the Import pane, the Configuration file field is set to CloudShopWeb.ps1, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image19.png "DSC / Import Configurations panes")
-
-3.  After importing the .ps1 files, click the **CloudShopSQL** DSC
-    Configuration and click **Compile** on the toolbar (click **Yes** on
-    the Start Compilation Job blade). Do the same for **CloudShopWeb**.
-    You will notice that the CloudShopWeb compilation will suspend,
-    please follow the next step to remedy. Then recompile.\
-    \
-    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations / CloudShopSQL panes")
-
-### Task 3: Add an Azure Automation credential
+### Task 2: Add an Azure Automation credential
 
 1.  The CloudShopSQL DSC configuration requires a credential object to
     access the local administrator account on the virtual machine.
@@ -141,6 +142,25 @@ resources of your ARM template.
 Important: It is important to use the exact name for the credential,
 because one of the scripts you upload in the next step references the
 name directly.
+
+
+### Task 3: Upload DSC Configurations into Automation Account
+
+1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **DSC Configurations** menu.
+
+    ![On the Automation account page, in the left pane, DSC configuration is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image18.png "Automation account page")
+
+2.  Click **+Add a configuration** to upload
+    **C:\\Hackathon\\CloudShopSQL.ps1** and **C:\\Hackathon\\CloudShopWeb.ps1.**.
+    
+    [In the DSC Configurations pane, the Add a configuration button is circled. In the Import pane, the Configuration file field is set to CloudShopWeb.ps1, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image19.png "DSC / Import Configurations panes")
+
+3.  After importing the .ps1 files, click the **CloudShopSQL** DSC
+    Configuration and click **Compile** on the toolbar (click **Yes** on
+    the Start Compilation Job blade). Do the same for **CloudShopWeb**.
+    
+    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations / CloudShopSQL panes")
+
 
 ## Exercise 2: Define the network foundation
 
@@ -178,7 +198,7 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the ARMHackathon Visual Studio window, JSON Outline displays in the left pane. In the right pane, the azuredeploy.json file displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image27.png "Visual Studio window")
 
-NOTE: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
+    > NOTE: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
 
 7.  On the **JSON Outline** window, click **Add Resource** in the upper-left corner or right-click the **resources**, and choose **Add New Resource**.
 
@@ -192,20 +212,20 @@ NOTE: If this was not the case, go to the View menu, select Other Windows, and c
 9.  Go to the **azuredeploy.json** file, and inspect its content. Review
     the **variables** section. It should look like the following file.
     ```  
-    "variables":??{
-      "hackathonVnetPrefix":??"10.0.0.0/16",
-      "hackathonVnetSubnet1Name":??"Subnet-1",
-      "hackathonVnetSubnet1Prefix":??"10.0.0.0/24",
-      "hackathonVnetSubnet2Name":??"Subnet-2",
-      "hackathonVnetSubnet2Prefix":??"10.0.1.0/24"
+    "variables": {
+      "hackathonVnetPrefix": "10.0.0.0/16",
+      "hackathonVnetSubnet1Name": "Subnet-1",
+      "hackathonVnetSubnet1Prefix": "10.0.0.0/24",
+      "hackathonVnetSubnet2Name": "Subnet-2",
+      "hackathonVnetSubnet2Prefix": "10.0.1.0/24"
     },
     ```
 
 10. Change the name of **Subnet-1** to **FrontEndNet** as well as the
     name of **Subnet-2** to **DatabaseNet**.
     ```
-    "hackathonVnetSubnet1Name":??"FrontEndNet",
-    "hackathonVnetSubnet2Name":??"DatabaseNet",
+    "hackathonVnetSubnet1Name": "FrontEndNet",
+    "hackathonVnetSubnet2Name": "DatabaseNet",
     ```
 
 11. Deploy the template by **right-clicking** the **ARMHackathon**
@@ -279,11 +299,11 @@ the roles.
 
 2.  Add a new **Storage Account** resource to the template named ***hackstorage***.
 
-Note: The template generated in the Azure SDK appends a unique value (13
+    > Note: The template generated in the Azure SDK appends a unique value (13
 characters in length) to the storage account name. Ensure the name
 specified is 11 characters or less in length.
 
-![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
+    ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
 3.  In the JSON Outline, locate the parameter named **hackstorageType**.
 
@@ -349,7 +369,7 @@ specified is 11 characters or less in length.
 
     ![The PowerShell DSC code block has the typehandlerVersion at 2.19, and the autoUpgradeMinorVersion as false. Both values are circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "PowerShell DSC code ")
 
-Note: This is due to a bug in PowerShell DSC at the time of this writing. It may be resolved by now.
+    > Note: This is due to a bug in PowerShell DSC at the time of this writing. It may be resolved by now.
 
 7.  Find the settings code within the PowerShell DSC section you just
     added, and replace it with this code (make sure you do not remove
@@ -357,7 +377,7 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
 
     ![The PowerShell DSC code section is similar to, but not the same as the following code.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image50.png "PowerShell DSC section")
     ```
-                 "settings": {
+            "settings": {
               "modulesUrl": "https://cloudworkshop.blob.core.windows.net/arm-hackathon/RegistrationMetaConfigV2.zip",
               "configurationFunction": "RegistrationMetaConfigV2.ps1\\RegistrationMetaConfigV2",
               "Properties": [
@@ -512,7 +532,7 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
     ```
 
 10. In the "**variables**" section, change the value of
-    hackathonVMVmSize\" to \"Standard\_DS1\_v2."
+    hackathonVMVmSize\" to \"Standard\_DS1\_v2".
 
     ![The Variables section is as follows: \"hackathonVMmSize\" :\"Standard\_DS1\_v2\",](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image54.png "Variables section")
 
@@ -579,7 +599,7 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
     new parameter called **vmSizeSQL** to define the size of the virtual
     machine.
 
-**Tip:** Do not forget the preceding comma.
+    > **Tip:** Do not forget the preceding comma.
     ```
     "vmSizeSql": {
       "type": "string",
@@ -605,53 +625,52 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
     ```
     ![In the code window, the previously mentioned new vmSizeSAL parameter is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image63.png "code window")
 
-11. Next, define two variables that build the paths for two data disks
-    for the **hackathonSqlVM** by first adding the storage paths as
-    variables in the variables section of the template.
+11. For storage, the SQL Server virtual machine will use managed disks to simplify manageability. This requires the API version of the SQL VM resource to be updated. In the Resource Explorer view, click hackathonSqlVM and in the code window update the API version value to match the following: 
 
     ```
-    "dataDisk1VhdName": "[concat('http://',variables('hackStorageName'),'.blob.core.windows.net/','vhds','/','dataDisk1.vhd')]",
-    "dataDisk2VhdName": "[concat('http://',variables('hackStorageName'),'.blob.core.windows.net/','vhds','/','dataDisk2.vhd')]"
+    "apiVersion": "2017-03-30",
     ```
 
-    > NOTE: Do not forget to add a comma after the last variable first
-    followed by hitting enter. This will start a new line where you can
-    paste.
+12. Modify OS Disk for managed disks by removing the name and vhd property inside the osDisk section. The osDisk section should look like the following:
 
-    ![In the code window, the previous code is circled, with an Add comma callout arrow.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image64.png "code window")
+    ```
+    "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "FromImage"
+    }
+    ```
 
-12. To deploy two 1TB disks, add the following section to the
+13. To deploy two 1TB data disks, add the following section to the
     properties, storage profile section of the **hackathonSqlVM** (right
     after osDisk).
 
-    ![In the code window, code is circled naming the dataDisks datadisk1, setting its disk size at 1023 G B, and setting the variable as dataDisk1VhdName.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image65.png "code window")
-
-**Tip:** Do not forget to add a comma at the end of the osDisk section.
+    > **Tip:** Do not forget to add a comma at the end of the osDisk section.
     ```
     "dataDisks": [
-    {
-    "name": "datadisk1",
-    "diskSizeGB": "1023",
-    "lun": 0,
-    "vhd": { "uri": "[variables('dataDisk1VhdName')]" },
-    "createOption": "Empty"
-    },
-    {
-    "name": "datadisk2",
-    "diskSizeGB": "1023",
-    "lun": 1,
-    "vhd": {"uri": "[variables('dataDisk2VhdName')]"},
-    "createOption": "Empty"
-    }]
+        {
+            "diskSizeGB": 1023,
+            "lun": 0,
+            "createOption": "Empty"
+        },
+        {
+            "diskSizeGB": 1023,
+            "lun": 1,
+            "createOption": "Empty"
+        }
+    ]
     ```
 
-13. Next you will add the PowerShell DSC Extension named
+    Your code change should look like this: 
+
+    ![In the code window, code is circled naming the dataDisks datadisk1, setting its disk size at 1023 GB](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image65.png "code window")
+
+14. Next you will add the PowerShell DSC Extension named
     **hackathonDSCSQL** to the **azuredeploy.json** file for the SQL VM.
     This will register the VM with Azure Automation DSC Extension.**\**
 
     ![In the PowerShell DSC Extension window, in the Name field, hackathonDSCSQL is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image66.png "PowerShell DSC Extension")
 
-14. Create a new parameter that will be different for the SQL VM. In the
+15. Create a new parameter that will be different for the SQL VM. In the
     **parameters** section, add the following code immediately after the
     existing **nodeConfigurationName** parameter.
     ```
@@ -665,21 +684,21 @@ Note: This is due to a bug in PowerShell DSC at the time of this writing. It may
 
     ![In the code window, the previous mentioned code block is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image67.png "code window")
 
-15. Save your changes to the **azuredeploy.json** template file.
+16. Save your changes to the **azuredeploy.json** template file.
 
-16. Navigate to the hackathonDscSQL resource.
+17. Navigate to the hackathonDscSQL resource.
 
     ![In the Resources tree-view, the following path is expanded: resources\\hackathonVM\\hackathonSqlVM\\hackathonDscSQL.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image68.png "Resources tree-view")
 
-17. Change the Type Handler from **2.9 to 2.19**, and make sure that
+18. Change the Type Handler from **2.9 to 2.19**, and make sure that
     **autoUpgradeMinorVersion** is false.
 
     ![In the Code window, the typeHandlerVersion of 2.19 is circled, and the autoUpgradeMinorVersion of false is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "Code window")
 
-Note: This is due to a bug in PowerShell DSC at the time of this
+> Note: This is due to a bug in PowerShell DSC at the time of this
 writing. It may be resolved by now.
 
-18. Find the settings code within the PowerShell DSC section you just
+19. Find the settings code within the PowerShell DSC section you just
     added, and replace it with this code:
 
     ![Code detailed in the following code section is circled in the code window.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image69.png "Code window")
@@ -745,7 +764,7 @@ writing. It may be resolved by now.
            },
     ```
 
-19. Next, in the **protectedSettings** section, delete the
+20. Next, in the **protectedSettings** section, delete the
     "**configurationUrlSasToken**" line; replacing it with this code.
     ```
     "Items": {
@@ -761,7 +780,7 @@ writing. It may be resolved by now.
 
     ![The displayed Code section has a parameter of parameters(\'registrationKey\') which replaced \_artifactsLocationSasToken.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png "Code section")
 
-20. Save your changes to the **azuredeploy.json** template file.
+21. Save your changes to the **azuredeploy.json** template file.
 
 ### Task 4: Deploy your updated template to Azure
 
