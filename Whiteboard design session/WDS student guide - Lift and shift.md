@@ -18,6 +18,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -62,7 +63,9 @@ lift and shift capabilities. In addition, attendees will learn to:
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -212,54 +215,52 @@ and potential obstacle to migration.
 ### Customer needs 
 
 1.  Lucerne have asked you to assess each application for suitability and cost analysis
-    before migrating to Azure.
+    before migrating to Azure
 
-1.  The procurement system is a critical business application. Availability is required 24/7,
-    including during migration.
+2.  The procurement system is a critical business application. Availability is required 24/7,
+    including during migration
 
-1.  The HR application is only used in office hours and a once-off 12-hour migration
-    window can be made available.
+3.  The HR application is only used in office hours and a once-off 12-hour migration
+    window can be made available
 
-1.  Each migrated application must offer high availability even
-    if a VM fails or during patching cycles.
+4.  Each migrated application must offer high availability even
+    if a VM fails or during patching cycles
         
-1.  Each migrated application must include backup/restore capabilities,
-    for both web and database tiers.
+5.  Each migrated application must include backup/restore capabilities,
+    for both web and database tiers
 
-1.  Prior to cutting over production traffic, Lucerne should be able to
+6.  Prior to cutting over production traffic, Lucerne should be able to
     perform a full test of the application running in Azure to ensure it
-    is fully functional.
+    is fully functional
 
-1.  Lucerne demands there is a way to "fail back" if
-    something goes wrong at any point in the migration process.
+7.  Lucerne demands there is a way to "fail back" if
+    something goes wrong at any point in the migration process
 
-1.  Both applications are Intranet applications. Lucerne requires connectivity
+8.  Both applications are Intranet applications. Lucerne requires connectivity
     from their corporate network to be robust, secure and performant.
 
-1.  All Azure deployments must support least-privilige access controls,
-    and protections to ensure production resources cannot be modified or
-    deleted without authorization or by accident.
+1.  All Azure deployments must support least-privilige access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident
     
 2.  Mechanisms must be in place to control and monitor Azure cost and prevent
-    use of unapproved Azure services.
+    use of unapproved Azure services
 
 ### Customer objections 
 
 1.  How can we tell how much we will really be spending once we have
     migrated to Azure?
 
-1.  Moving the procurement system to the cloud seems like a security problem. It
+2.  Moving the procurement system to the cloud seems like a security problem. It
     should only be accessible from people at Lucerne's offices.
 
-1.  We already have licenses for SQL Server. We do not want to pay for
+3.  We already have licenses for SQL Server. We do not want to pay for
     them again.
 
-1.  Our operations team is new to the cloud and currently uses existing
+4.  Our operations team is new to the cloud and currently uses existing
     technologies like System Center Operations Manager (SCOM). We are
     concerned about the time it takes to learn new technologies to
     monitor and maintain an existing workload.
 
-1.  The sun never sets on Lucerne Publishing. Logistics and procurement
+5.  The sun never sets on Lucerne Publishing. Logistics and procurement
     is one of our most critical applications. Any glitch will cause
     havoc in our ecosystem. The procurement system migration must be
     seamless, with no loss of data and no application downtime.
@@ -275,13 +276,13 @@ and potential obstacle to migration.
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
-1.  What customer business needs do you need to address with your solution?
+2.  What customer business needs do you need to address with your solution?
 
 **Design** 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
@@ -291,81 +292,80 @@ _Networking and Security_
 1.  Which peering options and other ExpressRoute features would be
     required?
 
-1.  Can you identify the workflow that Lucerne will need to follow to
+2.  Can you identify the workflow that Lucerne will need to follow to
     enable ExpressRoute in its environment?
 
-1.  The networking team has provided the following
+3.  The networking team has provided the following
     address space for creating the virtual network: 10.0.1.0/24. The
     on-premises network uses the following address space: 172.16.0.0/16.
     By drawing a diagram, what connectivity options and subnets would
     you use for the network design?
 
-1.  What additional security measures can you take to minimize the
+4.  What additional security measures can you take to minimize the
     attack surface of each application at the network level?
 
-1.  What does Lucerne need to do to allow isolated access to different
+5.  What does Lucerne need to do to allow isolated access to different
     components of Azure? Specifically, your design should allow the
     network infrastructure team to manage the virtual network, the
     procurement infrastructure team to manage the procurement
     infrastructure, and the HR team to manage the HR application.
 
-1.  How can Lucerne control and monitor their Azure spend?
+6.  How can Lucerne control and monitor their Azure spend?
 
 _Migration - Procurement system_
 
 1.  What options are available to assess the procurement system for suitability
     to migrating to Azure, and to forecast Azure costs?
 
-1.  Which compute stack would you recommend for the web tier, keeping in
+2.  Which compute stack would you recommend for the web tier, keeping in
     mind that the configuration of the application will essentially be
     the same (supporting cookie affinity, etc.)? 
 
-1.  Which data storage option and pricing tier would you recommend for
+3.  Which data storage option and pricing tier would you recommend for
     the database?
 
-1.  What migration approach (including tools and steps) would you use to
+4.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure?
 
-1.  How long will the migration take to synchronize data, for each tier?
+5.  How long will the migration take to synchronize data, for each tier?
     (Feel free to state any assumptions you need to make.)
 
-1.  How does the design perform user authentication?
+6.  How does the design perform user authentication?
 
-1.  How is load balancing configured in the migrated workload?
+7.  How is load balancing configured in the migrated workload?
 
-1.  How does the design achieve high availability?
+8.  How does the design achieve high availability?
 
-1.  How are all the VMs backed up?
+9.  How are all the VMs backed up?
 
-1.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
+10.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
 
 _Migration - HR application_
 
 1.  What options are available to assess the HR application for suitability
     to migrating to Azure, and to forecast Azure costs?
 
-1.  Which compute stack would you recommend for the web tier?
+2.  Which compute stack would you recommend for the web tier?
 
-1.  Which data storage option and pricing tier would you recommend for the database?
+3.  Which data storage option and pricing tier would you recommend for the database?
 
-1.  What migration approach (including tools and steps) would you use to
+4.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure? Keep in mind the physical server specifications
     and that application installers are not available.
 
-1.  How are high availability and backup provided, for both web and database tiers?
+5.  How are high availability and backup provided, for both web and database tiers?
 
-1.  How does your design meet Lucerne's database security requirements?
+6.  How does your design meet Lucerne's database security requirements?
 
-1.  What additional benefits can your design bring?
+7.  What additional benefits can your design bring?
 
 **Prepare**
 
-Directions: With all participants at your table
+Directions: With all participants at your table:
 
-1.  Prepare a 15-minute chalk-talk style presentation to the customer describing your migration design
-2.  Identify any customer needs that are not addressed with the proposed solution. 
-3.  Identify the benefits of your solution. 
-4.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution 
+2.  Identify the benefits of your solution
+3.  Determine how you will respond to the customer’s objections.
 
 
 ## Step 3: Present the solution
@@ -374,26 +374,26 @@ Directions: With all participants at your table
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team.
+7.  Tables switch roles and repeat Steps 2–6
 
 
 
 ## Wrap-up 
 
-Duration: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
