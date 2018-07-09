@@ -24,6 +24,9 @@ lift and shift capabilities. In addition, attendees will learn to:
 
 -   Scale existing templatized deployments leveraging VM Scale Sets
 
+### Whiteboard Design Session
+This design session focuses on how to migrate two existing (but quite different) applications to Azure. Students must create both an effective and cost-efficient Azure design, and plan how to achieve migration to that design within the constraints set by the business. Students will need to consider a range of different approaches and tools to meet the differing migration needs of each application.
+
 ### Hands-on Lab
 In this lab, attendees will learn how to author an Azure Resource Manager (ARM) template that can be used to deploy infrastructure such as virtual machine, storage, and networking. This lab will also teach the attendees how to deploy virtual machines that are automatically configured by the Azure Automation Desired State Configuration (DSC) service.
 
