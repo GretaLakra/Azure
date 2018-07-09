@@ -36,7 +36,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 4.  Familiarity with PowerShell
 
-## Before the hands-on lab (HOL)
+## Before the hands-on lab
 
 Duration: 15 minutes
 
