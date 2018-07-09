@@ -61,26 +61,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
--   Creates a safe environment in which learning can take place.
+-   Creates a safe environment in which learning can take place
 
--   Stimulates the participant's thinking.
+-   Stimulates the participant's thinking
 
--   Involves the participant in the learning process.
+-   Involves the participant in the learning process
 
--   Manages the learning process (on time, on topic, and adjusting to
-    benefit participants).
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants)
 
--   Ensures individual participant accountability.
+-   Ensures individual participant accountability
 
--   Ties it all together for the participant.
+-   Ties it all together for the participant
 
--   Provides insight and experience to the learning process.
+-   Provides insight and experience to the learning process
 
--   Effectively leads the whiteboard design session discussion.
+-   Effectively leads the whiteboard design session discussion
 
--   Monitors quality and appropriateness of participant deliverables.
+-   Monitors quality and appropriateness of participant deliverables
 
--   Effectively leads the feedback process.
+-   Effectively leads the feedback process
 
 ## Whiteboard design session flow 
 
@@ -98,7 +97,7 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Prepare to present a solution for your target customer audience
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 -   Determine your target customer audience
 
@@ -128,57 +127,38 @@ Before conducting your first whiteboard design session:
 
 -   Read the Student guide (including the case study) and Trainer guide
 
--   Become familiar with all key points and activities.
+-   Become familiar with all key points and activities
 
--   Plan the point you want to stress, which questions you want to
-    drive, transitions, and be ready to answer questions.
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
 
--   Prior to the whiteboard design session, discuss the case study to
-    pick up more ideas.
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas
 
--   Make notes for later.
+-   Make notes for later
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
 **Refer to the Trainer guide** to stay on track and observe the timings.
 
-**Do not expect to memorize every detail** of the whiteboard design
-session.
+**Do not expect to memorize every detail** of the whiteboard design session.
 
-When participants are doing activities, you can **look ahead to refresh
-your memory**.
+When participants are doing activities, you can **look ahead to refresh your memory**.
 
--   **Adjust activity and whiteboard design session pace** as needed to
-    allow time for presenting, feedback, and sharing.
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
 
--   **Add examples, points, and stories** from your own experience.
-    Think about stories you can share that help you make your points
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points
     clearly and effectively.
 
--   **Consider creating a "parking lot"** to record issues or questions
-    raised that are outside the scope of the whiteboard design session
-    or can be answered later. Decide how you will address these issues,
-    so you can acknowledge them without being derailed by them.
+-   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
 ***Have fun**! Encourage participants to have fun and share!*
 
-**Involve your participants.** Talk and share your knowledge but always
-involve your participants, even while you are the one speaking.
+**Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
-**Ask questions** and get them to share to fully involve your group in
-the learning process.
+**Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn
-your audience's opinions about it and experiences with it. Asking first
-enables you to assess their level of knowledge and experience, and
-leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
 
-**Wait for responses**. If you ask a question such as, "What's your
-experience with (fill in the blank)?" then wait. Do not be afraid of a
-little silence. If you leap into the silence, your participants will
-feel you are not serious about involving them and will become passive.
-Give participants a chance to think, and if no one answers, patiently
-ask again. You will usually get a response.
+**Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
 #  Lift and shift whiteboard design session student guide
 
@@ -202,7 +182,9 @@ lift and shift capabilities. In addition, attendees will learn to:
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -351,58 +333,38 @@ and potential obstacle to migration.
 
 ### Customer needs 
 
-1.  Lucerne have asked you to assess each application for suitability and cost analysis
-    before migrating to Azure.
+1.  Lucerne have asked you to assess each application for suitability and cost analysis before migrating to Azure
 
-1.  The procurement system is a critical business application. Availability is required 24/7,
-    including during migration.
+2.  The procurement system is a critical business application. Availability is required 24/7, including during migration
 
-1.  The HR application is only used in office hours and a once-off 12-hour migration
-    window can be made available.
+3.  The HR application is only used in office hours and a once-off 12-hour migration window can be made available
 
-1.  Each migrated application must offer high availability even
-    if a VM fails or during patching cycles.
+4.  Each migrated application must offer high availability even if a VM fails or during patching cycles
         
-1.  Each migrated application must include backup/restore capabilities,
-    for both web and database tiers.
+5.  Each migrated application must include backup/restore capabilities, for both web and database tiers
 
-1.  Prior to cutting over production traffic, Lucerne should be able to
-    perform a full test of the application running in Azure to ensure it
-    is fully functional.
+6.  Prior to cutting over production traffic, Lucerne should be able to perform a full test of the application running in Azure to ensure it is fully functional
 
-1.  Lucerne demands there is a way to "fail back" if
-    something goes wrong at any point in the migration process.
+7.  Lucerne demands there is a way to "fail back" if something goes wrong at any point in the migration process
 
-1.  Both applications are Intranet applications. Lucerne requires connectivity
-    from their corporate network to be robust, secure and performant.
+8.  Both applications are Intranet applications. Lucerne requires connectivity from their corporate network to be robust, secure and performant
 
-1.  All Azure deployments must support least-privilige access controls,
-    and protections to ensure production resources cannot be modified or
-    deleted without authorization or by accident.
+9.  All Azure deployments must support least-privilige access controls, and protections to ensure production resources cannot be modified or deleted without authorization or by accident
     
-2.  Mechanisms must be in place to control and monitor Azure cost and prevent
-    use of unapproved Azure services.
+10.  Mechanisms must be in place to control and monitor Azure cost and prevent use of unapproved Azure services
 
 ### Customer objections 
 
-1.  How can we tell how much we will really be spending once we have
-    migrated to Azure?
+1.  How can we tell how much we will really be spending once we have migrated to Azure?
 
-1.  Moving the procurement system to the cloud seems like a security problem. It
-    should only be accessible from people at Lucerne's offices.
+2.  Moving the procurement system to the cloud seems like a security problem. It should only be accessible from people at Lucerne's offices.
 
-1.  We already have licenses for SQL Server. We do not want to pay for
-    them again.
+3.  We already have licenses for SQL Server. We do not want to pay for them again.
 
-1.  Our operations team is new to the cloud and currently uses existing
-    technologies like System Center Operations Manager (SCOM). We are
-    concerned about the time it takes to learn new technologies to
-    monitor and maintain an existing workload.
+4.  Our operations team is new to the cloud and currently uses existing technologies like System Center Operations Manager (SCOM). We are concerned about the time it takes to learn new technologies to monitor and maintain an existing workload.
 
-1.  The sun never sets on Lucerne Publishing. Logistics and procurement
-    is one of our most critical applications. Any glitch will cause
-    havoc in our ecosystem. The procurement system migration must be
-    seamless, with no loss of data and no application downtime.
+5.  The sun never sets on Lucerne Publishing. Logistics and procurement is one of our most critical applications. Any glitch will cause
+    havoc in our ecosystem. The procurement system migration must be seamless, with no loss of data and no application downtime.
 
 ### Infographic for common scenarios
 
@@ -415,13 +377,13 @@ and potential obstacle to migration.
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
-1.  What customer business needs do you need to address with your solution?
+2.  What customer business needs do you need to address with your solution?
 
 **Design** 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
@@ -431,81 +393,80 @@ _Networking and Security_
 1.  Which peering options and other ExpressRoute features would be
     required?
 
-1.  Can you identify the workflow that Lucerne will need to follow to
+2.  Can you identify the workflow that Lucerne will need to follow to
     enable ExpressRoute in its environment?
 
-1.  The networking team has provided the following
+3.  The networking team has provided the following
     address space for creating the virtual network: 10.0.1.0/24. The
     on-premises network uses the following address space: 172.16.0.0/16.
     By drawing a diagram, what connectivity options and subnets would
     you use for the network design?
 
-1.  What additional security measures can you take to minimize the
+4.  What additional security measures can you take to minimize the
     attack surface of each application at the network level?
 
-1.  What does Lucerne need to do to allow isolated access to different
+5.  What does Lucerne need to do to allow isolated access to different
     components of Azure? Specifically, your design should allow the
     network infrastructure team to manage the virtual network, the
     procurement infrastructure team to manage the procurement
     infrastructure, and the HR team to manage the HR application.
 
-1.  How can Lucerne control and monitor their Azure spend?
+6.  How can Lucerne control and monitor their Azure spend?
 
 _Migration - Procurement system_
 
 1.  What options are available to assess the procurement system for suitability
     to migrating to Azure, and to forecast Azure costs?
 
-1.  Which compute stack would you recommend for the web tier, keeping in
+2.  Which compute stack would you recommend for the web tier, keeping in
     mind that the configuration of the application will essentially be
     the same (supporting cookie affinity, etc.)? 
 
-1.  Which data storage option and pricing tier would you recommend for
+3.  Which data storage option and pricing tier would you recommend for
     the database?
 
-1.  What migration approach (including tools and steps) would you use to
+4.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure?
 
-1.  How long will the migration take to synchronize data, for each tier?
+5.  How long will the migration take to synchronize data, for each tier?
     (Feel free to state any assumptions you need to make.)
 
-1.  How does the design perform user authentication?
+6.  How does the design perform user authentication?
 
-1.  How is load balancing configured in the migrated workload?
+7.  How is load balancing configured in the migrated workload?
 
-1.  How does the design achieve high availability?
+8.  How does the design achieve high availability?
 
-1.  How are all the VMs backed up?
+9.  How are all the VMs backed up?
 
-1.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
+10.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
 
 _Migration - HR application_
 
 1.  What options are available to assess the HR application for suitability
     to migrating to Azure, and to forecast Azure costs?
 
-1.  Which compute stack would you recommend for the web tier?
+2.  Which compute stack would you recommend for the web tier?
 
-1.  Which data storage option and pricing tier would you recommend for the database?
+3.  Which data storage option and pricing tier would you recommend for the database?
 
-1.  What migration approach (including tools and steps) would you use to
+4.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure? Keep in mind the physical server specifications
     and that application installers are not available.
 
-1.  How are high availability and backup provided, for both web and database tiers?
+5.  How are high availability and backup provided, for both web and database tiers?
 
-1.  How does your design meet Lucerne's database security requirements?
+6.  How does your design meet Lucerne's database security requirements?
 
-1.  What additional benefits can your design bring?
+7.  What additional benefits can your design bring?
 
 **Prepare**
 
 Directions: With all participants at your table
 
-1.  Prepare a 15-minute chalk-talk style presentation to the customer describing your migration design
-2.  Identify any customer needs that are not addressed with the proposed solution. 
-3.  Identify the benefits of your solution. 
-4.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution
+2.  Identify the benefits of your solution.
+3.  Determine how you will respond to the customer’s objections 
 
 
 ## Step 3: Present the solution
@@ -514,26 +475,26 @@ Directions: With all participants at your table
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team 
+7.  Tables switch roles and repeat Steps 2–6
 
 
 
 ## Wrap-up 
 
-Duration: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
@@ -566,57 +527,51 @@ Duration: 15 minutes
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session.
+-   Briefly review the steps and timeframes of the whiteboard design session
 
--   Ready, set, go! Let the table participants begin.
+-   Ready, set, go! Let the table participants begin
 
 ## Step 2: Design a proof of concept solution
 
 -   Check in with your tables to ensure that they are transitioning from
-    step to step on time.
+    step to step on time
 
 -   Provide some feedback on their responses to the business needs and
-    design.
+    design
 
     -   Try asking questions first that will lead the participants to
-        discover the answers on their own.
+        discover the answers on their own
 
--   Provide feedback for their responses to the customer's objections.
+-   Provide feedback for their responses to the customer's objections
 
     -   Try asking questions first that will lead the participants to
-        discover the answers on their own.
+        discover the answers on their own
 
 ## Step 3: Present the solution
 
 -   Determine which table will be paired with your table before Step 3
-    begins.
+    begins
 
 -   For the first round, assign one table as the Microsoft team and the
-    other table as the customer.
+    other table as the customer
 
--   Have the Microsoft team present their solution to the customer team.
+-   Have the Microsoft team present their solution to the customer team
 
     -   Have the customer team provide one objection for the Microsoft
-        team to respond to.
+        team to respond to
 
     -   The presentation and objections should be no longer than
-        10-minutes.
+        15 minutes
 
--   Have participants on the customer team give feedback to the
-    Microsoft team.
-
-    -   The feedback should be no longer than 5 minutes.
-
-    -   If needed, the trainer may also provide feedback.
+    -   If needed, the trainer may also provide feedback
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group
-    to hear a SME share the following preferred solution.
+  -   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution
 
 ##  Preferred target audience
 
@@ -652,7 +607,7 @@ _Networking and Security_
         Microsoft publishing BGP routes from the virtual networks to
         on-premises to access the procurement solution.
 
-1.  Can you identify the workflow that Lucerne will need to follow to
+2.  Can you identify the workflow that Lucerne will need to follow to
     enable ExpressRoute in its environment?
 
     ![The ExpressRoute Integration workflow starts with a box that has
@@ -670,7 +625,7 @@ _Networking and Security_
     public IPs through Azure Public peering, and Connecting to Microsoft
     cloud services.](images/image7.png "ExpressRoute Integration workflow")
 
-1.  The networking team has provided the following
+3.  The networking team has provided the following
     address space for creating the virtual network: 10.0.1.0/24. The
     on-premises network uses the following address space: 172.16.0.0/16.
     By drawing a diagram, what connectivity options and subnets would
@@ -697,7 +652,7 @@ _Networking and Security_
 
         ![This diagram shows the Lucerne network design. On the left is the on-premises network, with servers, a domain controller, and a network gateway icon. On the right is the Azure virtual network, which is divided into six subnets (ExpressRoute, App Gw, Procurement Web, Procurement DB, HR App Web, and HR App DB). The ExpressRoute subnet has a network endpoint that is connected to the on-premises network gateway via an ExpressRoute connection.](images/network-design.png "Lucrne Connectivity diagram")
 
-1.  What additional security measures can you take to minimize the
+4.  What additional security measures can you take to minimize the
     attack surface of each application at the network level?
     
     -   The design should use Network Security Groups (NSGs) on
@@ -710,7 +665,7 @@ _Networking and Security_
     -   The HR application could also be optionally deployed behind the Application
         Gateway. To reduce costs, the same Application Gateways could be shared.
 
-1.  What does Lucerne need to do to allow isolated access to different
+5.  What does Lucerne need to do to allow isolated access to different
     components of Azure? Specifically, your design should allow the
     network infrastructure team to manage the virtual network, the
     procurement infrastructure team to manage the procurement
@@ -730,13 +685,13 @@ _Networking and Security_
 
         ![This diagram shows the resource groups and permissions for each resource group. The first resource group is named 'VnetRG' and contains 'Virtual Networks'. The permissions are 'Network Team: Contributor', 'Procurement Team: Reader' and 'HR App Team: Reader'. The second resource group is named 'ProcurementRG' and contains 'Procurement system'. The permissions are 'Procurement Team: Contributor'. The third resource group is named 'HrAppRG' and contains 'HR application'. The permissions are 'HR App Team: Contributor'.](images/resource-groups.png "Preferred solution")
 
-1.  How can Lucerne control and monitor their Azure spend?
+6.  How can Lucerne control and monitor their Azure spend?
     -   Using Azure Resource Manager policies Lucerne can set the following constraints:
         -   Locations resources can be created
         -   Image types that can be created
         -   Instance sizes for VMs
         -   Services and service tiers that can be used (a 'service catalog')
-    - Lucerne can use Azure Cost Management to create detailed reports of current and forecast spend.
+    - Lucerne can use Azure Cost Management to create detailed reports of current and forecast spend
     - Resource Manager tags can be used to assign spending to specific teams or cost centers
 
 _Migration - Procurement system_
