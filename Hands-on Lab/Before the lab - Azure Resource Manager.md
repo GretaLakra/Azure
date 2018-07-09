@@ -1,5 +1,30 @@
 
-# Lift and shift setup
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+
+<div class="MCWHeader1">
+[Insert workshop name here]
+</div>
+
+<div class="MCWHeader2">
+Before the hands-on lab setup guide
+</div>
+
+<div class="MCWHeader3">
+[Insert date here Month Year]
+</div>
+
+
+Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
+
+Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
+
+The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
+© 2018 Microsoft Corporation. All rights reserved.
+
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+
+# Azure Resource Manager before the hands-on lab setup guide
 
 ## Requirements
 
@@ -12,7 +37,6 @@
 4.  Familiarity with PowerShell
 
 ## Before the hands-on lab (HOL)
-
 
 Duration: 15 minutes
 
@@ -32,13 +56,13 @@ files for the lab exercise.
     the Visual Studio Community 2017 image running on Windows Server
     2016 and with the latest update.
 
-3.  In the returned search results, click the image name.
+3.  In the returned search results, click the image name
 
     ![In the Everything blade, Visual Studio Community 2017 is typed in the Search field. Under Name, Visual Studio Community on Windows Server 2016 is circled.](images/Setup/image3.png "Everything blade")
 
-4.  In the Marketplace solution blade, click **Create**.
+4.  In the Marketplace solution blade, click **Create**
 
-5.  Set the following configuration on the Basics tab, and click **OK**.
+5.  Set the following configuration on the Basics tab, and select **OK**:
 
     -   Name: **LABVM**
 
@@ -48,13 +72,13 @@ files for the lab exercise.
 
     -   Password: **demo\@pass123**
 
-    -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in.**
+    -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in**
 
     -   Resource Group: **OPSLABRG**
 
-    -   Location: **Choose the closest Azure region to you.**
+    -   Location: **Choose the closest Azure region to you**
 
-6.  Choose the **DS1\_V2 Standard** instance size on the Size blade.
+6.  Choose the **DS1\_V2 Standard** instance size on the Size blade
 
 7.  Accept the remaining default values on the Settings blade, and click
     **OK**. On the Summary page, click **OK**. The deployment should
@@ -86,19 +110,19 @@ files for the lab exercise.
 
     ![The Remote Desktop Connection warning page explains that the identity of the remote computer cannot be identified, and asks if you still want to connect. The checkbox is selected and circled to not ask again for connections to this computer. At the bottom, the Yes button is circled.](images/Setup/image7.png "Remote Desktop Connection warning page")
 
-5.  When logging on for the first time, you will see a prompt on the right asking about network discovery. Click **No**.
+5.  When logging on for the first time, you will see a prompt on the right asking about network discovery. Select **No**.
 
     ![The Networks prompt asking if you want your PC to be discoverable, and the No button is circled.](images/Setup/image8.png "Networks prompt")
 
-6.  Notice the Server Manager opens by default. On the left, click **Local Server**.
+6.  Notice the Server Manager opens by default. On the left, click **Local Server**
 
     ![Local Server is circled in the left Server Manager menu.](images/Setup/image9.png "Local Server")
 
-7.  On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
+7.  On the right side of the pane, click **On** by **IE Enhanced Security Configuration**
 
     ![In Local Server information, IE Enhanced Security Configuration is circled, and is set to On.](images/Setup/image10.png "Local Server information")
 
-8.  Change to **Off** for Administrators, and click **OK**.
+8.  Change to **Off** for Administrators, and click **OK**
 
     ![On the Internet Explorer Enhanced Security Configuration page, under Administrators, the radio button is selected for Off. At the bottom, the OK button is circled.](images/Setup/image11.png "Internet Explorer Enhanced Security Configuration page")
 
@@ -108,9 +132,9 @@ files for the lab exercise.
 
     ![In the Internet Explorer 11 Setup window, the checkbox is selected for \"Use recommended security, privacy, and compatibility settings. At the bottom, the OK button is circled.](images/Setup/image12.png "Internet Explorer 11 Setup window")
 
-10. If prompted, click **Don't show this again** regarding protected mode.
+10. If prompted, click **Don't show this again** regarding protected mode
 
-11. To download the exercise files for the lab, paste this URL into the browser.
+11. To download the exercise files for the lab, paste this URL into the browser:
 
     <https://cloudworkshop.blob.core.windows.net/arm-hackathon/ARM_Hackathon_Guide_Student_Files.zip>
 
@@ -127,11 +151,11 @@ files for the lab exercise.
 ### Task 3: Validate connectivity to Azure
 
 1.  Within the virtual machine, launch **Visual Studio 2017**, and
-    validate you can login with your Microsoft Account when prompted.
+    validate you can login with your Microsoft Account when prompted
 
     ![The Visual Studio sign-in page displays.](images/Setup/image15.png "Visual Studio sign-in page")
 
-2.  Validate connectivity to your Azure subscription. Launch **Visual Studio**, open **Server Explorer** from the View menu, and ensure you can connect to your Azure subscription.
+2.  Validate connectivity to your Azure subscription. Launch **Visual Studio**, open **Server Explorer** from the View menu, and ensure you can connect to your Azure subscription
 
     ![In the Visual Studio Server Explorer window, the sub-menu displays for the Azure subscription, confirming that a connection to the Azure subscription can be made.](images/Setup/image16.png "Visual Studio Server Explorer")
 
