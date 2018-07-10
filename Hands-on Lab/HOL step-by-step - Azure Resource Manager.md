@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Lift and shift hands-on lab step-by-step](#lift-and-shift-hands-on-lab-step-by-step)
+- [Azure Resource Manager hands-on lab step-by-step](#lift-and-shift-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
@@ -53,7 +53,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- /TOC -->
 
-# Lift and shift hands-on lab step-by-step
+# Azure Resource Manager hands-on lab step-by-step
 
 ## Abstract and learning objectives 
 
