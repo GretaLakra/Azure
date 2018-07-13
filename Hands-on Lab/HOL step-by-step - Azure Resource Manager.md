@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Azure Resource Manager hands-on lab step-by-step](#lift-and-shift-hands-on-lab-step-by-step)
+- [Azure Resource Manager hands-on lab step-by-step](#azure-resource-manager-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
@@ -57,10 +57,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-In this lab, attendees will learn how to author an Azure Resource
+In this hands-on lab, you will learn how to author an Azure Resource
 Manager (ARM) template that can be used to deploy infrastructure such as
-virtual machine, storage, and networking. This lab will also teach the
-attendees how to deploy virtual machines that are automatically
+virtual machine, storage, and networking. This lab will also teach 
+you how to deploy virtual machines that are automatically
 configured by the Azure Automation Desired State Configuration (DSC)
 service.
 
@@ -83,8 +83,7 @@ using Azure Virtual Machines.
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Creating and deploying Azure resource groups through Visual Studio
-| https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy | 
+| Creating and deploying Azure resource groups through Visual Studio | https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy | 
 | Azure Quick Start Templates | <https://azure.microsoft.com/en-us/resources/templates/> |
 | Using Managed Disks with Templates | <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/using-managed-disks-template-deployments> |
 | Azure VM Scale Sets Templates | <https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start> |
@@ -198,7 +197,7 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the ARMHackathon Visual Studio window, JSON Outline displays in the left pane. In the right pane, the azuredeploy.json file displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image27.png "Visual Studio window")
 
-    > NOTE: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
+    > Note: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
 
 7.  On the **JSON Outline** window, click **Add Resource** in the upper-left corner or right-click the **resources**, and choose **Add New Resource**.
 
@@ -270,8 +269,7 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the Azure Management Portal, in the ARMHackathon resource group, Overview is selected in the left pane. In the right pane, under Essentials, under Name, hackathonVnet is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image37.png "Azure Management Portal")
 
-NOTE: If the resource group was created but the virtual network was
-not, redeploy the template once more from Visual Studio.
+    > Note: If the resource group was created but the virtual network was not, redeploy the template once more from Visual Studio.
 
 You should see an indication of a successful deployment in the **Output** screen.
     ![In the Output window, in the output for ARMHackathon, ProvisioningState Succeeded is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image38.png "Output window")
@@ -299,9 +297,7 @@ the roles.
 
 2.  Add a new **Storage Account** resource to the template named ***hackstorage***
 
-    > Note: The template generated in the Azure SDK appends a unique value (13
-characters in length) to the storage account name. Ensure the name
-specified is 11 characters or less in length.
+    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Ensure the name specified is 1 characters or less in length.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
@@ -695,8 +691,8 @@ specified is 11 characters or less in length.
 
     ![In the Code window, the typeHandlerVersion of 2.19 is circled, and the autoUpgradeMinorVersion of false is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "Code window")
 
-> Note: This is due to a bug in PowerShell DSC at the time of this
-writing. It may be resolved by now.
+    > Note: This is due to a bug in PowerShell DSC at the time of this
+    writing. It may be resolved by now.
 
 19. Find the settings code within the PowerShell DSC section you just
     added, and replace it with this code:
@@ -865,18 +861,18 @@ writing. It may be resolved by now.
 
     ![Fields in the Edit Parameters dialog box are set to the previously mentioned settings and values.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image76.png "Edit Parameters dialog box")
 
-Note: The deployment may take 20 to 30 minutes to complete.
+    > Note: The deployment may take 20 to 30 minutes to complete.
 
-**Extension Troubleshooting Tip:** If you make a mistake with either of the
-Azure DSC extensions and need to redeploy, open the virtual machine in
-the portal. Under all settings, click extensions, and remove the failed
-extension before deploying. Then, in your Automation Account, under the
-DSC Nodes, unregister the node.
+    **Extension Troubleshooting Tip:** If you make a mistake with either of the
+    Azure DSC extensions and need to redeploy, open the virtual machine in
+    the portal. Under all settings, click extensions, and remove the failed
+    extension before deploying. Then, in your Automation Account, under the
+    DSC Nodes, unregister the node.
 
-Note: The DSC configuration may take time to apply following the
-successful template deployment. Monitor this in the DSC Nodes section in
-the Automation Account properties. Wait to proceed until both nodes show
-as compliant.
+    > Note: The DSC configuration may take time to apply following the
+    successful template deployment. Monitor this in the DSC Nodes section in
+    the Automation Account properties. Wait to proceed until both nodes show
+    as compliant.
 
 7.  Launch the **Azure Management Portal** <http://portal.azure.com>,and navigate to the resource group you deployed to. Click the **virtual machine** for the web server. Then, click the **Public IP**.
 
@@ -1425,7 +1421,7 @@ This VM and NIC will be replaced by the VMs in the scale set.
 
     ![Screenshot of the Delete button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image95.png "Delete button")
 
-NOTE: Wait until the Resource Group has been deleted prior to moving onto the next step.
+    > Note: Wait until the Resource Group has been deleted prior to moving onto the next step.
 
 12. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
 

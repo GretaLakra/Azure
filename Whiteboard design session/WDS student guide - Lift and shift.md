@@ -45,18 +45,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-In this workshop, students will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
+In this whiteboard design session, you will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
 
-Attendees will be better able to migrate and enable easy deployment for
-lift and shift capabilities. In addition, attendees will learn to:
-
--   Build and deploy complex infrastructure solutions with Azure
-    Resource Manager templates
-
--   Work with Azure Automation Desired State Configuration (DSC) for
-    deploying server configurations
-
--   Scale existing templatized deployments leveraging VM Scale Sets
+You will be better able to migrate and enable easy deployment for a lift and shift migration.
 
 ## Step 1: Review the customer case study 
 
@@ -239,9 +230,9 @@ and potential obstacle to migration.
 8.  Both applications are Intranet applications. Lucerne requires connectivity
     from their corporate network to be robust, secure and performant.
 
-1.  All Azure deployments must support least-privilige access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident
+9.  All Azure deployments must support least-privilege access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident
     
-2.  Mechanisms must be in place to control and monitor Azure cost and prevent
+10.  Mechanisms must be in place to control and monitor Azure cost and prevent
     use of unapproved Azure services
 
 ### Customer objections 
@@ -260,10 +251,14 @@ and potential obstacle to migration.
     concerned about the time it takes to learn new technologies to
     monitor and maintain an existing workload.
 
-5.  The sun never sets on Lucerne Publishing. Logistics and procurement
-    is one of our most critical applications. Any glitch will cause
+5.  Logistics and procurement is one of our most critical applications. Any glitch will cause
     havoc in our ecosystem. The procurement system migration must be
     seamless, with no loss of data and no application downtime.
+
+6.  The procurement application is a simple application with known
+    dependencies and is perfect for a pilot. What about more complicated
+    workloads or workloads where we don't exactly know where the
+    dependencies are?
 
 ### Infographic for common scenarios
 

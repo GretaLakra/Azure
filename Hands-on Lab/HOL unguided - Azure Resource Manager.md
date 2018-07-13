@@ -25,7 +25,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Azure Resource Manager hands-on lab unguided](#lift-and-shift-hands-on-lab-unguided)
+- [Azure Resource Manager hands-on lab unguided](#azure-resource-manager-hands-on-lab-unguided)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
@@ -54,10 +54,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-In this lab, attendees will learn how to author an Azure Resource
+In this hands-on lab, you will learn how to author an Azure Resource
 Manager (ARM) template that can be used to deploy infrastructure such as
-virtual machine, storage, and networking. This lab will also teach the
-attendees how to deploy virtual machines that are automatically
+virtual machine, storage, and networking. This lab will also teach 
+you how to deploy virtual machines that are automatically
 configured by the Azure Automation Desired State Configuration (DSC)
 service.
 
@@ -90,8 +90,7 @@ using Azure Virtual Machines.
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Creating and deploying Azure resource groups through Visual Studio
-| https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy | 
+| Creating and deploying Azure resource groups through Visual Studio | https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy | 
 | Azure Quick Start Templates | <https://azure.microsoft.com/en-us/resources/templates/> |
 | Using Managed Disks with Templates | <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/using-managed-disks-template-deployments> |
 | Azure VM Scale Sets Templates | <https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start> |
@@ -333,7 +332,7 @@ Exit criteria
 
     ![The Cloud Shop webpage displays, with a list of products from
     which to
-    choose.](C:\Users\MichaelWasham\Dropbox (Opsgility)\Opsgility Projects\active\Cloud Workshops\Lift and Shift\Markdown Convert\Hands-onlabunguided-AzureResourceManagerimages/media/image18.emf "Cloud Shop webpage")
+    choose.](images/Hands-onlabunguided-AzureResourceManagerimages/media/image18.png "Cloud Shop webpage")
 
 ## Exercise 4: Lock down the environment 
 
@@ -394,7 +393,7 @@ In this portion of the exercise, you will use the Azure Virtual Machine
 Scale Sets feature to scale out the web front-end and the storage sub
 system.
 
-Note: This is an *advanced* configuration based on the feature Azure
+> Note: This is an *advanced* configuration based on the feature Azure
 Scale Sets. It is recommended that unless you have configured scale sets
 before that you use the Leader's guide with the hackathon answers to
 complete this exercise.

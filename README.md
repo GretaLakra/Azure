@@ -25,10 +25,21 @@ lift and shift capabilities. In addition, attendees will learn to:
 -   Scale existing templatized deployments leveraging VM Scale Sets
 
 ### Whiteboard Design Session
-This design session focuses on how to migrate two existing (but quite different) applications to Azure. Students must create both an effective and cost-efficient Azure design, and plan how to achieve migration to that design within the constraints set by the business. Students will need to consider a range of different approaches and tools to meet the differing migration needs of each application.
+In this whiteboard design session, you will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
+
+You will be better able to migrate and enable easy deployment for a lift and shift migration.
 
 ### Hands-on Lab
-In this lab, attendees will learn how to author an Azure Resource Manager (ARM) template that can be used to deploy infrastructure such as virtual machine, storage, and networking. This lab will also teach the attendees how to deploy virtual machines that are automatically configured by the Azure Automation Desired State Configuration (DSC) service.
+In this hands-on lab, you will learn how to author an Azure Resource
+Manager (ARM) template that can be used to deploy infrastructure such as
+virtual machine, storage, and networking. This lab will also teach 
+you how to deploy virtual machines that are automatically
+configured by the Azure Automation Desired State Configuration (DSC)
+service.
+
+-   How to author and deploy an ARM template
+
+-   How to perform configuration management with Azure Automation DSC
 
 ## Azure services and related products
 - Azure Portal

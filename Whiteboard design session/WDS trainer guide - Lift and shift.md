@@ -164,18 +164,10 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-In this workshop, students will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
+In this whiteboard design session, you will help a global publisher architect a solution to migrate two on-premises applications into Azure. Because of the desire to not change the existing applications, this will involve moving the application and its dependencies onto Azure IaaS VMs, using other Azure services where appropriate. There are many questions and concerns the customer has, and they will look to the student to answer these and provide the end-state design and the high-level steps to get there with minimal end-user impact and risk
 
-Attendees will be better able to migrate and enable easy deployment for
-lift and shift capabilities. In addition, attendees will learn to:
+You will be better able to migrate and enable easy deployment for a lift and shift migration.
 
--   Build and deploy complex infrastructure solutions with Azure
-    Resource Manager templates
-
--   Work with Azure Automation Desired State Configuration (DSC) for
-    deploying server configurations
-
--   Scale existing templatized deployments leveraging VM Scale Sets
 
 ## Step 1: Review the customer case study 
 
@@ -349,7 +341,7 @@ and potential obstacle to migration.
 
 8.  Both applications are Intranet applications. Lucerne requires connectivity from their corporate network to be robust, secure and performant
 
-9.  All Azure deployments must support least-privilige access controls, and protections to ensure production resources cannot be modified or deleted without authorization or by accident
+9.  All Azure deployments must support least-privilege access controls, and protections to ensure production resources cannot be modified or deleted without authorization or by accident
     
 10.  Mechanisms must be in place to control and monitor Azure cost and prevent use of unapproved Azure services
 
@@ -363,7 +355,7 @@ and potential obstacle to migration.
 
 4.  Our operations team is new to the cloud and currently uses existing technologies like System Center Operations Manager (SCOM). We are concerned about the time it takes to learn new technologies to monitor and maintain an existing workload.
 
-5.  The sun never sets on Lucerne Publishing. Logistics and procurement is one of our most critical applications. Any glitch will cause
+5.  Logistics and procurement is one of our most critical applications. Any glitch will cause
     havoc in our ecosystem. The procurement system migration must be seamless, with no loss of data and no application downtime.
 
 ### Infographic for common scenarios
@@ -585,7 +577,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 -   Network engineering
 
--   Procurement sytem and HR application infrastructure teams
+-   Procurement system and HR application infrastructure teams
 
 ## Preferred solution
 
@@ -706,11 +698,11 @@ _Migration - Procurement system_
         on-premises machines in Azure.
     -   The Azure Migration Service provides the following benefits:
         -   Assess Azure readiness: Assess whether your on-premises
-            machines are suitable for running in Azure.
+            machines are suitable for running in Azure
         -   Get size recommendations: Get size recommendations for Azure
             VMs based on the performance history of on-premises VMs. You can specify
             a 'comfort factor', which is a buffer applied on top of
-            the measured utilization when making sizing recommendations.
+            the measured utilization when making sizing recommendations
             (Especially useful since the existing HW utilization is unknown.)
         -   Estimate monthly costs: Get estimated costs for running
             on-premises machines in Azure. You can specify the VM pricing tier
@@ -720,17 +712,17 @@ _Migration - Procurement system_
             on-premises machines to create groups of machines that you
             will assess and migrate together. You can accurately view
             dependencies for a specific machine, or for all machines in
-            a group.
+            a group
     -   Azure Migrate currently only supports VMware workloads, which is fine
         for the procurement system. To deploy Azure Migrate:
-        1.  You create an Azure Migrate project.
-        1.  Azure Migrate uses an on-premises VM called the collector appliance, to discover information about your on-premises machines. To create the appliance, you download a setup file in Open Virtualization Appliance (.ova) format, and import it as a VM on your on-premises vCenter Server.
-        1.  You connect to the VM using console connection in vCenter Server, specify a new password for the VM while connecting and then run the collector application in the VM to initiate discovery.
-        1.  The collector collects VM metadata using VMware PowerCLI cmdlets. Discovery is agentless, and doesn't install anything on VMware hosts or VMs. The collected metadata includes VM information (cores, memory, disks, disk sizes, and network adapters). It also collects performance data for VMs, including CPU and memory usage, disk IOPS, disk throughput (MBps), and network output (MBps).
-        1.  The metadata is pushed to the Azure Migrate project. You can view it in the Azure portal.
-        1.  For the purposes of assessment, you gather the discovered VMs into groups. For example, you might group VMs that run the same application. For more precise grouping, you can use dependency visualization to view dependencies of a specific machine, or for all machines in a group and refine the group.
-        1.  Once your group is formed, you create an assessment for the group.
-        1.  After the assessment finishes, you can view it in the portal, or download it in Excel format.
+        -   You create an Azure Migrate project
+        -   Azure Migrate uses an on-premises VM called the collector appliance, to discover information about your on-premises machines. To create the appliance, you download a setup file in Open Virtualization Appliance (.ova) format, and import it as a VM on your on-premises vCenter Server
+        -   You connect to the VM using console connection in vCenter Server, specify a new password for the VM while connecting and then run the collector application in the VM to initiate discovery
+        -   The collector collects VM metadata using VMware PowerCLI cmdlets. Discovery is agentless, and doesn't install anything on VMware hosts or VMs. The collected metadata includes VM information (cores, memory, disks, disk sizes, and network adapters). It also collects performance data for VMs, including CPU and memory usage, disk IOPS, disk throughput (MBps), and network output (MBps)
+        -   The metadata is pushed to the Azure Migrate project. You can view it in the Azure portal
+        -   For the purposes of assessment, you gather the discovered VMs into groups. For example, you might group VMs that run the same application. For more precise grouping, you can use dependency visualization to view dependencies of a specific machine, or for all machines in a group and refine the group
+        -   Once your group is formed, you create an assessment for the group
+        -   After the assessment finishes, you can view it in the portal, or download it in Excel format
         
 1.  Which compute stack would you recommend for the web tier, keeping in
     mind that the configuration of the application will essentially be
@@ -814,17 +806,17 @@ _Migration - Procurement system_
             -   Provisioning the Azure environment (Recovery Services Vault, Virtual Network and Storage Account)
             -   Setting up ASR in the on-premises environment, including creating the necessary VMware account,
                 installing the mobility service on the web tier VMs, deploying the ASR Configuration Server
-                and connecting it with your Recovery Service Vault.
+                and connecting it with your Recovery Service Vault
             -   Replicating the web tier VMs to Azure Storage. This includes setting the replication policy
                 which defines the retention period (0 suffices since we will only use the latest recovery point),
                 the type of snapshots to use (crash-consistent snapshots suffices for the web tier), and whether
-                to use a replication group (not needed, since the web tier VMs do not share application state).
+                to use a replication group (not needed, since the web tier VMs do not share application state)
 
             To test the migration before the live site cutover:
             -   Initiate a test failover from the Azure portal. This will create
                 new Azure VMs from the replicated data from the legacy web servers.
                 These VMs will be connected to the on-premises production database
-                (if desired, a test database could be configured).
+                (if desired, a test database could be configured)
             -   Configure the backend server pool of the Application Gateway
                 to reference the procurement web servers.
                 Set cookie-based affinity on the backend HTTP server setting.
@@ -833,7 +825,7 @@ _Migration - Procurement system_
             To perform the migration:
             -   Initiate a planned failover from the Azure portal. As with the test
                 failover, this will create Azure VMs from the replicated web tier disks,
-                connected to the on-premises production database.
+                connected to the on-premises production database
             -   Update the Application Gateway back-end server pool to reference
                 the new web server VMs, and validate the application is working
             -   Update the DNS entry for the 'https://procurement' endpoint
@@ -843,8 +835,8 @@ _Migration - Procurement system_
             -   If the migration does not work properly, there is a simple back out plan. The
                 planned failover should be canceled from the portal and
                 then the VMs in VMware should be restarted to restore
-                service.
-            -   If the 'procurement' DNS entry has already been updated, revert it to the previous value.
+                service
+            -   If the 'procurement' DNS entry has already been updated, revert it to the previous value
                 
             Note: To minimize the impact of DNS caching, the Time-To-Live (TTL) for the DNS entry
             should be reduced to a short value (e.g. 60 seconds) well in advance of the migration.
@@ -901,11 +893,11 @@ _Migration - Procurement system_
             once the networking components are in place.
             -   Use PowerShell, template, or the Portal to create the
                 VMs running Windows Server 2017 Datacenter for the web tier.
-                Ensure they are provisioned into an availability set.
+                Ensure they are provisioned into an availability set
             -   Using the wizard, manually install the application again
                 making sure to configure anything per the vendors instructions
                 or restore any configurations that might be required
-                specifically for the application from the on-premises servers.
+                specifically for the application from the on-premises servers
 
             The virtual machines should be configured to connect to the on-premises
             production database.
@@ -964,7 +956,7 @@ _Migration - Procurement system_
         Testing the migration process:
         -   It is not advisable to run test transactions through the produciton database. Testing should be
             completed in a separate test or staging environment. Subject to data use constraints, a
-            backup of the production database can be restored into the test environment for testing purposes.
+            backup of the production database can be restored into the test environment for testing purposes
 
 1.  How long will the migration take to synchronize data, for each tier?
     (Feel free to state any assumptions you need to make.)
@@ -991,14 +983,14 @@ _Migration - Procurement system_
         controllers (as-is) because the environment is still connected
         to the existing Active Directory environment.      
         To implement this, configure the virtual network to reference the
-        existing AD DNS server IP addresses.
+        existing AD DNS server IP addresses
         
         Deploying domain controllers in the same virtual network or using
         Azure AD Domain Services would
         be advised once the deployment moves out of the pilot phase. The
         domain controller's site/subnet configuration should be
         configured to authenticate to the local domain controller in the virtual
-        network before an on-premises domain controller.
+        network before an on-premises domain controller
 
 1.  How is load balancing configured in the migrated workload?
 
@@ -1009,7 +1001,7 @@ _Migration - Procurement system_
         the F5 and to support the lack of external session state support
         on the application. For SQL, an internal load-balanced endpoint
         will also be configured with direct server return enabled for
-        the SQL Always On listener.
+        the SQL Always On listener
 
 1.  How does the design achieve high availability?
 
@@ -1018,27 +1010,27 @@ _Migration - Procurement system_
         web tier will have load balancing enabled to accommodate for individual
         VM failures. The database will use a SQL Always On availability
         group with synchronous commits to similar behavior of their existing
-        deployment.
+        deployment
 
         ![This diagram shows the design for the procurement system once migrated to Azure. At the top is the ExpressRoute icon. This is connected to the Application Gateway icon, which sits in the App Gw subnet, and is labelled with 'Static IP address' and 'Cookie affinity'. The Application Gateway is connected to the web tier virtual machines, which sit within an availability set within the web tier subnet. The web tier virtual machines are connected to the internal load balancer icon, sits in the database tier subnet and is labelled with 'Direct Server Return'. This is connected to the database virtual machines, which sit within an availability set, also within the database tier subnet. The database virtual machines are connected to a storage account icon, which is labelled 'Cloud Witness (storage account)'.](images/procurement-azure.png "Procurement migration overview")
 
 1.  How are all the VMs backed up?
 
     -   Back them up using Azure Backup (for IaaS VMs) using a Recovery
-        Services Vault.
+        Services Vault
 
 1.  How is the database backed up? Can you remove the dependency on tape for offsite backup?
 
     -   There are 3 options:
         -   Use Azure Backup Server. The downside is that this requires
             additional infrastructure (the backup server) to be deployed,
-            maintained, and paid for.
+            maintained, and paid for
         -   Use built-in SQL backup. For SQL Server 2017, this can back up
             directly to an Azure Storage account. It does not offer centralized 
-            management or long-term retention.
+            management or long-term retention
         -   Use the Azure Backup Service. A new feature of Azure Backup (in Preview at the time of writing) is native
             support to back up SQL databases running in Azure VMs. This is a low-cost, fully-managed zero-infrastructure service
-            that allows you to centrally manage your backups across all your databases.
+            that allows you to centrally manage your backups across all your databases
 
         It's important to note that Azure Backup Server and Azure Backup
         Service both use a Recovery
@@ -1056,20 +1048,20 @@ _Migration - HR application_
 1.  What options are available to assess the HR application for suitability
     to migrating to Azure, and to forecast Azure costs?
 
-    -   The Azure Migrate tool does not currently support assessment of physical infrastructure.
-    -   Third-party alternatives should be considered (see list at https://azure.microsoft.com/migration/assess/).
+    -   The Azure Migrate tool does not currently support assessment of physical infrastructure
+    -   Third-party alternatives should be considered (see list at https://azure.microsoft.com/migration/assess/)
     -   The [Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=7826)
-        can be used to help assess the existing application for migration.
+        can be used to help assess the existing application for migration
  
 
 1.  Which compute stack would you recommend for the web tier?
 
     -   Due to the lack of application installers, and the need to migrate quickly,
-        the web tier should be migrated to Azure VMs.
+        the web tier should be migrated to Azure VMs
     -   Using Azure App Service is unsuitable
         since it will require access to the application code and require more time.
         In addition, since this is an internal application, using Azure App Service
-        will require an App Service Environment, which will add significant additional cost.
+        will require an App Service Environment, which will add significant additional cost
         
 1.  Which data storage option and pricing tier would you recommend for the database?
 
@@ -1079,9 +1071,9 @@ _Migration - HR application_
         an unexpected compatibility issue arises.)
     -   Note that the vanilla Azure SQL Database service is unsuitable due to the
         requirement for T-SQL jobs scheduled using SQl Agent;
-        however this **is** supported on Azure SQL Database Managed Instances.
+        however this **is** supported on Azure SQL Database Managed Instances
 
-    ![The diagram shows the high-level architecture for the HR application, after migration to Azure. At the top, there is the incoming ExpressRoute connection from the on-premises network. This connects to the Internal Load Balancer, which in turn connects to the web servers. The web servers are enclosed in an availability set. The Internal Load Balancer and web servers are in the web tier. The web servers connect to the Azure SQL Database Managed Instance, which sits in the Database tier.](images/hrapp-azure.png "HR application solution design")
+        ![The diagram shows the high-level architecture for the HR application, after migration to Azure. At the top, there is the incoming ExpressRoute connection from the on-premises network. This connects to the Internal Load Balancer, which in turn connects to the web servers. The web servers are enclosed in an availability set. The Internal Load Balancer and web servers are in the web tier. The web servers connect to the Azure SQL Database Managed Instance, which sits in the Database tier.](images/hrapp-azure.png "HR application solution design")
     
 1.  What migration approach (including tools and steps) would you use to
     move the workload to Microsoft Azure? Keep in mind the physical server specifications
@@ -1102,11 +1094,11 @@ _Migration - HR application_
         -   Specify the destination servers in Azure
         -   CloudEndure will replicate the physical servers to Azure, at the block level,
             including any on-going changes. This occurs in the background, without disrupting
-            the running application.
+            the running application
         -   To test the migrated server, CloudEndure allows you to spin up new Azure
             servers for verification
         -   Once testing is complete, user traffic can be cut over to the migrated servers
-            similarly to the procurement system.
+            similarly to the procurement system
 
     -   Migrating the database tier     
 
@@ -1121,16 +1113,16 @@ _Migration - HR application_
 
         To summarize the migration steps:
         -   Complete pre-requisites, such as setting up the Virtual Network
-            ensuring the correct network connectivity, setting up logins, etc.
+            ensuring the correct network connectivity, setting up logins, etc
         -   Create an Azure Database Migration Service resource, specifying
-            the destination Virtual Network.
-        -   Create a Migration Project, and specify the source database.
+            the destination Virtual Network
+        -   Create a Migration Project, and specify the source database
         -   Specify the setting for the Azure SQL Database Managed Instance, 
-            which the migration process will provision for you.
+            which the migration process will provision for you
         -   Run the migration, specifying the storage location for backup files
-            and login details.   
+            and login details
         -   View the migration report, validate the migrated database, and update
-            the web tier to use the new database.
+            the web tier to use the new database
 
         If issues arise during migration, Microsoft have also published detailed documentation
         on how to [execute a manual migration](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate).
@@ -1154,13 +1146,13 @@ _Migration - HR application_
     -   Both Azure VMs running SQL Server and Azure SQL Database Managed Instances
         are deployed into the Azure Virtual Network hosting the application
         This gives full network isolation and supports Network Security Groups
-        to define what traffic is permitted.
+        to define what traffic is permitted
 
 1.  What additional benefits can your design bring?
 
     -   It may be possible to deploy Azure AD Application Proxy to make the application
         available to remote users, without having to open the application
-        to traffic from the Internet.
+        to traffic from the Internet
 
 ## Checklist of preferred objection handling
 
@@ -1212,7 +1204,7 @@ _Migration - HR application_
     machines in Hyper-V. With hybrid connectivity, SCOM could be used to
     manage the cloud-based deployment in the same way as they are today.
 
-1.  The sun never sets on Lucerne Publishing. Logistics and procurement
+1.  Logistics and procurement
     is one of our most critical applications. Any glitch will cause
     havoc in our ecosystem. The procurement system migration must be
     seamless, with no loss of data and no application downtime.
