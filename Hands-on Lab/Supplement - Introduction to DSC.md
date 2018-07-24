@@ -28,9 +28,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Azure Resource Manager before the hands-on lab setup guide](#azure-resource-manager-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
+- [Azure Resource Manager introduction to DSC](#azure-resource-manager-before-the-hands-on-lab-setup-guide)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
         - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
         - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
         - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
@@ -38,3 +37,20 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- /TOC -->
 
 # Azure Resource Manager introduction to DSC
+
+## Abstract and learning objectives
+
+In this hands-on lab, you will learn how to author a Desired State Configuration using Powershell DSC.  This lab will also cover applying DSC to a virtual machine using virtual machine extensions, how to verify DSC has been applied successfully, and how to troubleshoot DSC.
+
+## Exercise 1: Create Powershell Desired State Configuration
+
+Duration: 15 minutes
+
+In this exercise, you will create a powershell Desired State Configuration (DSC) and apply the configuration manually.
+
+### Task 1: Create Powershell DSC
+
+1. 
+
+
+
