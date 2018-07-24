@@ -28,11 +28,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Azure Resource Manager introduction to DSC](#azure-resource-manager-before-the-hands-on-lab-setup-guide)
+- [Azure Resource Manager introduction to DSC](#azure-resource-manager-introduction-to-DSC)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-        - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
-        - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
-        - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
+    - [Exercise 1: Create Powershell Desired State Configuration](#Exercise-1-create-powershell-desired-state-configuration)
+        - [Task 1: Create Powershell DSC](#task-1-create-powershell-dsc)
+
 
 <!-- /TOC -->
 
