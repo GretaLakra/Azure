@@ -31,7 +31,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Azure Resource Manager introduction to DSC](#azure-resource-manager-introduction-to-DSC)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Exercise 1: Create Powershell Desired State Configuration](#Exercise-1-create-powershell-desired-state-configuration)
-        - [Task 1: Create Powershell DSC](#task-1-create-powershell-dsc)
+        - [Task 1: Write an HTML file](#task-1-write-an-html-file)
+        - [Task 2: Write the configuration](#task-2-write-the-configuration)
 
 
 <!-- /TOC -->
@@ -48,9 +49,52 @@ Duration: 15 minutes
 
 In this exercise, you will create a powershell Desired State Configuration (DSC) and apply the configuration manually.
 
-### Task 1: Create Powershell DSC
+### Task 1: Write an HTML file
 
-1. 
+1. Create the HTML file that we will use as the website content:
+
+In your root folder, create a folder named `test`.
+
+In a text editor, type the following text:
+
+```html
+<head></head>
+<body>
+<p>Hello World!</p>
+</body>
+```
+
+Save this as `index.htm` in the `test` folder you created earlier.
+
+### Task 2: Write the configuration
+
+1. In the VM created in the 'Before hands on lab...' open PowerShell ISE and type the following:
+```powershell
+Configuration WebsiteTest {
+
+    # Import the module that contains the resources we're using.
+    Import-DscResource -ModuleName PsDesiredStateConfiguration
+
+    # The Node statement specifies which targets this configuration will be applied to.
+    Node 'localhost' {
+
+        # The first resource block ensures that the Web-Server (IIS) feature is enabled.
+        WindowsFeature WebServer {
+            Ensure = "Present"
+            Name   = "Web-Server"
+        }
+
+        # The second resource block ensures that the website content copied to the website root folder.
+        File WebsiteContent {
+            Ensure = 'Present'
+            SourcePath = 'c:\test\index.htm'
+            DestinationPath = 'c:\inetpub\wwwroot'
+        }
+    }
+}
+```
+
+Save the file as `WebsiteTest.ps1`.
 
 
 
