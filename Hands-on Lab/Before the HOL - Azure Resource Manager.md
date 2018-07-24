@@ -94,7 +94,8 @@ files for the lab exercise.
 6.  Choose the **DS1\_V2 Standard** instance size on the Size blade
 
 7.  On the Settings blade, under **Network Security Group** select **RDP (3389)**
-![Screenshot of NSG](images/setup/nsg.png)
+
+	![Screenshot of NSG](images/Setup/nsg.png "Configure NSG ")
 
 8.  Accept the remaining default values on the Settings blade, and click
     **OK**. On the Summary page, click **OK**. The deployment should
