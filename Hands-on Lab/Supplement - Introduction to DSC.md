@@ -51,11 +51,9 @@ In this exercise, you will create a powershell Desired State Configuration (DSC)
 
 ### Task 1: Write an HTML file
 
-1. Create the HTML file that we will use as the website content:
+1. In your root folder, create a folder named `test`.
 
-In your root folder, create a folder named `test`.
-
-In a text editor, type the following text:
+2. In a text editor, type the following text:
 
 ```html
 <head></head>
@@ -64,11 +62,12 @@ In a text editor, type the following text:
 </body>
 ```
 
-Save this as `index.htm` in the `test` folder you created earlier.
+3. Save this as `index.htm` in the `test` folder you created earlier.
 
 ### Task 2: Write the configuration
 
 1. In the VM created in the 'Before hands on lab...' open PowerShell ISE and type the following:
+
 ```powershell
 Configuration WebsiteTest {
 
@@ -94,7 +93,45 @@ Configuration WebsiteTest {
 }
 ```
 
-Save the file as `WebsiteTest.ps1`.
+2. Save the file as `WebsiteTest.ps1`.
 
+### Task 3: Compile the configuration
+
+1. To compile the configuration, run WebsiteTest.ps1.  This places the function in a global scope
+```powershell
+PS C:\ConfigurationTest>. .\WebsiteTest.ps1
+```
+2. Next, run the function by entering it's name.  The output will be a MOF file
+```powershell
+PS C:\ConfigurationTest>WebsiteTest
+Directory: C:\ConfigurationTest\WebsiteTest
+Mode                LastWriteTime         Length Name                                                              
+----                -------------         ------ ----                                                              
+-a----        7/24/2018  11:58 PM           2756 localhost.mof  
+```
+
+### Task 4: Apply the configuration and verify status
+
+1. Apply the configuraiton by running the following command:
+```powershell
+PS C:\ConfigurationTest> Start-DscConfiguration .\WebsiteTest
+```
+2. It will take a few minutes for the configuration to apply.  Get the status of the configuration by running the following command.
+```powershell
+Get-DscConfigurationStatus
+```
+3. Once the status shows 'Success', browse to http://locahost 
+
+4. Alternatively, DSC status can be retrieved by examining the Windows Event Viewer. DSC events are in: Applications and Services Logs/Microsoft/Windows/Desired State Configuration.
+
+### Task 5: Cleanup
+The local DSC configuration will be removed so that it can be applied through Azure VM extensions in Exercise 2.
+1. In PowerShell, run the following command:
+```powershell
+Remove-DscConfigurationDocument -Stage Current
+```
+2. The previous step removed the .mof document.  The individual server configuration must still be reverted.  To do this, run the following command:
+```powershell
+Uninstall-WindowsFeature Web-Server
 
 
