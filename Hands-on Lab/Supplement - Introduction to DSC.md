@@ -28,12 +28,12 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Azure Resource Manager introduction to DSC](#azure-resource-manager-introduction-to-DSC)
+- [Azure Resource Manager introduction to DSC](#azure-resource-manager-introduction-to-dsc)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Exercise 1: Create Powershell Desired State Configuration](#Exercise-1-create-powershell-desired-state-configuration)
+    - [Exercise 1: Create Powershell Desired State Configuration](#exercise-1-create-powershell-desired-state-configuration)
         - [Task 1: Write an HTML file](#task-1-write-an-html-file)
         - [Task 2: Write the configuration](#task-2-write-the-configuration)
-    - [Exercise 2: Deploy DSC using Azure Virtual Machine extensions](#Exercise-2-deploy-dsc-using-azure-virtual-machine-extensions)
+    - [Exercise 2: Deploy DSC using Azure Virtual Machine extensions](#exercise-2-deploy-dsc-using-azure-virtual-machine-extensions)
 
 
 <!-- /TOC -->
@@ -143,9 +143,50 @@ Duration: 10 minutes
 
 In this exercise, you will apply the DSC from Exercise 1 using the Azure VM extension for DSC
 
-### Task 1: Add and configure the VM extenion
+### Task 1: Package the DSC configuration script
+The VM extension for PowerShell DSC requires that the configuration script be provided in a .zip file.
+1. Open Powershell, navigate to the C:\ConfigurationTest folder and run the following command:
+
+```powershell
+PS C:\ConfigurationTest>compress-archive WebsiteTest.ps1 -DestinationPath WebsiteTest.zip
+```
+
+### Task 2: Add and configure the VM extenion
 
 1. Log into the portal.azure.com
 
-2. 
+2. Under Resource Groups, click on **OPSLABRG**
+
+3. Within the **OPSLABRG** Resource Group, click on the LABVM
+
+4. In the Virtual Machine blade, under settings, click on Extensions
+ ![VM Extenions](images/DSC/extensions.png "VM Extensions")
+
+ 5. In the Extensions blade, click on + Add
+ ![VM Extenions](images/DSC/addextension.png "Add VM Extension")
+
+ 6. In the New Resource blade, click on PowerShell Desired State Configuration
+ ![VM Extenions](images/DSC/powershelldscextension.png "PowerShell DSC extension")
+
+ 7. In the blade that opens, click Create 
+
+ 8. In the Install extension blade that opens enter the following information and click OK:
+
+    -   Configuration Modules or Script: Select the ZIP file created in Task 1: **WebsiteTest.zip**
+
+    -   Module-qualified Name of Configuration: **WebsiteTest.ps1\WebsiteTest**
+
+    -   Version: **2.76**
+
+    -   Auto Upgrade Minor Version: **Yes**
+
+    ![VM DSC Extension](images/DSC/powershelldscextensionconfig.png)
+
+9. It will take 2-3 minutes for the deployment to complete successfully and for the extension to show as **Provisioning succeeded**
+![DSC Extension Status](images/DSC/provisioningstatus.png)
+
+10. Once provisioning is complete, verify by running the PowerShell command below and by browsing to http://localhost 
+```powershell
+PS C:\ConfigurationTest> Get-DscConfigurationStatus
+```
 
