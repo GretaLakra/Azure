@@ -33,6 +33,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Exercise 1: Create Powershell Desired State Configuration](#Exercise-1-create-powershell-desired-state-configuration)
         - [Task 1: Write an HTML file](#task-1-write-an-html-file)
         - [Task 2: Write the configuration](#task-2-write-the-configuration)
+    - [Exercise 2: Deploy DSC using Azure Virtual Machine extensions](#Exercise-2-deploy-dsc-using-azure-virtual-machine-extensions)
 
 
 <!-- /TOC -->
@@ -45,7 +46,7 @@ In this hands-on lab, you will learn how to author a Desired State Configuration
 
 ## Exercise 1: Create Powershell Desired State Configuration
 
-Duration: 15 minutes
+Duration: 10 minutes
 
 In this exercise, you will create a powershell Desired State Configuration (DSC) and apply the configuration manually.
 
@@ -133,5 +134,18 @@ Remove-DscConfigurationDocument -Stage Current
 2. The previous step removed the .mof document.  The individual server configuration must still be reverted.  To do this, run the following command:
 ```powershell
 Uninstall-WindowsFeature Web-Server
+```
+3. Restart the server
 
+## Exercise 2: Deploy DSC using Azure Virtual Machine extensions
+
+Duration: 10 minutes
+
+In this exercise, you will apply the DSC from Exercise 1 using the Azure VM extension for DSC
+
+### Task 1: Add and configure the VM extenion
+
+1. Log into the portal.azure.com
+
+2. 
 
