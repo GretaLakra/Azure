@@ -33,7 +33,12 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Exercise 1: Create Powershell Desired State Configuration](#exercise-1-create-powershell-desired-state-configuration)
         - [Task 1: Write an HTML file](#task-1-write-an-html-file)
         - [Task 2: Write the configuration](#task-2-write-the-configuration)
+        - [Task 3: Compile the configuration](#task-3-compile-the-configuration)
+        - [Task 4: Apply the configuration](#task-4-apply-the-configuration-and-verify-status)
+        - [Task 5: Cleanup](#task-5-cleanup)
     - [Exercise 2: Deploy DSC using Azure Virtual Machine extensions](#exercise-2-deploy-dsc-using-azure-virtual-machine-extensions)
+        - [Task 1: Package the DSC configuration script](#task-1-package-the-dsc-configuration-script)
+        - [Task 2: Add and configure the vm extension](#task-2-add-and-configure-the-vm-extenion)
 
 
 <!-- /TOC -->
