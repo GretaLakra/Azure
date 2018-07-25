@@ -161,15 +161,15 @@ PS C:\ConfigurationTest>compress-archive WebsiteTest.ps1 -DestinationPath Websit
 
 4. In the Virtual Machine blade, under settings, click on Extensions
 
- ![VM Extenions](images/DSC/extensions.png "VM Extensions")
+    ![VM Extenions](images/DSC/extensions.png "VM Extensions")
 
  5. In the Extensions blade, click on + Add
 
- ![VM Extenions](images/DSC/addextension.png "Add VM Extension")
+     ![VM Extenions](images/DSC/addextension.png "Add VM Extension")
 
  6. In the New Resource blade, click on PowerShell Desired State Configuration
-
- ![VM Extenions](images/DSC/powershelldscextension.png "PowerShell DSC extension")
+ 
+     ![VM Extenions](images/DSC/powershelldscextension.png "PowerShell DSC extension")
 
  7. In the blade that opens, click Create 
 
