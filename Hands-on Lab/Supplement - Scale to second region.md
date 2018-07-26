@@ -908,6 +908,8 @@ the roles.
     the Automation Account properties. Wait to proceed until both nodes show
     as compliant.
 
+    >Note: Another way to monitor the status of your deployment is in **Deployments** located under Settings in the **ARMHackathon Resource Group**
+
 7.  Launch the **Azure Management Portal** <http://portal.azure.com>,and navigate to the resource group you deployed to. Click the **virtual machine** for the web server. Then, click the **Public IP**.
 
     ![In the Resource group pane, the Public IP address (52.184.226.46) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image77.png "Resource group pane")
@@ -1079,7 +1081,14 @@ feature.
       "lbBEAddressPool": "loadBalancerBEAddressPool",
       "lbFEIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/',variables('lbFEName'))]",
       "lbBEAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('lbBEAddressPool'))]",
-      "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]"
+      "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]",
+      "storageAccountPrefix": [
+       "a",
+       "g",
+       "m",
+       "s",
+       "y"
+      ]
 ```
 
 2.  Add the following parameters to the end of the **parameters**
@@ -1091,10 +1100,106 @@ feature.
        "metadata": {
         "description": "Number of VM instances"
        }
+      },
+      "newStorageAccountSuffix": {
+       "type": "string",
+       "metadata": {
+        "description": "The Prefix for the names of the new storage accounts created"
+       }
       }
     ```
 
     ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
+
+3.  Add a new storage account resource using the copy function by
+        pasting the following code as the first resource in the list
+
+    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
+    ```
+    {
+     "type": "Microsoft.Storage/storageAccounts",
+     "name": "[concat(variables('StorageAccountPrefix')[copyIndex()],parameters('newStorageAccountSuffix'))]",
+     "apiVersion": "2015-06-15",
+     "copy": {
+      "name": "storageLoop",
+      "count": 5
+     },
+     "location": "[resourceGroup().location]",
+     "properties": {
+      "accountType": "[parameters('hackStorageType')]"
+     }
+    },
+    ```
+
+    ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
+
+4.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list
+
+    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
+    ```
+    {
+     "apiVersion": "2016-03-30",
+     "name": "[variables('lbName')]",
+     "type": "Microsoft.Network/loadBalancers",
+     "location": "[resourceGroup().location]",
+     "dependsOn": [
+      "[concat('Microsoft.Network/publicIPAddresses/',variables('hackathonPublicIPName'))]"
+     ],
+     "properties": {
+      "frontendIPConfigurations": [
+       {
+        "name": "[variables('lbFEName')]",
+        "properties": {
+         "publicIPAddress": {
+          "id": "[variables('publicIPAddressID')]"
+         }
+        }
+       }
+      ],
+      "backendAddressPools": [
+       {
+        "name": "[variables('lbBEAddressPool')]"
+       }
+      ],
+      "loadBalancingRules": [
+       {
+        "name": "weblb",
+        "properties": {
+         "frontendIPConfiguration": {
+          "id": "[variables('lbFEIPConfigID')]"
+         },
+         "backendAddressPool": {
+          "id": "[variables('lbBEAddressPoolID')]"
+         },
+         "probe": {
+          "id": "[variables('lbWebProbeID')]"
+         },
+         "protocol": "Tcp",
+         "frontendPort": 80,
+         "backendPort": 80,
+         "enableFloatingIP": false
+        }
+       }
+      ],
+      "probes": [
+       {
+        "name": "[variables('lbWebProbeName')]",
+        "properties": {
+         "protocol": "Http",
+         "port": 80,
+         "intervalInSeconds": 15,
+         "numberOfProbes": 5,
+         "requestPath": "/"
+        }
+       }
+      ]
+     }
+    },
+    ```
+
+    > Note: This code will create five storage accounts. The virtual machine
+    scale set will distribute the virtual machine disks across the storage
+    accounts to ensure the VMs do not run out of IO capacity.
 
 5.  Add a load balancer resource by pasting the following code as the first resource in the list.
 
@@ -1174,6 +1279,11 @@ feature.
         "vmsstag1": "Myriad"
        },
        "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/a',parameters('newStorageAccountSuffix'))]",
+        "[concat('Microsoft.Storage/storageAccounts/g',parameters('newStorageAccountSuffix'))]",
+        "[concat('Microsoft.Storage/storageAccounts/m',parameters('newStorageAccountSuffix'))]",
+        "[concat('Microsoft.Storage/storageAccounts/s',parameters('newStorageAccountSuffix'))]",
+        "[concat('Microsoft.Storage/storageAccounts/y',parameters('newStorageAccountSuffix'))]",
         "[concat('Microsoft.Network/loadBalancers/',variables('lbName'))]",
         "[concat('Microsoft.Network/virtualNetworks/','hackathonVnet')]"
        ],
@@ -1189,6 +1299,14 @@ feature.
         "virtualMachineProfile": {
          "storageProfile": {
           "osDisk": {
+           "vhdContainers": [
+            "[concat('https://a',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
+            "[concat('https://g',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
+            "[concat('https://m',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
+            "[concat('https://s',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
+            "[concat('https://y',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]"
+           ],
+           "name": "vmssosdisk",
            "caching": "ReadOnly",
            "createOption": "FromImage"
           },
