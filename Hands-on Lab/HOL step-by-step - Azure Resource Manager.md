@@ -1071,15 +1071,15 @@ feature.
 ![In the code window, an arrow points to a comma that precedes the code following this graphic.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image89.png "code window")
 ```
     "vmSSName": "webset",
-      "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('hackathonPublicIPName'))]",
-      "lbName": "loadBalancer1",
-      "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
-      "lbFEName": "loadBalancerFrontEnd",
-      "lbWebProbeName": "loadBalancerWebProbe",
-      "lbBEAddressPool": "loadBalancerBEAddressPool",
-      "lbFEIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/',variables('lbFEName'))]",
-      "lbBEAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('lbBEAddressPool'))]",
-      "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]"
+    "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('hackathonPublicIPName'))]",
+    "lbName": "loadBalancer1",
+    "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
+    "lbFEName": "loadBalancerFrontEnd",
+    "lbWebProbeName": "loadBalancerWebProbe",
+    "lbBEAddressPool": "loadBalancerBEAddressPool",
+    "lbFEIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/',variables('lbFEName'))]",
+    "lbBEAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('lbBEAddressPool'))]",
+    "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]"
 ```
 
 2.  Add the following parameters to the end of the **parameters**
@@ -1167,7 +1167,7 @@ feature.
     ```
     {
        "type": "Microsoft.Compute/virtualMachineScaleSets",
-       "apiVersion": "2015-06-15",
+       "apiVersion": "2017-03-30",
        "name": "[variables('vmSSName')]",
        "location": "[resourceGroup().location]",
        "tags": {
