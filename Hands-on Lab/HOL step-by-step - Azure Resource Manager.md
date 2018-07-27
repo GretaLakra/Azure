@@ -1096,7 +1096,7 @@ feature.
 
     ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
 
-5.  Add a load balancer resource by pasting the following code as the first resource in the list.
+3.  Add a load balancer resource by pasting the following code as the first resource in the list.
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[{](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "code")
 
@@ -1162,7 +1162,7 @@ feature.
         },
     ```
 
-6.  Add the virtual machine scale set to the **resources** section using
+4.  Add the virtual machine scale set to the **resources** section using
     the following configuration:
     ```
     {
@@ -1316,40 +1316,40 @@ feature.
     will distribute the VM disks across the previously created storage
     accounts.
 
-7.  Delete the existing **hackathonVM** and the **hackathonVMNic**
+5.  Delete the existing **hackathonVM** and the **hackathonVMNic**
     resources by right-clicking each resource and clicking **Delete**
 
     ![Screenshot of the two hackathon resource line items.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image92.png "resources line items")
 
 This VM and NIC will be replaced by the VMs in the scale set.
 
-8.  Delete the existing deployment (to save on core quota) by opening
+6.  Delete the existing deployment (to save on core quota) by opening
     the Azure portal (portal.azure.com) in your browser
 
-9.  Click **Resource groups**
+7.  Click **Resource groups**
 
     ![Screenshot of the Resource groups button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image93.png "Resource groups button")
 
-10.  Click the **ARMHackathon** resource group (or whatever you named
+8.  Click the **ARMHackathon** resource group (or whatever you named
     your deployment)
 
         ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
 
-11. Click **Delete**, and then, confirm by typing in the name of the resource group
+9. Click **Delete**, and then, confirm by typing in the name of the resource group
 
     ![Screenshot of the Delete button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image95.png "Delete button")
 
     > Note: Wait until the Resource Group has been deleted prior to moving onto the next step.
 
-12. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
+10. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
 
     ![In the Resource group field, ARMHackathonScaleSet (West US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
 
-13. Choose any of the template parameters files, and click **Edit Parameters**
+11. Choose any of the template parameters files, and click **Edit Parameters**
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
-14. Provide a unique value for the **hackathonPublicIPDnsName** and **newStorageAccountSuffix** parameters. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
+12. Provide a unique value for the **hackathonPublicIPDnsName** and **newStorageAccountSuffix** parameters. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
 
     ![In the Edit Parameters dialog box, the hackathonPublicIPDnsName, instanceCount, and newStorageAccountSuffix parameters are circled. The checkbox is selected and circled for Save passwords as plain text in the parameters file, and the Save buton is circled as well.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image98.png "Edit Parameters dialog box")
 
@@ -1359,11 +1359,11 @@ This VM and NIC will be replaced by the VMs in the scale set.
     monitor the deployment by clicking the link under the Last Deployment
     lab on the essentials pane.
 
-15. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
+13. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
 
     ![Screenshot of the HackathonPublicIP resource.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image99.png "HackathonPublicIP resource")
 
-16. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
+14. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image100.png "Cloud Shop webpage")
 
