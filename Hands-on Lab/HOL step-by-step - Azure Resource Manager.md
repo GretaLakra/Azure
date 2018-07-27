@@ -1343,13 +1343,13 @@ This VM and NIC will be replaced by the VMs in the scale set.
 
 10. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
 
-    ![In the Resource group field, ARMHackathonScaleSet (West US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
+    ![In the Resource group field, ARMHackathonScaleSet (East US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
 
 11. Choose any of the template parameters files, and click **Edit Parameters**
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
-12. Provide a unique value for the **hackathonPublicIPDnsName** and **newStorageAccountSuffix** parameters. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
+12. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
 
     ![In the Edit Parameters dialog box, the hackathonPublicIPDnsName, instanceCount, and newStorageAccountSuffix parameters are circled. The checkbox is selected and circled for Save passwords as plain text in the parameters file, and the Save buton is circled as well.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image98.png "Edit Parameters dialog box")
 
