@@ -1370,6 +1370,7 @@ This VM and NIC will be replaced by the VMs in the scale set.
 ## After the hands-on lab 
 
 Duration: 10 minutes
+    > Note: Do not complete these steps if you plan on doing the supplemental exercises.
 
 ### Task 1: Delete the resource groups created
 
