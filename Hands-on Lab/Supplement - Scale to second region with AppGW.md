@@ -199,14 +199,18 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 1. In the JSON outline window, click on the VMSS object
     Update the \"dependsOn\" section from:
 ![Add the Application Gateway subnet.](images/Scale-to-second-region/vmssdependson.png "Add AppGW subnet")
-    To:
+
+ To:
+
 ![Add the Application Gateway subnet.](images/Scale-to-second-region/vmssdependsonafter.png "Add AppGW subnet")
 
 
 2. Scroll down to the networkProfile section.
     Replace \"loadBalancerBAckendAddressPools\" from
 ![Add the Application Gateway subnet.](images/Scale-to-second-region/vmsslbbepool.png "Add AppGW subnet")
-    To:
+
+ To:
+
 ![Add the Application Gateway subnet.](images/Scale-to-second-region/vmssappgwbepool.png "Add AppGW subnet")
 ```
     "ApplicationGatewayBackendAddressPools": [
@@ -218,17 +222,17 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 
 ### Task 4:
 
-12. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSetRegion2**.
+1. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSetRegion2**.
 
     ![In the Resource group field, ARMHackathonScaleSet (West US) displays.](images/Scale-to-second-region/resourcegroupname.png "Resource group field")
 
     > Note: Be sure to choose a different region for the location field
 
-13. Choose any of the template parameters files, and click **Edit Parameters**
+2. Choose any of the template parameters files, and click **Edit Parameters**
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
-14. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
+3. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
     > Note: The **hackathonPublicIPDnsName** must be changed since it's already in use in the first deployment
 
     ![In the Edit Parameters dialog box, the hackathonPublicIPDnsName, instanceCount, and newStorageAccountSuffix parameters are circled. The checkbox is selected and circled for Save passwords as plain text in the parameters file, and the Save buton is circled as well.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image98.png "Edit Parameters dialog box")
@@ -239,11 +243,11 @@ In this exercise, you will configure the template to scale out to a 2nd region b
     monitor the deployment by clicking the link under the Last Deployment
     lab on the essentials pane.
 
-15. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
+4. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
 
     ![Screenshot of the HackathonPublicIP resource.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image99.png "HackathonPublicIP resource")
 
-16. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
+5. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image100.png "Cloud Shop webpage")
 
