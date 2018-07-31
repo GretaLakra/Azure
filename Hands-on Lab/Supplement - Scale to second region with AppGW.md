@@ -259,12 +259,11 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 ![New Resource](images/Scale-to-second-region/newresource.png "New Resource")
 
   Click on Traffic Manager Profile
-  
+
 ![New Resource](images/Scale-to-second-region/searchforTM.png "New Resource")
 
   In the windows that opens, click on Create
       
-
 2. Create the Traffic Manager Profile with the following configuration:
   - Name: must be unique
   - Routing Method: Weighted
