@@ -289,6 +289,7 @@ In this exercise, you will configure the template to scale out to a 2nd region b
    7. Once the endpoints are added, click refresh until both endpoints show as Online
 
     ![New Resource](images/Scale-to-second-region/tmstatus.png "New Resource")
+    
 
     8. Test that TM works by going to the Traffic Manager endpoint from 2 different workstations
 
