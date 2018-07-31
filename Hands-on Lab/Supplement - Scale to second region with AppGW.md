@@ -252,3 +252,40 @@ In this exercise, you will configure the template to scale out to a 2nd region b
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image100.png "Cloud Shop webpage")
 
 
+##Exercise 2: Create Traffic Manager
+
+1. In the Azure portal, click on **Create New Resource** and search for **Traffic Manager**
+![New Resource](images/Scale-to-second-region/newresource.png "New Resource")
+  Click on Traffic Manager Profile
+  Click on Create
+      
+
+2. Create the Traffic Manager Profile with the following configuration:
+  - Name: must be unique
+  - Routing Method: Weighted
+  - Resource Group: (Create New) TrafficManager
+  - Resource Group Location: East US
+
+ ![New Resource](images/Scale-to-second-region/trafficmgrnew.png "New Resource")
+
+ 3. Go to the Resource Group where Traffic Manager was created and click on the Traffic Manager resource
+
+ 4. In the Traffic Manager configuration, click on Endpoints
+
+  ![New Resource](images/Scale-to-second-region/endpoints.png "New Resource")
+
+  5. Click on Add
+
+ ![New Resource](images/Scale-to-second-region/add.png "New Resource")
+
+  6. Fill in the New Endpoint form with the appropriate information.  Do the same for the both endpoints / application instances.
+
+   ![New Resource](images/Scale-to-second-region/tmendpoints.png "New Resource")
+
+   7. Once the endpoints are added, click refresh until both endpoints show as Online
+
+    ![New Resource](images/Scale-to-second-region/tmstatus.png "New Resource")
+
+    8. Test that TM works by going to the Traffic Manager endpoint from 2 different workstations
+    
+
