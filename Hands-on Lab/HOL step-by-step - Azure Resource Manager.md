@@ -13,7 +13,6 @@ June 2018
 </div>
 
 
-
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
@@ -118,11 +117,10 @@ resources of your ARM template.
 
 1.  The CloudShopSQL DSC configuration requires a credential object to
     access the local administrator account on the virtual machine.
-    Within the Azure Automation DSC configuration click **Credentials**
+    Within the Azure Automation Account click **Credentials**
     in the **SHARED RESOURCES** section.
 
-    ![In the Shared Resources section, Credentials is
-    circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image21.png "Shared Resources section")
+    ![In the Shared Resources section, Credentials is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-10-10.png "Shared Resources section")
 
 2.  Click the **Add a credential** button
 
@@ -145,20 +143,23 @@ name directly.
 
 ### Task 3: Upload DSC Configurations into Automation Account
 
-1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **DSC Configurations** menu
+1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **State configuration (DSC)** menu.
 
-    ![On the Automation account page, in the left pane, DSC configuration is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image18.png "Automation account page")
+    ![On the Automation account page, in the left pane, State configuration \(DSC\) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-17-53.png "Automation account page")
 
-2.  Click **+Add a configuration** to upload
-    **C:\\Hackathon\\CloudShopSQL.ps1** and **C:\\Hackathon\\CloudShopWeb.ps1**
-    
-    [In the DSC Configurations pane, the Add a configuration button is circled. In the Import pane, the Configuration file field is set to CloudShopWeb.ps1, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image19.png "DSC / Import Configurations panes")
+2.  Select the **Configurations** tab.
 
-3.  After importing the .ps1 files, click the **CloudShopSQL** DSC
+    ![On the State configuration blade, the Configurations tab is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-21-50.png "Configurations tab")
+
+3.  Click **+Add** button to upload **C:\\Hackathon\\CloudShopSQL.ps1** and **C:\\Hackathon\\CloudShopWeb.ps1**.
+
+    ![In the Import configuration pane, CloudShopSQL.ps1 is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-36-34.png "Import configuration pane")   ![In the Import configuration pane, CloudShopWeb.ps1 is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-41-04.png "Import configuration pane")
+
+4.  After importing the .ps1 files, click the **CloudShopSQL** DSC
     Configuration and click **Compile** on the toolbar (click **Yes** on
     the Start Compilation Job blade). Do the same for **CloudShopWeb**.
     
-    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations / CloudShopSQL panes")
+    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations CloudShopSQL panes")
 
 
 ## Exercise 2: Define the network foundation
@@ -271,7 +272,7 @@ using Visual Studio and deploy it to your Azure account.
 
     > Note: If the resource group was created but the virtual network was not, redeploy the template once more from Visual Studio.
 
-You should see an indication of a successful deployment in the **Output** screen.
+    You should see an indication of a successful deployment in the **Output** screen.
     ![In the Output window, in the output for ARMHackathon, ProvisioningState Succeeded is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image38.png "Output window")
 
 20. To verify the new network was created, within the Azure portal,
@@ -297,7 +298,7 @@ the roles.
 
 2.  Add a new **Storage Account** resource to the template named ***hackstorage***
 
-    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Ensure the name specified is 1 characters or less in length.
+    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Storage account names must not exceed 24 characters. Ensure the name specified is 11 characters or less in length.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
@@ -797,11 +798,9 @@ the roles.
     ![In the In the Manage Keys blade, the copy button for the URL field is called out with an arrow.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image72.png "Manage Keys blade")
 
 4.  You will also need the name of your Node Configurations you uploaded
-    using the portal during Exercise 1. To find these, click the DSC
-    Configuration tile on the Azure Automation Blade. Then, click the
-    name of each to find the Node Name.
+    using the portal during Exercise 1. To find these, click the State configuration (DSC) tile on the Azure Automation Blade. Select the Configurations tab, click the name of each configuration to find the Node Name.
 
-    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. Under CloudShopSQL, under Node Configuration, under Name, CloudShopWeb.WebServer is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image73.png "DSC Configurations window")
+    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. Under CloudShopSQL, under Node Configuration, under Name, CloudShopSQL.SQLSERVER is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-13-47-32.png "DSC Configurations window")
 
 5.  Within Visual Studio, create a new deployment (*specify the same
     Resource group as before ARMHackathon)*
@@ -881,10 +880,6 @@ the roles.
 8.  Copy the **IP address**, and navigate to it in the browser
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image78.png "Cloud Shop webpage")
-
-9.  You should also verify your VMs are registered as DSC Nodes in your Automation Account. In the Azure portal, click **Resource groups \>Automation\_RG \> Automation-Acct**. Then, click the **DSC Nodes** tile.
-
-    ![In the Azure Portal, in the left pane, Resource groups is called out (1). In the next pane, under Name, Automation\_RG is called out (2). In the Resource group pane, under Essentials, under Name, Automation-Acct is called out (3). In the Automation Account pane, DSC Nodes is called out (4), and 2 (nodes) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image79.png "Azure Portal")
 
 ## Exercise 4: Lock down the environment 
 
@@ -1091,72 +1086,6 @@ feature.
      "location": "[resourceGroup().location]",
      "properties": {
       "accountType": "[parameters('hackStorageType')]"
-     }
-    },
-    ```
-
-    ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
-
-4.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list
-
-    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
-    ```
-    {
-     "apiVersion": "2016-03-30",
-     "name": "[variables('lbName')]",
-     "type": "Microsoft.Network/loadBalancers",
-     "location": "[resourceGroup().location]",
-     "dependsOn": [
-      "[concat('Microsoft.Network/publicIPAddresses/',variables('hackathonPublicIPName'))]"
-     ],
-     "properties": {
-      "frontendIPConfigurations": [
-       {
-        "name": "[variables('lbFEName')]",
-        "properties": {
-         "publicIPAddress": {
-          "id": "[variables('publicIPAddressID')]"
-         }
-        }
-       }
-      ],
-      "backendAddressPools": [
-       {
-        "name": "[variables('lbBEAddressPool')]"
-       }
-      ],
-      "loadBalancingRules": [
-       {
-        "name": "weblb",
-        "properties": {
-         "frontendIPConfiguration": {
-          "id": "[variables('lbFEIPConfigID')]"
-         },
-         "backendAddressPool": {
-          "id": "[variables('lbBEAddressPoolID')]"
-         },
-         "probe": {
-          "id": "[variables('lbWebProbeID')]"
-         },
-         "protocol": "Tcp",
-         "frontendPort": 80,
-         "backendPort": 80,
-         "enableFloatingIP": false
-        }
-       }
-      ],
-      "probes": [
-       {
-        "name": "[variables('lbWebProbeName')]",
-        "properties": {
-         "protocol": "Http",
-         "port": 80,
-         "intervalInSeconds": 15,
-         "numberOfProbes": 5,
-         "requestPath": "/"
-        }
-       }
-      ]
      }
     },
     ```
