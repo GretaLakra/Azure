@@ -65,13 +65,13 @@ files for the lab exercise.
     organization account or just a Microsoft Account.
 
 2.  Click on +NEW, and in the search box, type in Visual Studio
-    Community 2017 on Windows Server 2016 (x64), and press enter. Click
+    Community 2017, and press enter. Click
     the Visual Studio Community 2017 image running on Windows Server
     2016 and with the latest update.
 
 3.  In the returned search results, click the image name
 
-    ![In the Everything blade, Visual Studio Community 2017 is typed in the Search field. Under Name, Visual Studio Community on Windows Server 2016 is circled.](images/Setup/image3.png "Everything blade")
+    ![In the Everything blade, Visual Studio Community 2017 is typed in the Search field. Under Name, Visual Studio Community on Windows Server 2016 is circled.](images/Setup/2018-08-15-10-04-24.png "Everything blade")
 
 4.  In the Marketplace solution blade, click **Create**
 
@@ -79,7 +79,7 @@ files for the lab exercise.
 
     -   Name: **LABVM**
 
-    -   VM disk type: **SSD**
+    -   VM disk type: **Premium SSD**
 
     -   User name: **demouser**
 
@@ -91,15 +91,15 @@ files for the lab exercise.
 
     -   Location: **Choose the closest Azure region to you**
 
-6.  Choose the **DS1\_V2 Standard** instance size on the Size blade
+6.  Choose the **DS1\_V2 Standard** instance size on the Size blade.
 
-7.  On the Settings blade, under **Network Security Group** select **RDP (3389)**
 
-	![Screenshot of NSG](images/Setup/nsg.png "Configure NSG ")
+7.  On the Settings blade, choose **RDP (3389)** on the Select public inbound ports dropdown.
+
+    ![In the Select public inbound ports dropdown, RDP is selected.](images/Setup/2018-08-15-10-09-55.png "Select public inbound ports")
 
 8.  Accept the remaining default values on the Settings blade, and click
-    **OK**. On the Summary page, click **OK**. The deployment should
-    begin provisioning. It may take more than 10 minutes for the virtual
+    **OK**. On the Summary page, click **Create**. The deployment should  begin provisioning. It may take more than 10 minutes for the virtual
     machine to complete provisioning.
 
     ![Screenshot of the Deploying Visual Studio Community 2017 icon.](images/Setup/image4.png "Deploying Visual Studio Community 2017 icon")
@@ -149,21 +149,33 @@ files for the lab exercise.
 
     ![In the Internet Explorer 11 Setup window, the checkbox is selected for \"Use recommended security, privacy, and compatibility settings. At the bottom, the OK button is circled.](images/Setup/image12.png "Internet Explorer 11 Setup window")
 
-10. If prompted, click **Don't show this again** regarding protected mode
+10. If prompted, click **Don't show this again** regarding protected mode.
 
-11. To download the exercise files for the lab, paste this URL into the browser:
+11. Open Internet options by clicking the **Tools** icon in the upper right corner, then selecting **Internet options**.
+
+    ![In Internet Explorer, the tools icon is highlighted and Internet options is highlighted in the dropdown.](images/Setup/2018-08-15-11-46-27.png "Internet Explorer tools menu")
+
+12. Switch to the **Security** tab, verify that **Internet** is selected, then click the **Custom level...** button.
+
+    ![In Internet options, the security tab is selected, the Internet zone is highlighted, and the custom level button is highlighted.](images/Setup/2018-08-15-11-57-11.png "Internet Options Security tab")
+
+13. In the Settings pane, set the **File download** setting to **Enable** and click **OK**.
+    
+    ![In the Security Settings window, File download is highlighted and enable is selected.](images/Setup/2018-08-15-11-52-57.png "Internet Explorer security settings")
+
+14. To download the exercise files for the lab, paste this URL into the browser:
 
     <https://cloudworkshop.blob.core.windows.net/arm-hackathon/ARM_Hackathon_Guide_Student_Files.zip>
 
-12. You will be prompted about what you want to do with the file. Select **Save**.
+15. You will be prompted about what you want to do with the file. Select **Save**.
 
     ![In the Internet Explorer Save, window, a prompt asks what you want to do with the file, and the Save button is circled.](images/Setup/image13.png "Internet Explorer Save window")
 
-13. Download progress is shown at the bottom of the browser window. When the download is complete, click **Open folder**.
+16. Download progress is shown at the bottom of the browser window. When the download is complete, click **Open folder**.
 
     ![The Open Folder button is circled on the Download progress bar.](images/Setup/image14.png "Download progress bar")
 
-14. The **Downloads** folder will open. ***Right-click*** the zip file, and click **Extract All**. In the **Extract Compressed (Zipped) Folders** window, enter **C:\\Hackathon** in the **Files will be extracted to this folder** dialog. Click the **Extract** button.
+17. The **Downloads** folder will open. ***Right-click*** the zip file, and click **Extract All**. In the **Extract Compressed (Zipped) Folders** window, enter **C:\\Hackathon** in the **Files will be extracted to this folder** dialog. Click the **Extract** button.
 
 ### Task 3: Validate connectivity to Azure
 

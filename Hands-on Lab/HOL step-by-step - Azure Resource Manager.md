@@ -13,7 +13,6 @@ June 2018
 </div>
 
 
-
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
@@ -118,11 +117,10 @@ resources of your ARM template.
 
 1.  The CloudShopSQL DSC configuration requires a credential object to
     access the local administrator account on the virtual machine.
-    Within the Azure Automation DSC configuration click **Credentials**
+    Within the Azure Automation Account click **Credentials**
     in the **SHARED RESOURCES** section.
 
-    ![In the Shared Resources section, Credentials is
-    circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image21.png "Shared Resources section")
+    ![In the Shared Resources section, Credentials is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-10-10.png "Shared Resources section")
 
 2.  Click the **Add a credential** button
 
@@ -145,20 +143,23 @@ name directly.
 
 ### Task 3: Upload DSC Configurations into Automation Account
 
-1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **DSC Configurations** menu
+1.  Click **Resource groups \> Automation\_RG \> Automation-Acct**, and click the **State configuration (DSC)** menu.
 
-    ![On the Automation account page, in the left pane, DSC configuration is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image18.png "Automation account page")
+    ![On the Automation account page, in the left pane, State configuration \(DSC\) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-17-53.png "Automation account page")
 
-2.  Click **+Add a configuration** to upload
-    **C:\\Hackathon\\CloudShopSQL.ps1** and **C:\\Hackathon\\CloudShopWeb.ps1**
-    
-    [In the DSC Configurations pane, the Add a configuration button is circled. In the Import pane, the Configuration file field is set to CloudShopWeb.ps1, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image19.png "DSC / Import Configurations panes")
+2.  Select the **Configurations** tab.
 
-3.  After importing the .ps1 files, click the **CloudShopSQL** DSC
+    ![On the State configuration blade, the Configurations tab is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-21-50.png "Configurations tab")
+
+3.  Click **+Add** button to upload **C:\\Hackathon\\CloudShopSQL.ps1** and **C:\\Hackathon\\CloudShopWeb.ps1**.
+
+    ![In the Import configuration pane, CloudShopSQL.ps1 is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-36-34.png "Import configuration pane")   ![In the Import configuration pane, CloudShopWeb.ps1 is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-41-04.png "Import configuration pane")
+
+4.  After importing the .ps1 files, click the **CloudShopSQL** DSC
     Configuration and click **Compile** on the toolbar (click **Yes** on
     the Start Compilation Job blade). Do the same for **CloudShopWeb**.
     
-    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations / CloudShopSQL panes")
+    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations CloudShopSQL panes")
 
 
 ## Exercise 2: Define the network foundation
@@ -271,7 +272,7 @@ using Visual Studio and deploy it to your Azure account.
 
     > Note: If the resource group was created but the virtual network was not, redeploy the template once more from Visual Studio.
 
-You should see an indication of a successful deployment in the **Output** screen.
+    You should see an indication of a successful deployment in the **Output** screen.
     ![In the Output window, in the output for ARMHackathon, ProvisioningState Succeeded is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image38.png "Output window")
 
 20. To verify the new network was created, within the Azure portal,
@@ -297,7 +298,7 @@ the roles.
 
 2.  Add a new **Storage Account** resource to the template named ***hackstorage***
 
-    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Ensure the name specified is 1 characters or less in length.
+    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Storage account names must not exceed 24 characters. Ensure the name specified is 11 characters or less in length.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
@@ -831,11 +832,9 @@ the roles.
     ![In the In the Manage Keys blade, the copy button for the URL field is called out with an arrow.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image72.png "Manage Keys blade")
 
 4.  You will also need the name of your Node Configurations you uploaded
-    using the portal during Exercise 1. To find these, click the DSC
-    Configuration tile on the Azure Automation Blade. Then, click the
-    name of each to find the Node Name.
+    using the portal during Exercise 1. To find these, click the State configuration (DSC) tile on the Azure Automation Blade. Select the Configurations tab, click the name of each configuration to find the Node Name.
 
-    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. Under CloudShopSQL, under Node Configuration, under Name, CloudShopWeb.WebServer is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image73.png "DSC Configurations window")
+    ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. Under CloudShopSQL, under Node Configuration, under Name, CloudShopSQL.SQLSERVER is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-13-47-32.png "DSC Configurations window")
 
 5.  Within Visual Studio, create a new deployment (*specify the same
     Resource group as before ARMHackathon)*
@@ -915,10 +914,6 @@ the roles.
 8.  Copy the **IP address**, and navigate to it in the browser
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image78.png "Cloud Shop webpage")
-
-9.  You should also verify your VMs are registered as DSC Nodes in your Automation Account. In the Azure portal, click **Resource groups \>Automation\_RG \> Automation-Acct**. Then, click the **DSC Nodes** tile.
-
-    ![In the Azure Portal, in the left pane, Resource groups is called out (1). In the next pane, under Name, Automation\_RG is called out (2). In the Resource group pane, under Essentials, under Name, Automation-Acct is called out (3). In the Automation Account pane, DSC Nodes is called out (4), and 2 (nodes) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image79.png "Azure Portal")
 
 ## Exercise 4: Lock down the environment 
 
@@ -1096,7 +1091,32 @@ feature.
 
     ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
 
-3.  Add a load balancer resource by pasting the following code as the first resource in the list.
+
+3.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list
+
+    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
+    ```
+    {
+     "type": "Microsoft.Storage/storageAccounts",
+     "name": "[concat(variables('StorageAccountPrefix')[copyIndex()],parameters('newStorageAccountSuffix'))]",
+     "apiVersion": "2015-06-15",
+     "copy": {
+      "name": "storageLoop",
+      "count": 5
+     },
+     "location": "[resourceGroup().location]",
+     "properties": {
+      "accountType": "[parameters('hackStorageType')]"
+     }
+    },
+    ```
+
+    > Note: This code will create five storage accounts. The virtual machine
+    scale set will distribute the virtual machine disks across the storage
+    accounts to ensure the VMs do not run out of IO capacity.
+
+4.  Add a load balancer resource by pasting the following code as the first resource in the list.
+
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[{](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "code")
 
@@ -1162,7 +1182,7 @@ feature.
         },
     ```
 
-4.  Add the virtual machine scale set to the **resources** section using
+5.  Add the virtual machine scale set to the **resources** section using
     the following configuration:
     ```
     {
@@ -1316,40 +1336,40 @@ feature.
     will distribute the VM disks across the previously created storage
     accounts.
 
-5.  Delete the existing **hackathonVM** and the **hackathonVMNic**
+6.  Delete the existing **hackathonVM** and the **hackathonVMNic**
     resources by right-clicking each resource and clicking **Delete**
 
     ![Screenshot of the two hackathon resource line items.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image92.png "resources line items")
 
 This VM and NIC will be replaced by the VMs in the scale set.
 
-6.  Delete the existing deployment (to save on core quota) by opening
+7.  Delete the existing deployment (to save on core quota) by opening
     the Azure portal (portal.azure.com) in your browser
 
-7.  Click **Resource groups**
+8.  Click **Resource groups**
 
     ![Screenshot of the Resource groups button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image93.png "Resource groups button")
 
-8.  Click the **ARMHackathon** resource group (or whatever you named
+9.  Click the **ARMHackathon** resource group (or whatever you named
     your deployment)
 
         ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
 
-9. Click **Delete**, and then, confirm by typing in the name of the resource group
+10. Click **Delete**, and then, confirm by typing in the name of the resource group
 
     ![Screenshot of the Delete button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image95.png "Delete button")
 
     > Note: Wait until the Resource Group has been deleted prior to moving onto the next step.
 
-10. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
+11. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
 
     ![In the Resource group field, ARMHackathonScaleSet (East US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
 
-11. Choose any of the template parameters files, and click **Edit Parameters**
+12. Choose any of the template parameters files, and click **Edit Parameters**
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
-12. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
+13. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
 
     ![In the Edit Parameters dialog box, the hackathonPublicIPDnsName, instanceCount, and newStorageAccountSuffix parameters are circled. The checkbox is selected and circled for Save passwords as plain text in the parameters file, and the Save buton is circled as well.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image98.png "Edit Parameters dialog box")
 
@@ -1359,11 +1379,11 @@ This VM and NIC will be replaced by the VMs in the scale set.
     monitor the deployment by clicking the link under the Last Deployment
     lab on the essentials pane.
 
-13. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
+14. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
 
     ![Screenshot of the HackathonPublicIP resource.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image99.png "HackathonPublicIP resource")
 
-14. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
+15. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image100.png "Cloud Shop webpage")
 
