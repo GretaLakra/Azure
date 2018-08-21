@@ -93,13 +93,13 @@ files for the lab exercise.
 
 6.  Choose the **DS1\_V2 Standard** instance size on the Size blade.
 
+
 7.  On the Settings blade, choose **RDP (3389)** on the Select public inbound ports dropdown.
 
     ![In the Select public inbound ports dropdown, RDP is selected.](images/Setup/2018-08-15-10-09-55.png "Select public inbound ports")
 
 8.  Accept the remaining default values on the Settings blade, and click
-    **OK**. On the Summary page, click **Create**. The deployment should
-    begin provisioning. It may take more than 10 minutes for the virtual
+    **OK**. On the Summary page, click **Create**. The deployment should  begin provisioning. It may take more than 10 minutes for the virtual
     machine to complete provisioning.
 
     ![Screenshot of the Deploying Visual Studio Community 2017 icon.](images/Setup/image4.png "Deploying Visual Studio Community 2017 icon")
