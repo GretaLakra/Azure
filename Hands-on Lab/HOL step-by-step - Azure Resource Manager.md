@@ -301,20 +301,7 @@ the roles.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
-3.  In the JSON Outline, locate the parameter named **hackstorageType**
-
-    ![Screenshot of the hackstorageType button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image41.png "hackstorageType button")
-
-4.  Update the Storage code to use **Premium\_LRS** as the defaultValue
-    by changing it from Standard\_LRS to Premium\_LRS
-
-    Before the change:
-
-    ![In the JSON window, a callout arrow points to \"Standard\_LRS.\"](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image42.png "JSON window")
-
-    After the change:
-
-    ![In the JSON window, the callout arrow now points to \"Premium\_LRS.\"](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image43.png "JSON window")
+3. Click **Add** to add the storage account to the template
 
 ### Task 2: Add a virtual machine and configure as a web server
 
@@ -322,6 +309,8 @@ the roles.
     choose ***hackstorage*** as the Storage Account and **FrontEndNet**
     subnet as the Virtual network/subnet. The **FrontEndNet** is the
     value of **hackathonVnetSubnet1Name** variable.
+
+    > Note: The storage account will be changed later to use a new feature called Managed Disks.
 
     ![The fields in the Windows Virtual Machine window are set to the previously mentioned settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image44.jpg "Windows Virtual Machine window")
 
@@ -354,20 +343,56 @@ the roles.
 
     ![In the Add Resource window, in the left pane, Public IP Address is circled. In the right, Create a Public IP Address pane, the Name field is set to hackathonPublicIP, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image47.png "Add Resource window")
 
-5.  Next you will add the PowerShell DSC Extension to the
+    > Note: If you inspect the JSON for the NIC, you'll notice that the ipConfigurations were modified to refer to the public IP address just added!
+
+5.  In the JSON outline pane, select the hackathonVM object
+    ![Select the hackathonVM object](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/hackathonvm.png "hackathonVM")
+
+6.  Visual Studio should have highlighted the JSON that represents the VM object.  Within this JSON code, locate 2 sections of code:
+
+    First, find:
+    ```
+    "apiVersion": "2015-06-15",
+    ```
+    Change to:
+    ```
+    "apiVersion": "2017-03-30",
+    ```
+    Next, find:
+
+    ```
+          "osDisk": {
+            "name": "hackathonVMOSDisk",
+            "vhd": {
+              "uri": "[concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('hackstorageName')), '2016-01-01').primaryEndpoints.blob, variables('hackathonVMStorageAccountContainerName'), '/', variables('hackathonVMOSDiskName'), '.vhd')]"
+            },
+            "caching": "ReadWrite",
+            "createOption": "FromImage"
+          }
+    ```
+    Replace the code block with the code below:
+
+    ```
+            "osDisk": {
+                "createOption": "FromImage"
+            }
+    ```
+
+    This step has changed the VM to use **managed disks** instead of unmanaged disks.
+
+7.  Next you will add the PowerShell DSC Extension to the
     **azuredeploy.json** file. This will register the VM with Azure
     Automation DSC Extension.
 
     ![In the PowerShell DSC Extension window, the Name field is set to hackathonDSC, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image48.png "PowerShell DSC Extension window")
 
-6.  Change the Type Handler from 2.9 to **2.19**, and make sure that
+8.  Change the Type Handler from 2.9 to **2.76**, and make sure that
     autoUpgradeMinorVersion is **false**
 
     ![The PowerShell DSC code block has the typehandlerVersion at 2.19, and the autoUpgradeMinorVersion as false. Both values are circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "PowerShell DSC code ")
 
-    > Note: This is due to a bug in PowerShell DSC at the time of this writing. It may be resolved by now.
 
-7.  Find the settings code within the PowerShell DSC section you just
+9.  Find the settings code within the PowerShell DSC section you just
     added, and replace it with this code (make sure you do not remove
     the protectedSettings block):
 
@@ -449,8 +474,11 @@ the roles.
 
     ![Screenshot of the code section after replacing it with the previous code.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png "Code section")
 
-9.  You will now append the following parameters to your json template
+
+9. You will now append the following parameters to your json template
     (*after the **hackathonPublicIPDnsName** parameter*)
+    > Note: A comma "," must be added after the closing curly-brace "}"
+
     
     ![Screenshot of code, with },\] circled, and the text \"Paste parameter code here, after comma\"highlighted.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image53.png "Code section")
     ```
@@ -776,7 +804,13 @@ the roles.
 
     ![The displayed Code section has a parameter of parameters(\'registrationKey\') which replaced \_artifactsLocationSasToken.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png "Code section")
 
-21. Save your changes to the **azuredeploy.json** template file
+21.  In the paramters section of the JSON outline, delete _artifactsLocation and _artifactsLocationSasToken:
+
+    ![Delete artifactsLocation](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png/artifactslocation.png)
+
+    ![Delete artifactsLocationSasToken](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png/artifactsLocationsastoken.png) 
+
+22. Save your changes to the **azuredeploy.json** template file
 
 ### Task 4: Deploy your updated template to Azure
 
@@ -1037,22 +1071,15 @@ feature.
 ![In the code window, an arrow points to a comma that precedes the code following this graphic.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image89.png "code window")
 ```
     "vmSSName": "webset",
-      "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('hackathonPublicIPName'))]",
-      "lbName": "loadBalancer1",
-      "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
-      "lbFEName": "loadBalancerFrontEnd",
-      "lbWebProbeName": "loadBalancerWebProbe",
-      "lbBEAddressPool": "loadBalancerBEAddressPool",
-      "lbFEIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/',variables('lbFEName'))]",
-      "lbBEAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('lbBEAddressPool'))]",
-      "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]",
-      "storageAccountPrefix": [
-       "a",
-       "g",
-       "m",
-       "s",
-       "y"
-      ]
+    "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('hackathonPublicIPName'))]",
+    "lbName": "loadBalancer1",
+    "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
+    "lbFEName": "loadBalancerFrontEnd",
+    "lbWebProbeName": "loadBalancerWebProbe",
+    "lbBEAddressPool": "loadBalancerBEAddressPool",
+    "lbFEIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/',variables('lbFEName'))]",
+    "lbBEAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('lbBEAddressPool'))]",
+    "lbWebProbeID": "[concat(variables('lbID'),'/probes/',variables('lbWebProbeName'))]"
 ```
 
 2.  Add the following parameters to the end of the **parameters**
@@ -1064,108 +1091,12 @@ feature.
        "metadata": {
         "description": "Number of VM instances"
        }
-      },
-      "newStorageAccountSuffix": {
-       "type": "string",
-       "metadata": {
-        "description": "The Prefix for the names of the new storage accounts created"
-       }
       }
     ```
 
     ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
 
-3.  Add a new storage account resource using the copy function by
-        pasting the following code as the first resource in the list
-
-    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
-    ```
-    {
-     "type": "Microsoft.Storage/storageAccounts",
-     "name": "[concat(variables('StorageAccountPrefix')[copyIndex()],parameters('newStorageAccountSuffix'))]",
-     "apiVersion": "2015-06-15",
-     "copy": {
-      "name": "storageLoop",
-      "count": 5
-     },
-     "location": "[resourceGroup().location]",
-     "properties": {
-      "accountType": "[parameters('hackStorageType')]"
-     }
-    },
-    ```
-
-    ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
-
-4.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list
-
-    ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
-    ```
-    {
-     "apiVersion": "2016-03-30",
-     "name": "[variables('lbName')]",
-     "type": "Microsoft.Network/loadBalancers",
-     "location": "[resourceGroup().location]",
-     "dependsOn": [
-      "[concat('Microsoft.Network/publicIPAddresses/',variables('hackathonPublicIPName'))]"
-     ],
-     "properties": {
-      "frontendIPConfigurations": [
-       {
-        "name": "[variables('lbFEName')]",
-        "properties": {
-         "publicIPAddress": {
-          "id": "[variables('publicIPAddressID')]"
-         }
-        }
-       }
-      ],
-      "backendAddressPools": [
-       {
-        "name": "[variables('lbBEAddressPool')]"
-       }
-      ],
-      "loadBalancingRules": [
-       {
-        "name": "weblb",
-        "properties": {
-         "frontendIPConfiguration": {
-          "id": "[variables('lbFEIPConfigID')]"
-         },
-         "backendAddressPool": {
-          "id": "[variables('lbBEAddressPoolID')]"
-         },
-         "probe": {
-          "id": "[variables('lbWebProbeID')]"
-         },
-         "protocol": "Tcp",
-         "frontendPort": 80,
-         "backendPort": 80,
-         "enableFloatingIP": false
-        }
-       }
-      ],
-      "probes": [
-       {
-        "name": "[variables('lbWebProbeName')]",
-        "properties": {
-         "protocol": "Http",
-         "port": 80,
-         "intervalInSeconds": 15,
-         "numberOfProbes": 5,
-         "requestPath": "/"
-        }
-       }
-      ]
-     }
-    },
-    ```
-
-    > Note: This code will create five storage accounts. The virtual machine
-    scale set will distribute the virtual machine disks across the storage
-    accounts to ensure the VMs do not run out of IO capacity.
-
-5.  Add a load balancer resource by pasting the following code as the first resource in the list.
+3.  Add a load balancer resource by pasting the following code as the first resource in the list.
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[{](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "code")
 
@@ -1231,23 +1162,18 @@ feature.
         },
     ```
 
-6.  Add the virtual machine scale set to the **resources** section using
+4.  Add the virtual machine scale set to the **resources** section using
     the following configuration:
     ```
     {
        "type": "Microsoft.Compute/virtualMachineScaleSets",
-       "apiVersion": "2015-06-15",
+       "apiVersion": "2017-03-30",
        "name": "[variables('vmSSName')]",
        "location": "[resourceGroup().location]",
        "tags": {
         "vmsstag1": "Myriad"
        },
        "dependsOn": [
-        "[concat('Microsoft.Storage/storageAccounts/a',parameters('newStorageAccountSuffix'))]",
-        "[concat('Microsoft.Storage/storageAccounts/g',parameters('newStorageAccountSuffix'))]",
-        "[concat('Microsoft.Storage/storageAccounts/m',parameters('newStorageAccountSuffix'))]",
-        "[concat('Microsoft.Storage/storageAccounts/s',parameters('newStorageAccountSuffix'))]",
-        "[concat('Microsoft.Storage/storageAccounts/y',parameters('newStorageAccountSuffix'))]",
         "[concat('Microsoft.Network/loadBalancers/',variables('lbName'))]",
         "[concat('Microsoft.Network/virtualNetworks/','hackathonVnet')]"
        ],
@@ -1263,14 +1189,6 @@ feature.
         "virtualMachineProfile": {
          "storageProfile": {
           "osDisk": {
-           "vhdContainers": [
-            "[concat('https://a',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
-            "[concat('https://g',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
-            "[concat('https://m',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
-            "[concat('https://s',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]",
-            "[concat('https://y',parameters('newStorageAccountSuffix'),'.blob.core.windows.net/vmss')]"
-           ],
-           "name": "vmssosdisk",
            "caching": "ReadOnly",
            "createOption": "FromImage"
           },
@@ -1398,40 +1316,40 @@ feature.
     will distribute the VM disks across the previously created storage
     accounts.
 
-7.  Delete the existing **hackathonVM** and the **hackathonVMNic**
+5.  Delete the existing **hackathonVM** and the **hackathonVMNic**
     resources by right-clicking each resource and clicking **Delete**
 
     ![Screenshot of the two hackathon resource line items.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image92.png "resources line items")
 
 This VM and NIC will be replaced by the VMs in the scale set.
 
-8.  Delete the existing deployment (to save on core quota) by opening
+6.  Delete the existing deployment (to save on core quota) by opening
     the Azure portal (portal.azure.com) in your browser
 
-9.  Click **Resource groups**
+7.  Click **Resource groups**
 
     ![Screenshot of the Resource groups button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image93.png "Resource groups button")
 
-10.  Click the **ARMHackathon** resource group (or whatever you named
+8.  Click the **ARMHackathon** resource group (or whatever you named
     your deployment)
 
         ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
 
-11. Click **Delete**, and then, confirm by typing in the name of the resource group
+9. Click **Delete**, and then, confirm by typing in the name of the resource group
 
     ![Screenshot of the Delete button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image95.png "Delete button")
 
     > Note: Wait until the Resource Group has been deleted prior to moving onto the next step.
 
-12. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
+10. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSet**.
 
-    ![In the Resource group field, ARMHackathonScaleSet (West US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
+    ![In the Resource group field, ARMHackathonScaleSet (East US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
 
-13. Choose any of the template parameters files, and click **Edit Parameters**
+11. Choose any of the template parameters files, and click **Edit Parameters**
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
-14. Provide a unique value for the **hackathonPublicIPDnsName** and **newStorageAccountSuffix** parameters. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
+12. Provide a unique value for the **hackathonPublicIPDnsName**. Enter a value of **2** for the **instanceCount**. Click **Save** and **Deploy**.
 
     ![In the Edit Parameters dialog box, the hackathonPublicIPDnsName, instanceCount, and newStorageAccountSuffix parameters are circled. The checkbox is selected and circled for Save passwords as plain text in the parameters file, and the Save buton is circled as well.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image98.png "Edit Parameters dialog box")
 
@@ -1441,17 +1359,18 @@ This VM and NIC will be replaced by the VMs in the scale set.
     monitor the deployment by clicking the link under the Last Deployment
     lab on the essentials pane.
 
-15. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
+13. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
 
     ![Screenshot of the HackathonPublicIP resource.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image99.png "HackathonPublicIP resource")
 
-16. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
+14. Copy the **DNS name**, and navigate to it in a browser to validate the load balancer and the scale set are working. Click **Refresh** several times, and the page should flip from WEBSET-0 to WEBSET-1.
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image100.png "Cloud Shop webpage")
 
 ## After the hands-on lab 
 
 Duration: 10 minutes
+    > Note: Do not complete these steps if you plan on doing the supplemental exercises.
 
 ### Task 1: Delete the resource groups created
 
