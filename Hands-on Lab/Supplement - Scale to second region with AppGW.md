@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-July 2018
+August 2018
 </div>
 
 
@@ -27,12 +27,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Azure Resource Manager hands-on lab step-by-step - Scale to 2nd Region with Application Gateway](#azure-resource-manager-hands-on-lab-step-by-step - scale-to-2nd-region-with-application-gateway)
+- [Azure Resource Manager hands-on lab step-by-step - Scale to 2nd Region with Application Gateway](#azure-resource-manager-hands-on-lab-step-by-step---scale-to-2nd-region-with-application-gateway)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
-        - [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
+    - [Exercise 1: Create a 2nd instance of architecture in another region](#exercise-1-create-a-2nd-instance-of-architecture-in-another-region)
+        - [Task 1: Add the Application Gateway](#task-1-add-the-application-gateway)
 
 <!-- /TOC -->
 
@@ -40,7 +38,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-In this hands-on lab, you will deploy a 2nd instance of the infrastructure from the 1st HoL to another region.  The 2nd instance will be configured to use an Application Gateway in place of a Load Balancer.  Finally, Traffic Manager will be used to route traffice between both instances.
+In this hands-on lab, you will deploy a 2nd instance of the infrastructure from the 1st HoL to another region.  The 2nd instance will be configured to use an Application Gateway in place of a Load Balancer.  Finally, Traffic Manager will be used to route traffic between both instances.
 
 -   How to deploy and configure an Application Gateway with VM Scale Sets
 
@@ -58,7 +56,7 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 ### Task 1: Add the Application Gateway
 
 1. Before adding the Application Gateway, delete the Load Balancer:
-    In the JSON Outline window, under resources, click on the Load Balancer and delte it.
+    In the JSON Outline window, under resources, click on the Load Balancer and delete it.
 ![Delete the LB.](images/Scale-to-second-region/deletelb.png "delete")
 
     In the same window, under variables, delete the lbxxx variables
@@ -256,11 +254,11 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 
 1. In the Azure portal, click on **Create New Resource** and search for **Traffic Manager**
 
-![New Resource](images/Scale-to-second-region/newresource.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/newresource.png "New Resource")
 
   Click on Traffic Manager Profile
 
-![New Resource](images/Scale-to-second-region/searchforTM.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/searchforTM.png "New Resource")
 
   In the windows that opens, click on Create
       
@@ -270,26 +268,26 @@ In this exercise, you will configure the template to scale out to a 2nd region b
   - Resource Group: (Create New) TrafficManager
   - Resource Group Location: East US
 
- ![New Resource](images/Scale-to-second-region/trafficmgrnew.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/trafficmgrnew.png "New Resource")
 
- 3. Go to the Resource Group where Traffic Manager was created and click on the Traffic Manager resource
+3. Go to the Resource Group where Traffic Manager was created and click on the Traffic Manager resource
 
- 4. In the Traffic Manager configuration, click on Endpoints
+4. In the Traffic Manager configuration, click on Endpoints
 
   ![New Resource](images/Scale-to-second-region/endpoints.png "New Resource")
 
-  5. Click on Add
+5. Click on Add
 
- ![New Resource](images/Scale-to-second-region/add.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/add.png "New Resource")
 
-  6. Fill in the New Endpoint form with the appropriate information.  Do the same for the both endpoints / application instances.
+6. Fill in the New Endpoint form with the appropriate information.  Do the same for the both endpoints / application instances.
 
-   ![New Resource](images/Scale-to-second-region/tmendpoints.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/tmendpoints.png "New Resource")
 
-   7. Once the endpoints are added, click refresh until both endpoints show as Online
+7. Once the endpoints are added, click refresh until both endpoints show as Online
 
-![New Resource](images/Scale-to-second-region/tmstatus.png "New Resource")
+  ![New Resource](images/Scale-to-second-region/tmstatus.png "New Resource")
 
-    8. Test that TM works by going to the Traffic Manager endpoint from 2 different workstations
+8. Test that TM works by going to the Traffic Manager endpoint from 2 different workstations
 
 

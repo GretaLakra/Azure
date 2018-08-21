@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-July 2018
+August 2018
 </div>
 
 
@@ -27,11 +27,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Azure Resource Manager hands-on lab step-by-step - Azure Backup](#azure-resource-manager-hands-on-lab-step-by-step - Azure Backup)
+- [Azure Resource Manager hands-on lab step-by-step - Azure Backup](#azure-resource-manager-hands-on-lab-step-by-step---azure-backup)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
-        - [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
-
+    - [Exercise 1: Create a Recovery Services vault](#exercise-1-create-a-recovery-services-vault)
+        - [Task 1:](#task-1)
 
 <!-- /TOC -->
 
@@ -57,5 +56,5 @@ In this exercise, you will configure the template to scale out to a 2nd region b
 ### Task 1: 
 
 1. Before adding the Application Gateway, delete the Load Balancer:
-    In the JSON Outline window, under resources, click on the Load Balancer and delte it.
+    In the JSON Outline window, under resources, click on the Load Balancer and delete it.
 
