@@ -54,22 +54,17 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-In this hands-on lab, you will learn how to author an Azure Resource
-Manager (ARM) template that can be used to deploy infrastructure such as
-virtual machine, storage, and networking. This lab will also teach 
-you how to deploy virtual machines that are automatically
-configured by the Azure Automation Desired State Configuration (DSC)
-service.
+In this hands-on lab, you will learn how to author an Azure Resource Manager (ARM) template that can be used to deploy infrastructure such as virtual machine, storage, and networking. This lab will also teach the you how to deploy virtual machines that are automatically configured by the Azure Automation Desired State Configuration (DSC) service.
 
--   How to author and deploy an ARM template
-
--   How to perform configuration management with Azure Automation DSC
+By the end of this lab, you will be better able to migrate and enable easy deployment for lift-and-shift capabilities. In addition, you will learn to build and deploy complex infrastructure solutions with Azure Resource Manager templates, work with Azure Automation Desired State Configuration (DSC) for deploying server configurations, as well as scale existing templatized deployments leveraging VM Scale Sets.
 
 ## Overview
 
-Contoso has asked you to define an Azure Resource Manager (ARM) template
-that can deploy their application CloudShop and its associated database
-using Azure Virtual Machines.
+Lucerne Publishing is one of the largest English-language publishers in the world. With nearly 200 years of history, Lucerne has published some of the world's foremost authors, including Nobel Prize, Pulitzer Prize, National Book Award, Newbery Medal and Caldecott Medal winners. Lucerne is consistently at the forefront of innovation, using digital technology to create unique reading and viewing experiences and expand the reach of its authors and documentary producers.
+
+Lucerne is starting a three-year project to move most of its data center footprint to the cloud. "We are convinced that cloud implementations will give us cost savings and more importantly, deliver operational flexibility," says Greg Vernon, head of infrastructure and enterprise operations at Lucerne. "Like every other business, we are under constant pressure to do more with less. We believe that cloud computing will be substantially cheaper over time than in-house data centers."
+
+The company has asked you to define an Azure Resource Manager (ARM) template that can deploy their application CloudShop and its associated database using Azure Virtual Machines.
 
 ## Solution architecture
 
