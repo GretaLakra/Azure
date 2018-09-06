@@ -41,13 +41,10 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
-1.  Azure Subscription
-
-2.  Understanding of Azure Infrastructure as a Service components
-
-3.  Familiarity with JavaScript Object Notation (JSON)
-
-4.  Familiarity with PowerShell
+- Azure Subscription
+- Understanding of Azure Infrastructure as a Service components
+- Familiarity with JavaScript Object Notation (JSON)
+- Familiarity with PowerShell
 
 ## Before the hands-on lab
 
@@ -69,11 +66,11 @@ files for the lab exercise.
     the Visual Studio Community 2017 image running on Windows Server
     2016 and with the latest update.
 
-3.  In the returned search results, click the image name
+3.  In the returned search results, click the image name.
 
     ![In the Everything blade, Visual Studio Community 2017 is typed in the Search field. Under Name, Visual Studio Community on Windows Server 2016 is circled.](images/Setup/2018-08-15-10-04-24.png "Everything blade")
 
-4.  In the Marketplace solution blade, click **Create**
+4.  In the Marketplace solution blade, click **Create**.
 
 5.  Set the following configuration on the Basics tab, and select **OK**:
 
@@ -85,11 +82,11 @@ files for the lab exercise.
 
     -   Password: **demo\@pass123**
 
-    -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in**
+    -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in**.
 
     -   Resource Group: **OPSLABRG**
 
-    -   Location: **Choose the closest Azure region to you**
+    -   Location: **Choose the closest Azure region to you**.
 
 6.  Choose the **DS1\_V2 Standard** instance size on the Size blade.
 
@@ -98,9 +95,7 @@ files for the lab exercise.
 
     ![In the Select public inbound ports dropdown, RDP is selected.](images/Setup/2018-08-15-10-09-55.png "Select public inbound ports")
 
-8.  Accept the remaining default values on the Settings blade, and click
-    **OK**. On the Summary page, click **Create**. The deployment should  begin provisioning. It may take more than 10 minutes for the virtual
-    machine to complete provisioning.
+8.  Accept the remaining default values on the Settings blade, and click **OK**. On the Summary page, click **Create**. The deployment should  begin provisioning. It may take more than 10 minutes for the virtual machine to complete provisioning.
 
     ![Screenshot of the Deploying Visual Studio Community 2017 icon.](images/Setup/image4.png "Deploying Visual Studio Community 2017 icon")
 
@@ -131,20 +126,19 @@ files for the lab exercise.
 
     ![The Networks prompt asking if you want your PC to be discoverable, and the No button is circled.](images/Setup/image8.png "Networks prompt")
 
-6.  Notice the Server Manager opens by default. On the left, click **Local Server**
+6.  Notice the Server Manager opens by default. On the left, click **Local Server**.
 
     ![Local Server is circled in the left Server Manager menu.](images/Setup/image9.png "Local Server")
 
-7.  On the right side of the pane, click **On** by **IE Enhanced Security Configuration**
+7.  On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
 
     ![In Local Server information, IE Enhanced Security Configuration is circled, and is set to On.](images/Setup/image10.png "Local Server information")
 
-8.  Change to **Off** for Administrators, and click **OK**
+8.  Change to **Off** for Administrators, and click **OK**.
 
     ![On the Internet Explorer Enhanced Security Configuration page, under Administrators, the radio button is selected for Off. At the bottom, the OK button is circled.](images/Setup/image11.png "Internet Explorer Enhanced Security Configuration page")
 
-9.  In the lower left corner, click Internet Explorer to open it. On
-    first use, you will be prompted about security settings. Accept the
+9.  In the lower left corner, click Internet Explorer to open it. On first use, you will be prompted about security settings. Accept the
     defaults by clicking **OK**.
 
     ![In the Internet Explorer 11 Setup window, the checkbox is selected for \"Use recommended security, privacy, and compatibility settings. At the bottom, the OK button is circled.](images/Setup/image12.png "Internet Explorer 11 Setup window")
@@ -179,12 +173,11 @@ files for the lab exercise.
 
 ### Task 3: Validate connectivity to Azure
 
-1.  Within the virtual machine, launch **Visual Studio 2017**, and
-    validate you can login with your Microsoft Account when prompted
+1.  Within the virtual machine, launch **Visual Studio 2017**, and validate you can login with your Microsoft Account when prompted.
 
     ![The Visual Studio sign-in page displays.](images/Setup/image15.png "Visual Studio sign-in page")
 
-2.  Validate connectivity to your Azure subscription. Launch **Visual Studio**, open **Server Explorer** from the View menu, and ensure you can connect to your Azure subscription
+2.  Validate connectivity to your Azure subscription. Launch **Visual Studio**, open **Server Explorer** from the View menu, and ensure you can connect to your Azure subscription.
 
     ![In the Visual Studio Server Explorer window, the sub-menu displays for the Azure subscription, confirming that a connection to the Azure subscription can be made.](images/Setup/image16.png "Visual Studio Server Explorer")
 
