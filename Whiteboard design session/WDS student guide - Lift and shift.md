@@ -58,10 +58,9 @@ Analyze your customer’s needs.
 Timeframe: 15 minutes 
 
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
-
+1.  Meet your table participants and trainer .
+2.  Read all of the directions for steps 1–3 in the student guide. 
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -205,60 +204,40 @@ and potential obstacle to migration.
 
 ### Customer needs 
 
-1.  Lucerne have asked you to assess each application for suitability and cost analysis
-    before migrating to Azure
+1.  Lucerne Publishing has asked you to assess each application for suitability and cost analysis before migrating to Azure.
 
-2.  The procurement system is a critical business application. Availability is required 24/7,
-    including during migration
+2.  The procurement system is a critical business application. Availability is required 24/7, including during migration.
 
-3.  The HR application is only used in office hours and a once-off 12-hour migration
-    window can be made available
+3.  The HR application is only used in office hours and a once-off 12-hour migration window can be made available.
 
-4.  Each migrated application must offer high availability even
-    if a VM fails or during patching cycles
+4.  Each migrated application must offer high availability even if a VM fails or during patching cycles.
         
-5.  Each migrated application must include backup/restore capabilities,
-    for both web and database tiers
+5.  Each migrated application must include backup/restore capabilities, for both web and database tiers.
 
-6.  Prior to cutting over production traffic, Lucerne should be able to
-    perform a full test of the application running in Azure to ensure it
-    is fully functional
+6.  Prior to cutting over production traffic, Lucerne should be able to perform a full test of the application running in Azure to ensure it is fully functional.
 
-7.  Lucerne demands there is a way to "fail back" if
-    something goes wrong at any point in the migration process
+7.  Lucerne demands there is a way to "fail back" if something goes wrong at any point in the migration process.
 
-8.  Both applications are Intranet applications. Lucerne requires connectivity
-    from their corporate network to be robust, secure and performant.
+8.  Both applications are intranet applications. Lucerne requires connectivity from their corporate network to be robust, secure and performant.
 
-9.  All Azure deployments must support least-privilege access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident
+9.  All Azure deployments must support least-privilege access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident.
     
-10.  Mechanisms must be in place to control and monitor Azure cost and prevent
-    use of unapproved Azure services
+10.  Mechanisms must be in place to control and monitor Azure cost and prevent use of unapproved Azure services.
 
 ### Customer objections 
 
-1.  How can we tell how much we will really be spending once we have
-    migrated to Azure?
+1.  How can we tell how much we will really be spending once we have migrated to Azure?
 
-2.  Moving the procurement system to the cloud seems like a security problem. It
-    should only be accessible from people at Lucerne's offices.
+2.  Moving the procurement system to the cloud seems like a security problem. It should only be accessible from people at Lucerne's offices.
 
-3.  We already have licenses for SQL Server. We do not want to pay for
-    them again.
+3.  We already have licenses for SQL Server. We do not want to pay for them again.
 
-4.  Our operations team is new to the cloud and currently uses existing
-    technologies like System Center Operations Manager (SCOM). We are
-    concerned about the time it takes to learn new technologies to
-    monitor and maintain an existing workload.
+4.  Our operations team is new to the cloud and currently uses existing technologies like System Center Operations Manager (SCOM). We are concerned about the time it takes to learn new technologies to monitor and maintain an existing workload.
 
-5.  Logistics and procurement is one of our most critical applications. Any glitch will cause
-    havoc in our ecosystem. The procurement system migration must be
-    seamless, with no loss of data and no application downtime.
+5.  Logistics and procurement is one of our most critical applications. Any glitch will cause havoc in our ecosystem. The procurement system migration must be seamless, with no loss of data and no application downtime.
 
-6.  The procurement application is a simple application with known
-    dependencies and is perfect for a pilot. What about more complicated
-    workloads or workloads where we don't exactly know where the
-    dependencies are?
+6.  The procurement application is a simple application with known dependencies and is perfect for a pilot. What about more complicated
+    workloads or workloads where we don't exactly know where the dependencies are?
 
 ### Infographic for common scenarios
 
@@ -276,36 +255,25 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart: 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
 **Design** 
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 _Networking and Security_
 
-1.  Which peering options and other ExpressRoute features would be
-    required?
+1.  Which peering options and other ExpressRoute features would be required?
 
-2.  Can you identify the workflow that Lucerne will need to follow to
-    enable ExpressRoute in its environment?
+2.  Can you identify the workflow that Lucerne will need to follow to enable ExpressRoute in its environment?
 
-3.  The networking team has provided the following
-    address space for creating the virtual network: 10.0.1.0/24. The
-    on-premises network uses the following address space: 172.16.0.0/16.
-    By drawing a diagram, what connectivity options and subnets would
-    you use for the network design?
+3.  The networking team has provided the following address space for creating the virtual network: 10.0.1.0/24. The on-premises network uses the following address space: 172.16.0.0/16. By drawing a diagram, what connectivity options and subnets would you use for the network design?
 
-4.  What additional security measures can you take to minimize the
-    attack surface of each application at the network level?
+4.  What additional security measures can you take to minimize the attack surface of each application at the network level?
 
-5.  What does Lucerne need to do to allow isolated access to different
-    components of Azure? Specifically, your design should allow the
-    network infrastructure team to manage the virtual network, the
-    procurement infrastructure team to manage the procurement
-    infrastructure, and the HR team to manage the HR application.
+5.  What does Lucerne need to do to allow isolated access to different components of Azure? Specifically, your design should allow the network infrastructure team to manage the virtual network, the procurement infrastructure team to manage the procurement  infrastructure, and the HR team to manage the HR application.
 
 6.  How can Lucerne control and monitor their Azure spend?
 
@@ -360,10 +328,11 @@ _Migration - HR application_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution 
-2.  Identify the benefits of your solution
+1.  Identify any customer needs that are not addressed with the proposed solution. 
+2.  Identify the benefits of your solution.
 3.  Determine how you will respond to the customer’s objections.
 
+Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
@@ -376,15 +345,13 @@ Timeframe: 30 minutes
 **Presentation** 
 
 Directions:
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
+1.  Pair with another table.
+2.  One table is the Microsoft team and the other table is the customer.
+3.  The Microsoft team presents their proposed solution to the customer.
+4.  The customer makes one of the objections from the list of objections.
+5.  The Microsoft team responds to the objection.
 6.  The customer team gives feedback to the Microsoft team.
-7.  Tables switch roles and repeat Steps 2–6
-
-
+7.  Tables switch roles and repeat Steps 2–6.
 
 ## Wrap-up 
 
