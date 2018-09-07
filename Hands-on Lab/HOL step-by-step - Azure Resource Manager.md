@@ -30,6 +30,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
+    - [Requirements](#requirements)
     - [Help references](#help-references)
     - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
         - [Task 1: Create Automation Account](#task-1-create-automation-account)
@@ -71,6 +72,13 @@ The company has asked you to define an Azure Resource Manager (ARM) template tha
 ## Solution architecture
 
 ![This image is a representation of the Solution Architecture.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image2.png "Solution Architecture")
+
+## Requirements
+
+- Azure Subscription
+- Understanding of Azure Infrastructure as a Service components
+- Familiarity with JavaScript Object Notation (JSON)
+- Familiarity with PowerShell
 
 ## Help references
 
