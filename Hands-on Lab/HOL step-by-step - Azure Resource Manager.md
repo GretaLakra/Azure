@@ -100,7 +100,7 @@ resources of your ARM template.
 ### Task 1: Create Automation Account
 
 1.  Browse to the Azure portal and authenticate at
-    <https://portal.azure.com/>
+    <https://portal.azure.com/>.
 
 2.  Click + **Create Resource** and type **Automation** in the search box. Choose **Automation** from the results.
 
@@ -117,7 +117,7 @@ resources of your ARM template.
 
     ![In the Shared Resources section, Credentials is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-12-10-10.png "Shared Resources section")
 
-2.  Click the **Add a credential** button
+2.  Click the **Add a credential** button.
 
     ![Screenshot of the Add a credential button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image22.png "Add a credential button")
 
@@ -174,16 +174,16 @@ using Visual Studio and deploy it to your Azure account.
     followed by **Azure Resource Group**.
 
 3.  Name the project **ARMHackathon**, specify **C:\\Hackathon** for the
-    location, and click **OK**
+    location, and click **OK**.
 
     ![In the New Project window, in the left pane, under Installed, the tree-view is expanded as follows: Templates\\Visual C\#\\Cloud. In the right pane, Azure Resource Group is circled, and called out (1). At the bottom, the Name field is set to ARMHackathon and is called out (2), as is the OK button (3).](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image24.png "New Project window")
 
-4.  On the Select Azure Template dialog box, choose **Blank Template**, and click **OK**
+4.  On the Select Azure Template dialog box, choose **Blank Template**, and click **OK**.
 
     ![In the Select Azure Template window, Blank Template is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image25.png "Select Azure Template window")
 
 5.  In the **Solution Explorer**, open the **azuredeploy.json** under
-    the solution
+    the solution.
 
     ![In the Solution Explorer window, under ARMHackathon, azuredeploy.json is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image26.png "Solution Explorer window")
 
@@ -200,7 +200,7 @@ using Visual Studio and deploy it to your Azure account.
     ![Screenshot of the JSON Outline button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image28.png "JSON Outline button")
 
 8.  On the **Add Resource** dialog box, choose **Virtual Network**,
-    enter **hackathonVnet** in the **Name** field, and click **Add**
+    enter **hackathonVnet** in the **Name** field, and click **Add**.
 
     ![In the left pane of the Add Resource dialog box, Virtual Network is circled. In the right, Create a virtual network pane, the Name field is set to hackathonVnet.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image29.png "Add Resource dialog box")
 
@@ -217,20 +217,21 @@ using Visual Studio and deploy it to your Azure account.
     ```
 
 10. Change the name of **Subnet-1** to **FrontEndNet** as well as the
-    name of **Subnet-2** to **DatabaseNet**
+    name of **Subnet-2** to **DatabaseNet**.
+    
     ```
     "hackathonVnetSubnet1Name": "FrontEndNet",
     "hackathonVnetSubnet2Name": "DatabaseNet",
     ```
 
 11. Deploy the template by **right-clicking** the **ARMHackathon**
-    project and choosing **Deploy** **\>** **New**
+    project and choosing **Deploy** **\>** **New**.
 
     ![In the Solution Explorer window, ARMHackathon is selected, and in the right-click menu, New is called out (1), and in its right-click menu, Deploy is called out(2).](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image30.png "Solution Explorer window")
 
-12. If you did not sign in to your Microsoft Azure account already, you will be asked to do so now
+12. If you did not sign in to your Microsoft Azure account already, you will be asked to do so now.
 
-13. Fill in the email address associated with the Azure account, and click **Continue**
+13. Fill in the email address associated with the Azure account, and click **Continue**.
 
     ![The Sign in to Visual Studio window displays with the User name field obscured.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image31.png "Sign in to Visual Studio window")
 
@@ -239,15 +240,15 @@ using Visual Studio and deploy it to your Azure account.
     Depending on what kind of account you have, you should choose one or
     the other.
 
-15. Enter your password, and click **Sign In**
+15. Enter your password, and click **Sign In**.
 
     ![The Sign in to Visual Studio window displays with the username field obscured, and this time the Password field displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image32.png "Sign in to Visual Studio window ")
 
-16. If you have several subscriptions, choose the one that you want your VNet to be deployed to, and on the Resource group, choose **Create New**
+16. If you have several subscriptions, choose the one that you want your VNet to be deployed to, and on the Resource group, choose **Create New**.
 
     ![In the Deploy to Resource Group window, the Resource group field is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image33.png "Deploy to Resource Group window")
 
-17. On the Create Resource Group dialog box, accept the default value for the name. For the location, choose the **closest location to you**, and click **Create**
+17. On the Create Resource Group dialog box, accept the default value for the name. For the location, choose the **closest location to you**, and click **Create**.
 
     ![In the Create Resource Group window, the Create button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image34.png "Create Resource Group window")
 
@@ -259,7 +260,7 @@ using Visual Studio and deploy it to your Azure account.
 
 19. View the created resource group and virtual network in the Azure
     Management Portal by clicking **Resource Groups** and clicking the
-    **ARMHackathon**
+    **ARMHackathon**.
 
     ![Screenshot of the Resource groups button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image36.png "Resource groups button")
 
@@ -291,13 +292,13 @@ the roles.
 
     ![Screenshot of the Add New Resource button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image28.png "Add New Resource button")
 
-2.  Add a new **Storage Account** resource to the template named ***hackstorage***
+2.  Add a new **Storage Account** resource to the template named ***hackstorage***.
 
     > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Storage account names must not exceed 24 characters. Ensure the name specified is 11 characters or less in length.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
-3. Click **Add** to add the storage account to the template
+3. Click **Add** to add the storage account to the template.
 
 ### Task 2: Add a virtual machine and configure as a web server
 
@@ -310,7 +311,7 @@ the roles.
 
     ![The fields in the Windows Virtual Machine window are set to the previously mentioned settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image44.jpg "Windows Virtual Machine window")
 
-2.  Locate the Parameter **hackathonVMWindowsOSVersion**
+2.  Locate the Parameter **hackathonVMWindowsOSVersion**.
 
     ![Screenshot of the hackathonVMWindowsOSVersion parameter.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image45.png "hackathonVMWindowsOSVersion parameter")
 
@@ -341,7 +342,8 @@ the roles.
 
     > Note: If you inspect the JSON for the NIC, you'll notice that the ipConfigurations were modified to refer to the public IP address just added!
 
-5.  In the JSON outline pane, select the hackathonVM object
+5.  In the JSON outline pane, select the hackathonVM object.
+
     ![Select the hackathonVM object](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/hackathonvm.png "hackathonVM")
 
 6.  Visual Studio should have highlighted the JSON that represents the VM object.  Within this JSON code, locate 2 sections of code:
@@ -383,7 +385,7 @@ the roles.
     ![In the PowerShell DSC Extension window, the Name field is set to hackathonDSC, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image48.png "PowerShell DSC Extension window")
 
 8.  Change the Type Handler from 2.9 to **2.76**, and make sure that
-    autoUpgradeMinorVersion is **false**
+    autoUpgradeMinorVersion is **false**.
 
     ![The PowerShell DSC code block has the typehandlerVersion at 2.19, and the autoUpgradeMinorVersion as false. Both values are circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "PowerShell DSC code ")
 
@@ -454,7 +456,7 @@ the roles.
               ]
            },
     ```
-8.  Next in the protectedSettings section, delete the
+10.  Next in the protectedSettings section, delete the
         "configurationUrlSasToken" line; replacing it with this code:
     ```
     "Items": {
@@ -470,13 +472,12 @@ the roles.
 
     ![Screenshot of the code section after replacing it with the previous code.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png "Code section")
 
+11. You will now append the following parameters to your json template (*after the **hackathonPublicIPDnsName** parameter*).
 
-9. You will now append the following parameters to your json template
-    (*after the **hackathonPublicIPDnsName** parameter*)
-    > Note: A comma "," must be added after the closing curly-brace "}"
-
+    > Note: A comma "," must be added after the closing curly-brace "}".
     
     ![Screenshot of code, with },\] circled, and the text \"Paste parameter code here, after comma\"highlighted.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image53.png "Code section")
+    
     ```
     "registrationKey": {
        "type": "string",
@@ -551,22 +552,21 @@ the roles.
       }
     ```
 
-10. In the "**variables**" section, change the value of
-    hackathonVMVmSize\" to \"Standard\_DS1\_v2"
+12. In the "**variables**" section, change the value of hackathonVMVmSize\" to \"Standard\_DS1\_v2".
 
     ![The Variables section is as follows: \"hackathonVMmSize\" :\"Standard\_DS1\_v2\",](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image54.png "Variables section")
 
-11. Save your changes to the **azuredeploy.json** template file
+13. Save your changes to the **azuredeploy.json** template file.
 
 ### Task 3: Add a Windows virtual machine for the database server
 
-1.  Add another virtual machine to the template by clicking **Add Resource** and next, selecting **Windows Virtual Machine**
+1.  Add another virtual machine to the template by clicking **Add Resource** and next, selecting **Windows Virtual Machine**.
 
     ![Screenshot of the Windows Virtual Machine icon.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image55.png "Windows Virtual Machine icon")
 
 2.  Name this virtual machine resource **hackathonSqlVM**, and reference
     the parameters **hackStorage** and **hackathonVnetSubnet2Name**
-    respectively
+    respectively.
 
     ![The Windows Virtual Machine window fields are set to the previously mentioned settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image56.jpg "Windows Virtual Machine window")
 
@@ -584,7 +584,7 @@ the roles.
     "hackathonSqlVMImageOffer": "SQL2016SP1-WS2016",
     ```
 
-5.  Find the **hackathonSqlVMWindowsOSVersion** parameter
+5.  Find the **hackathonSqlVMWindowsOSVersion** parameter.
 
     ![Screenshot of the hackathonSqlVMWindowsOSVersion Parameter.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image58.png "hackathonSqlVMWindowsOSVersion Parameter")
 
@@ -603,11 +603,11 @@ the roles.
 
     ![Screenshot of the hackathonSqlVMWindowsOSVersion Parameter section, with hackathonSQLVMSKU highlighted. The code in the parameter section is the same as the previous code block.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image59.png "hackathonSqlVMWindowsOSVersion Parameter")
 
-7.  Click the **hackathonSqlVM** resource to move to its properties
+7.  Click the **hackathonSqlVM** resource to move to its properties.
 
     ![Under Resources, under hackathonVM, hackathonSqlVM is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image60.png "Resources section")
 
-8.  Update the **SKU** property to point to the new parameter: **hackathonSqlVMSKU**
+8.  Update the **SKU** property to point to the new parameter: **hackathonSqlVMSKU**.
 
     ```
     "sku": "[parameters('hackathonSqlVMSKU')]", 
@@ -617,7 +617,7 @@ the roles.
 
 9.  Navigate to the **parameters** section of the template, and add a
     new parameter called **vmSizeSQL** to define the size of the virtual
-    machine
+    machine.
 
     > **Tip:** Do not forget the preceding comma.
     ```
@@ -640,6 +640,7 @@ the roles.
     Find the **hardwareProfile** section, and replace the reference to
     the **vmSize** variable to a reference to the new **vmSizeSql**
     parameter:
+    
     ```
     "vmSize": "[parameters('vmSizeSql')]"
     ```
@@ -662,7 +663,7 @@ the roles.
 
 13. To deploy two 1TB data disks, add the following section to the
     properties, storage profile section of the **hackathonSqlVM** (right
-    after osDisk)
+    after osDisk).
 
     > **Tip:** Do not forget to add a comma at the end of the osDisk section.
     ```
@@ -686,13 +687,14 @@ the roles.
 
 14. Next you will add the PowerShell DSC Extension named
     **hackathonDSCSQL** to the **azuredeploy.json** file for the SQL VM.
-    This will register the VM with Azure Automation DSC Extension.**\**
+    This will register the VM with Azure Automation DSC Extension.
 
     ![In the PowerShell DSC Extension window, in the Name field, hackathonDSCSQL is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image66.png "PowerShell DSC Extension")
 
 15. Create a new parameter that will be different for the SQL VM. In the
     **parameters** section, add the following code immediately after the
     existing **nodeConfigurationName** parameter.
+    
     ```
        "sqlnodeConfigurationName": {
           "type": "string",
@@ -704,14 +706,14 @@ the roles.
 
     ![In the code window, the previous mentioned code block is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image67.png "code window")
 
-16. Save your changes to the **azuredeploy.json** template file
+16. Save your changes to the **azuredeploy.json** template file.
 
-17. Navigate to the hackathonDscSQL resource
+17. Navigate to the hackathonDscSQL resource.
 
     ![In the Resources tree-view, the following path is expanded: resources\\hackathonVM\\hackathonSqlVM\\hackathonDscSQL.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image68.png "Resources tree-view")
 
 18. Change the Type Handler from **2.9 to 2.19**, and make sure that
-    **autoUpgradeMinorVersion** is false
+    **autoUpgradeMinorVersion** is false.
 
     ![In the Code window, the typeHandlerVersion of 2.19 is circled, and the autoUpgradeMinorVersion of false is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "Code window")
 
@@ -722,6 +724,7 @@ the roles.
     added, and replace it with this code:
 
     ![Code detailed in the following code section is circled in the code window.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image69.png "Code window")
+    
     ```
              "settings": {
               "modulesUrl": "https://cloudworkshop.blob.core.windows.net/arm-hackathon/RegistrationMetaConfigV2.zip",
@@ -786,6 +789,7 @@ the roles.
 
 20. Next, in the **protectedSettings** section, delete the
     "**configurationUrlSasToken**" line; replacing it with this code:
+    
     ```
     "Items": {
         "registrationKeyPrivate": "[parameters('registrationKey')]"
@@ -806,7 +810,7 @@ the roles.
 
     ![Delete artifactsLocationSasToken](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image52.png/artifactsLocationsastoken.png) 
 
-22. Save your changes to the **azuredeploy.json** template file
+22. Save your changes to the **azuredeploy.json** template file.
 
 ### Task 4: Deploy your updated template to Azure
 
@@ -822,7 +826,7 @@ the roles.
     ![In the Manage Keys blade, the copy button for Primary Access Key is called out with an arrow.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image71.png "Manage Keys blade")
 
 3.  Using this same process, the **URL** can also be copied to use with
-    Visual Studio
+    Visual Studio.
 
     ![In the In the Manage Keys blade, the copy button for the URL field is called out with an arrow.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image72.png "Manage Keys blade")
 
@@ -832,7 +836,7 @@ the roles.
     ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. Under CloudShopSQL, under Node Configuration, under Name, CloudShopSQL.SQLSERVER is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-08-15-13-47-32.png "DSC Configurations window")
 
 5.  Within Visual Studio, create a new deployment (*specify the same
-    Resource group as before ARMHackathon)*
+    Resource group as before ARMHackathon)*.
     
     ![In Visual Studio, ArmHackathon is selected. In its right-click menu, New Deployment is selected, and the right-click menu for New Deployment has Deploy selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image74.png "Visual Studio")
 
@@ -867,7 +871,7 @@ the roles.
 
     -   refreshFrequencyMins: **30**
 
-    -   actionAfterReboot: ContinueConfiguration
+    -   actionAfterReboot: **ContinueConfiguration**
 
     -   timestamp: **\<enter current value in format like screenshot below\>**
 
@@ -906,7 +910,7 @@ the roles.
 
     ![In the Resource group pane, the Public IP address (52.184.226.46) is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image77.png "Resource group pane")
 
-8.  Copy the **IP address**, and navigate to it in the browser
+8.  Copy the **IP address**, and navigate to it in the browser.
 
     ![The Cloud Shop webpage displays, with a list of products from which to choose.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image78.png "Cloud Shop webpage")
 
@@ -927,6 +931,7 @@ the network attack surface for the deployment.
     ![The following code displays, with resources underlined, and the comment \"Insert new Line\" next to it: \"resources\": \[ { \"name\":\"hackathonVNet\",](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image80.png "code")
 
     ![The same code displays, but under resources, a line is inserted with the comment \"Paste Code Here.\"](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image81.png "code")
+    
     ```
     {
      "apiVersion": "2016-03-30",
@@ -954,14 +959,14 @@ the network attack surface for the deployment.
     },
     ```
 
-2.  Click the **hackathonVNet** resource to go to its configuration
+2.  Click the **hackathonVNet** resource to go to its configuration.
 
     ![Under resources, hackathonVNet is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image82.png "hackathonVNet resource")
 
 3.  Associate the network security group with the
     **hackathonVnetSubnet1Name** subnet by adding a comma at the end of
     the **addressPrefix** block and pasting in the
-    **networkSecurityGroup** reference
+    **networkSecurityGroup** reference.
 
     ```
     "networkSecurityGroup": {
@@ -971,13 +976,13 @@ the network attack surface for the deployment.
 
     ![A code window displays. A comma after networkSecurityGroup is called out (1). The previously mentioned code is circled and called out (2).](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image83.png "code window")
 
-4.  Update the virtual network to have a dependency on the network security group
+4.  Update the virtual network to have a dependency on the network security group.
 
-5.  Click the **hackathonVNet** resource to view the configuration
+5.  Click the **hackathonVNet** resource to view the configuration.
 
     ![Under resources, hackathonVNet is selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image84.png "hackathonVNet resource")
 
-6.  Change the **dependsOn** configuration to refer to the network security group
+6.  Change the **dependsOn** configuration to refer to the network security group.
 
     ```
         "dependsOn": [
@@ -990,7 +995,7 @@ the network attack surface for the deployment.
     update the existing deployment with the network security group.
 
 8.  In the Portal, browse to the ARMHackathon Resource Group and locate
-    the newly added Network Security Group
+    the newly added Network Security Group.
 
     ![Screenshot of hackathonNetworkSecurityGroup.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image85.png "hackathonNetworkSecurityGroup")
 
@@ -1010,6 +1015,7 @@ the network attack surface for the deployment.
 1.  Add a new rule to the network security group to allow in traffic on
     port 3389 Remote Desktop Protocol (RDP) by adding a comma at the end
     of the web rule and add the following code:
+    
     ```
     {
      "name": "rdprule",
@@ -1030,15 +1036,15 @@ the network attack surface for the deployment.
     ![A code window displays. A callout arrow points to a comma, and the previously mentioned code is circled below.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image87.png "code window")
 
 2.  Perform another Deployment using Visual Studio to set the rule and
-    test RDP connectivity again
+    test RDP connectivity again.
 
 3.  Open the Azure Preview Portal, and navigate to the resource group
-    containing your deployment
+    containing your deployment.
 
 4.  Click the **hackathonNetworkSecurityGroup** in the resources
-    summary
+    summary.
 
-5.  Examine the created rules
+5.  Examine the created rules:
 
     ![This image contains the created Inbound and Outbound security rules.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image88.png "Inbound and outbound security rules.")
 
@@ -1056,7 +1062,7 @@ feature.
 1.  Add the following variables to the end of the **variables** section
     of the **azuredeploy.json** file:
 
-**Tip:** Do not forget to put a comma after the previous variables.
+    **Tip:** Do not forget to put a comma after the previous variables.
 
 ![In the code window, an arrow points to a comma that precedes the code following this graphic.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image89.png "code window")
 ```
@@ -1074,7 +1080,8 @@ feature.
 
 2.  Add the following parameters to the end of the **parameters**
     section of the **azuredeploy.json** file (do not forget to add the
-    comma after the last parameter)
+    comma after the last parameter).
+    
     ```
       "instanceCount": {
        "type": "string",
@@ -1086,8 +1093,7 @@ feature.
 
     ![In the code window, a comma that precedes the code mentioned previous to this graphic, is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image90.png "code window")
 
-
-3.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list
+3.  Add a new storage account resource using the copy function by pasting the following code as the first resource in the list.
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[ {](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "Code ")
     ```
@@ -1111,7 +1117,6 @@ feature.
     accounts to ensure the VMs do not run out of IO capacity.
 
 4.  Add a load balancer resource by pasting the following code as the first resource in the list.
-
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[{](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "code")
 
@@ -1332,25 +1337,25 @@ feature.
     accounts.
 
 6.  Delete the existing **hackathonVM** and the **hackathonVMNic**
-    resources by right-clicking each resource and clicking **Delete**
+    resources by right-clicking each resource and clicking **Delete**.
 
     ![Screenshot of the two hackathon resource line items.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image92.png "resources line items")
 
 This VM and NIC will be replaced by the VMs in the scale set.
 
 7.  Delete the existing deployment (to save on core quota) by opening
-    the Azure portal (portal.azure.com) in your browser
+    the Azure portal (portal.azure.com) in your browser.
 
-8.  Click **Resource groups**
+8.  Click **Resource groups**.
 
     ![Screenshot of the Resource groups button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image93.png "Resource groups button")
 
 9.  Click the **ARMHackathon** resource group (or whatever you named
-    your deployment)
+    your deployment).
 
         ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
 
-10. Click **Delete**, and then, confirm by typing in the name of the resource group
+10. Click **Delete**, and then, confirm by typing in the name of the resource group.
 
     ![Screenshot of the Delete button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image95.png "Delete button")
 
@@ -1360,7 +1365,7 @@ This VM and NIC will be replaced by the VMs in the scale set.
 
     ![In the Resource group field, ARMHackathonScaleSet (East US) displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image96.png "Resource group field")
 
-12. Choose any of the template parameters files, and click **Edit Parameters**
+12. Choose any of the template parameters files, and click **Edit Parameters**.
 
     ![In the Template parameters file field, deploymenttemplate.param.prod.json displays, along with an Edit Parameters button.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image97.png "Template parameters file field")
 
@@ -1374,7 +1379,7 @@ This VM and NIC will be replaced by the VMs in the scale set.
     monitor the deployment by clicking the link under the Last Deployment
     lab on the essentials pane.
 
-14. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource
+14. Within the **Azure Management Portal**, open the **resource group**, and click the **hackathonPublicIP** resource.
 
     ![Screenshot of the HackathonPublicIP resource.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image99.png "HackathonPublicIP resource")
 
@@ -1385,11 +1390,12 @@ This VM and NIC will be replaced by the VMs in the scale set.
 ## After the hands-on lab 
 
 Duration: 10 minutes
+
     > Note: Do not complete these steps if you plan on doing the supplemental exercises.
 
 ### Task 1: Delete the resource groups created
 
-1.  Within the Azure portal, click Resource Groups on the left navigation
+1.  Within the Azure portal, click Resource Groups on the left navigation.
 
 2.  Delete each of the resource groups created in this lab by clicking
     them followed by clicking the Delete Resource Group button. You will
