@@ -136,7 +136,7 @@ host runs Xeon processors (Skylake). The hardware utilization is unknown
 at this point in time.
 
 The application itself is accessed by users on Lucerne's corporate
-network via the URL https://procurement. Jesse is concerned about
+network via the URL https://<span></span>procurement. Jesse is concerned about
 security to the application and wants to restrict access to only
 requests from the on-premises network.
 
@@ -175,7 +175,7 @@ Framework 4.5. This is implemented on two Dell PowerEdge servers,
 with two 4-core Intel Xeon CPUs (Sandy Bridge) and 4GB memory. Both the OS and application
 have been installed on the same drive, which has UEFI boot enabled.
 
-The application is accessed via the internal network via the URL https://AskHR. It is open
+The application is accessed via the internal network via the URL https://<span></span>AskHR. It is open
 to all staff, who are identified using their AD credentials. There have been requests to make
 the application available from outside the corporate network, but due to security concerns
 this has not yet been implemented.
@@ -338,7 +338,8 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 
 **Outcome**
  
-Present a solution to the target customer audience in a 15-minute chalk-talk format.
+Present a solution to the target customer audience in a 15-
+minute chalk-talk format.
 
 Timeframe: 30 minutes
 
