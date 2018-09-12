@@ -262,7 +262,7 @@ host runs Xeon processors (Skylake). The hardware utilization is unknown
 at this point in time.
 
 The application itself is accessed by users on Lucerne's corporate
-network via the URL https://procurement. Jesse is concerned about
+network via the URL https://<span></span>procurement. Jesse is concerned about
 security to the application and wants to restrict access to only
 requests from the on-premises network.
 
@@ -301,7 +301,7 @@ Framework 4.5. This is implemented on two Dell PowerEdge servers,
 with two 4-core Intel Xeon CPUs (Sandy Bridge) and 4GB memory. Both the OS and application
 have been installed on the same drive, which has UEFI boot enabled.
 
-The application is accessed via the internal network via the URL https://AskHR. It is open
+The application is accessed via the internal network via the URL https://<span></span>AskHR. It is open
 to all staff, who are identified using their AD credentials. There have been requests to make
 the application available from outside the corporate network, but due to security concerns
 this has not yet been implemented.
@@ -835,7 +835,7 @@ _Migration - Procurement system_
                 connected to the on-premises production database.
             -   Update the Application Gateway back-end server pool to reference
                 the new web server VMs, and validate the application is working.
-            -   Update the DNS entry for the 'https://procurement' endpoint
+            -   Update the DNS entry for the 'https://<span></span>procurement' endpoint
                 to point to the Application Gateway front-end.
 
             Rollback (if required):
@@ -911,7 +911,7 @@ _Migration - Procurement system_
 
             From this point, the remaining steps to configure Application Gateway,
             test the new web tier, and cut over or fail back production traffic by
-            modifying the http://procurement endpoint DNS entry, are the same as Option 1 above.
+            modifying the http://<span></span>procurement endpoint DNS entry, are the same as Option 1 above.
 
     -   Phase 2: Database Migration
 
@@ -1217,7 +1217,7 @@ _Migration - HR application_
     **Potential answer**
 
     For the web tier, both on-premises and Azure-based web servers are deployed in parallel,
-    with the cut-over occurring at the DNS level by updating the http://procurement endpoint
+    with the cut-over occurring at the DNS level by updating the http://<span></span>procurement endpoint
     DNS entry. This should be seamless for the end users. Even existing sessions will not be interrupted,
     since they will continue on their existing server until they are terminated. The only possible
     effect is loss of cookie affinity as new sessions are established against the new servers.
