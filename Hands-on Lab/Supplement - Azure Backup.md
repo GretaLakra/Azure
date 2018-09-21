@@ -40,9 +40,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 In this hands-on lab, you will deploy an Azure Backup infrastructure and configure backup the SQL Servers in each environment.
 
--   How to deploy and configure an Azure Backup
+-   How to deploy and configure an Azure Backup.
 
--   How to onboard servers onto Azure Backup
+-   How to onboard servers onto Azure Backup.
 
 
 ## Exercise 1: Create a Recovery Services vault
@@ -51,10 +51,11 @@ Duration: 15 Minutes
 
 In this exercise, you will configure the template to scale out to a 2nd region by deploying a 2nd instance of the architecture.  The 2nd instance will use an Application Gateway.
 
- > Note: Consider making a copy of the Visual Studio solution
+ > Note: Consider making a copy of the Visual Studio solution.
 
 ### Task 1: 
 
 1. Before adding the Application Gateway, delete the Load Balancer:
+
     In the JSON Outline window, under resources, click on the Load Balancer and delete it.
 
