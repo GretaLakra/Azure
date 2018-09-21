@@ -102,11 +102,13 @@ Configuration WebsiteTest {
 
 ### Task 3: Compile the configuration
 
-1. To compile the configuration, run WebsiteTest.ps1.  This places the function in a global scope
+1. To compile the configuration, run WebsiteTest.ps1.  This places the function in a global scope.
+
 ```powershell
 PS C:\ConfigurationTest>. .\WebsiteTest.ps1
 ```
-2. Next, run the function by entering it's name.  The output will be a MOF file
+2. Next, run the function by entering it's name.  The output will be a MOF file.
+
 ```powershell
 PS C:\ConfigurationTest>WebsiteTest
 Directory: C:\ConfigurationTest\WebsiteTest
@@ -118,37 +120,47 @@ Mode                LastWriteTime         Length Name
 ### Task 4: Apply the configuration and verify status
 
 1. Apply the configuraiton by running the following command:
+
 ```powershell
 PS C:\ConfigurationTest> Start-DscConfiguration .\WebsiteTest
 ```
 2. It will take a few minutes for the configuration to apply.  Get the status of the configuration by running the following command.
+
 ```powershell
 Get-DscConfigurationStatus
 ```
-3. Once the status shows 'Success', browse to http://locahost 
+3. Once the status shows 'Success', browse to http://locahost .
 
 4. Alternatively, DSC status can be retrieved by examining the Windows Event Viewer. DSC events are in: Applications and Services Logs/Microsoft/Windows/Desired State Configuration.
 
 ### Task 5: Cleanup
+
 The local DSC configuration will be removed so that it can be applied through Azure VM extensions in Exercise 2.
+
 1. In PowerShell, run the following command:
+
 ```powershell
 Remove-DscConfigurationDocument -Stage Current
 ```
+
 2. The previous step removed the .mof document.  The individual server configuration must still be reverted.  To do this, run the following command:
+
 ```powershell
 Uninstall-WindowsFeature Web-Server
 ```
-3. Restart the server
+
+3. Restart the server.
 
 ## Exercise 2: Deploy DSC using Azure Virtual Machine extensions
 
 Duration: 10 minutes
 
-In this exercise, you will apply the DSC from Exercise 1 using the Azure VM extension for DSC
+In this exercise, you will apply the DSC from Exercise 1 using the Azure VM extension for DSC.
 
 ### Task 1: Package the DSC configuration script
+
 The VM extension for PowerShell DSC requires that the configuration script be provided in a .zip file.
+
 1. Open Powershell, navigate to the C:\ConfigurationTest folder and run the following command:
 
 ```powershell
@@ -157,29 +169,29 @@ PS C:\ConfigurationTest>compress-archive WebsiteTest.ps1 -DestinationPath Websit
 
 ### Task 2: Add and configure the VM extenion
 
-1. Log into the portal.azure.com
+1. Log into the portal.azure.com.
 
-2. Under Resource Groups, click on **OPSLABRG**
+2. Under Resource Groups, click on **OPSLABRG**.
 
-3. Within the **OPSLABRG** Resource Group, click on the LABVM
+3. Within the **OPSLABRG** Resource Group, click on the LABVM.
 
-4. In the Virtual Machine blade, under settings, click on Extensions
+4. In the Virtual Machine blade, under settings, click on Extensions.
 
     ![VM Extenions](images/DSC/extensions.png "VM Extensions")
 
- 5. In the Extensions blade, click on + Add
+ 5. In the Extensions blade, click on + Add.
 
      ![VM Extenions](images/DSC/addextension.png "Add VM Extension")
 
- 6. In the New Resource blade, click on PowerShell Desired State Configuration
+ 6. In the New Resource blade, click on PowerShell Desired State Configuration.
  
      ![VM Extenions](images/DSC/powershelldscextension.png "PowerShell DSC extension")
 
- 7. In the blade that opens, click Create 
+ 7. In the blade that opens, click Create.
 
  8. In the Install extension blade that opens enter the following information and click OK:
 
-    -   Configuration Modules or Script: Select the ZIP file created in Task 1: **WebsiteTest.zip**
+    -   Configuration Modules or Script: Select the ZIP file created in Task 1: **WebsiteTest.zip**.
 
     -   Module-qualified Name of Configuration: **WebsiteTest.ps1\WebsiteTest**
 
@@ -190,9 +202,11 @@ PS C:\ConfigurationTest>compress-archive WebsiteTest.ps1 -DestinationPath Websit
     ![VM DSC Extension](images/DSC/powershelldscextensionconfig.png)
 
 9. It will take 2-3 minutes for the deployment to complete successfully and for the extension to show as **Provisioning succeeded**
+
 ![DSC Extension Status](images/DSC/provisioningstatus.png)
 
-10. Once provisioning is complete, verify by running the PowerShell command below and by browsing to http://localhost 
+10. Once provisioning is complete, verify by running the PowerShell command below and by browsing to http://localhost.
+
 ```powershell
 PS C:\ConfigurationTest> Get-DscConfigurationStatus
 ```
