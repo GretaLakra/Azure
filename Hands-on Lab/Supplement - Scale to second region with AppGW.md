@@ -5,7 +5,7 @@ Azure Resource Manager
 </div>
 
 <div class="MCWHeader2">
-Hands-on lab step-by-step
+Supplement to the Hands-on Lab: Scale to 2nd Region with Application Gateway
 </div>
 
 <div class="MCWHeader3">
