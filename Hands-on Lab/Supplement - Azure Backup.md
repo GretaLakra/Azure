@@ -5,7 +5,7 @@ Azure Resource Manager
 </div>
 
 <div class="MCWHeader2">
-Hands-on lab step-by-step - Azure Backup
+Supplement to the Hands-on Lab: Azure Backup
 </div>
 
 <div class="MCWHeader3">
