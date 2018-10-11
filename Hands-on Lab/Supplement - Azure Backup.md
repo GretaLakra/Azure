@@ -28,7 +28,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Azure Resource Manager hands-on lab step-by-step - Azure Backup](#azure-resource-manager-hands-on-lab-step-by-step---azure-backup)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Exercise 1: Create a Recovery Services vault](#exercise-1-create-a-recovery-services-vault)
-        - [Task 1:](#task-1)
+        - [Task 1:](#task-1-delete-load-balancer)
 
 <!-- /TOC -->
 
@@ -49,9 +49,9 @@ Duration: 15 Minutes
 
 In this exercise, you will configure the template to scale out to a 2nd region by deploying a 2nd instance of the architecture.  The 2nd instance will use an Application Gateway.
 
- > Note: Consider making a copy of the Visual Studio solution.
+ >**Note**: Consider making a copy of the Visual Studio solution.
 
-### Task 1: 
+### Task 1: Delete Load Balancer
 
 1. Before adding the Application Gateway, delete the Load Balancer:
 
