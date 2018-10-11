@@ -29,6 +29,10 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Exercise 1: Create a 2nd instance of architecture in another region](#exercise-1-create-a-2nd-instance-of-architecture-in-another-region)
         - [Task 1: Add the Application Gateway](#task-1-add-the-application-gateway)
+        - [Task 2: Update the VNet to provide a subnet for the application gateway](#task-2-update-the-vnet-to-provide-a-subnet-for-the-application-gateway)
+        - [Task 3: Update the VMSS resource to use the Application Gateway](#task-3-update-the-vmss-resource-to-use-the-application-gateway)
+        - [Task 4](#task-4)
+    - [Exercise 2: Create Traffic Manager](#exercise-2-create-traffic-manager)
 
 <!-- /TOC -->
 
@@ -224,7 +228,7 @@ In this exercise, you will configure the template to scale out to a 2nd region b
     ]
 ```
 
-### Task 4:
+### Task 4
 
 1. Create a **new deployment**, and choose a new **resource group**. Name the new resource group **ARMHackathonScaleSetRegion2**.
 
