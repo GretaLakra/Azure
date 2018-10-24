@@ -464,16 +464,17 @@ the roles.
               ]
            },
     ```
-10.  Next in the protectedSettings section, delete the
-        "configurationUrlSasToken" line; replacing it with this code:
+
+10. Next in the protectedSettings section, delete the "configurationUrlSasToken" line; replacing it with this code:
+
     ```
     "Items": {
         "registrationKeyPrivate": "[parameters('registrationKey')]"
-     }
+    }
     ```
 
     Before:
-    
+
     ![Screenshot of the code section before replacing it with the previous code.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image51.png "Code section")
 
     After:
@@ -845,7 +846,7 @@ the roles.
 
 5.  Within Visual Studio, create a new deployment (*specify the same
     Resource group as before ARMHackathon)*.
-    
+
     ![In Visual Studio, ArmHackathon is selected. In its right-click menu, New Deployment is selected, and the right-click menu for New Deployment has Deploy selected.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image74.png "Visual Studio")
 
 6.  On the **Deploy to Resource Group** dialog box, click **Edit Parameters**, and populate the empty values:
@@ -1361,7 +1362,7 @@ This VM and NIC will be replaced by the VMs in the scale set.
 9.  Click the **ARMHackathon** resource group (or whatever you named
     your deployment).
 
-        ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
+    ![Screenshot of the ARMHackathon resource group line item.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image94.png  "ARMHackathon resource group")
 
 10. Click **Delete**, and then, confirm by typing in the name of the resource group.
 
